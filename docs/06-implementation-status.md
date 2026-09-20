@@ -29,7 +29,7 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 | Source-owner boundary | Engineering requires Windchill, coverage requires Contracts/Dataverse, demand requires Planning, lots require SAP/Depot and terms require Supplier manifest references. Five wrong-owner cases fail before analysis. These checks trust the ingester’s manifest; external authenticity is not proven. |
 | Cancellation and approval timeout | Authoritative CANCELLED/APPROVAL_WAIT_EXPIRED transitions, no late result commit, no old-run expiry of a newer run; preserved approved-at-boundary behavior. V1 retained for history replay; v2 registered in cloud; actual local Functions/Azurite checkpoint-to-approval completion plus offline cancellation/expiry branches. Recovery reused recorded model responses. |
 | Actual local backup/restore | SQLite backup restored while the independent synthetic ERP retained a newer receipt; reconciliation returned the same reference, one external row and a valid audit chain. `local-restore-verification.json`; model test double, not Azure SQL PITR. |
-| Automated checks | **147 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
+| Automated checks | **161 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
 | Observability | `lastbuy-deployed-model-traces.json` contains correlated model/tool spans; input/output content capture disabled explicitly for current hosted release and Durable |
 | Budget enforcement | Shared SQL admission ledger, atomic reservation, retained failure allowance, full-run preflight, concurrency tests; no automatic replenishment |
 
@@ -91,3 +91,7 @@ Azure Cost Management repeatedly returned HTTP 429. Actual billed spend is **unv
 - The authenticated Founderz syllabus, written assignment and upload form are now reviewed. Required six-page PDF support material is prepared; the participant must review it, create their own recording/editing and submit the entry. Seven lesson videos have not all been watched. No public Git repository or contest entry has been published.
 
 Code, source archives, research, test evidence, operating runbook and submission/recording script are ready for review. These deliverables are a cloud-tested contest prototype, not a claim that a real enterprise production rollout or contest submission is complete.
+
+## Public market evidence added
+
+The deployed `?view=market` screen now uses a directly browser-verified onsemi AP0202AT2L00XPGA0-DR listing in USD and INR, with manufacturer notice PD27281ZA. Exact five-decimal unit prices are held as strings and computed with Decimal, rounding only the extended line. Stock limits, quote requirements, 24-hour freshness, NCNR terms and replacement qualification boundaries are visible. This public reference does not overwrite the historical ASIC-SYN-017 plan or pretend a catalogue observation is an accepted supplier quote. See `docs/11-public-market-evidence.md` and `lastbuy/market_prices.json`.

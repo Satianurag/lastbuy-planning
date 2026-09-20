@@ -63,3 +63,7 @@ Live evaluation consumes the shared allowance. Do not run it automatically on ev
 Key code: `lastbuy/` domain, solver, workflow, authorization and adapters; `hosted/` Foundry entrypoint; `functions/` Durable orchestration and web API; `export_functions/` isolated export worker; `web/` decision workspace; `evaluations/` frozen synthetic cases; `evidence/` reproducible execution records.
 
 Research and historical checkpoints are dated. The current implementation report supersedes the original setup-only notes. Public Git repository creation and contest submission are not automatic parts of deployment. The participant must record and edit their own final video under the official contest rules.
+
+### Real public market evidence
+
+Open [the supplier evidence screen](https://lastbuy-dev-4126.azurewebsites.net/?view=market) for directly observed USD/INR prices, quantity tiers, stock limits and an onsemi discontinuance notice. The calculator preserves five-decimal unit pricing, blocks estimates beyond observed availability or after its freshness window, and cannot write purchase decisions. Research and refresh instructions: [public market evidence](docs/11-public-market-evidence.md).

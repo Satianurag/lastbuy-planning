@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-09-20T17:39:34.190085+00:00",
+  "url": "https://lastbuy-dev-4126.azurewebsites.net/?view=market",
+  "market_reference_sha256": "c00732f9da3b347edc5d206334cd913cbfedbb9e6df0bb6b4a5b827da552a4cf",
+  "supplier_observed_at": "2026-09-20T17:31:43Z",
+  "supplier_verification": "Actual browser inspection of US and India rendered listings; manufacturer PDF retrieved and read independently.",
+  "cloud_inr_250_subtotal": "200119.92",
+  "cloud_usd_250_subtotal": "2094.40",
+  "cloud_bulk_10000": {
+    "quantity": 10000,
+    "currency": "INR",
+    "tier_quantity": 250,
+    "unit_price": null,
+    "subtotal": null,
+    "status": "QUOTE_REQUIRED",
+    "reasons": [
+      "Requested quantity exceeds observed stock and backorders are unavailable; obtain a supplier allocation and quote."
+    ],
+    "stale": false,
+    "observed_stock_shortfall": 7799,
+    "rounding": "Preserve five decimal places per unit; round the extended line once to two decimals, half up.",
+    "purchase_authority": false,
+    "existing_case_modified": false
+  },
+  "unauthenticated_private_cases": 401,
+  "assets_match_local_bytes": {
+    "app.js": "5451f64a54c135ffc265e1d6eb09ae64ab4259fcc704fca68f18cdb31127e82d",
+    "market-view.js": "3a12146a0f921ae7a020891237aea7597ce25cd87059c7da53c8438f106dff51",
+    "style.css": "108480cf1f67c9ac47dc3171f8d563808c7929bdf48696b3302a0199baaf0752"
+  },
+  "browser_local": "Verified INR subtotal, USD switch, over-stock quote requirement and source links through actual browser UI.",
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "161",
+    "time": "3.813",
+    "timestamp": "2026-09-20T23:04:05.378836+05:30",
+    "hostname": "MacBook-Pro.local"
+  },
+  "new_model_calls": 0,
+  "enterprise_case_records_changed": false,
+  "web_release": {
+    "archive": "evidence/releases/lastbuy-functions-840ca0ba55733562.zip",
+    "sha256": "840ca0ba55733562de2fcf4d2296d4fe707f94be8abf4a58fbb3dd047aaa4b8f",
+    "files": 36
+  },
+  "browser_cloud": "Deployed page visibly rendered real SKU, INR price tiers, 250-unit subtotal, manufacturer notice links and stock limits in the in-app browser."
+}

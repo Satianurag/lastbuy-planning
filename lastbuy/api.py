@@ -10,7 +10,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 import jwt
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import Field
@@ -28,6 +28,7 @@ from .erp import SyntheticERP
 from .fixtures import DEMO_ACTORS, demo_snapshot
 from .http_limits import BodyLimitMiddleware
 from .ingestion import compare_snapshots
+from .market import market_reference
 from .remote import HostedAnalyst
 from .service import DomainError, Workflow
 from .store import Case, Store, audit
@@ -256,6 +257,14 @@ def create_app(workflow=None, demo=None):
             "data_mode": "synthetic-development" if demo else "enterprise",
             "model": os.getenv("AZURE_AI_MODEL_DEPLOYMENT_NAME", "lastbuy-dev-mini"),
         }
+
+    @app.get("/api/market-prices")
+    def public_market_prices(
+        quantity: int = Query(default=250, ge=1, le=1_000_000),
+        currency: str = Query(default="INR", pattern="^(USD|INR)$"),
+    ):
+        # Public, curated catalogue facts only. No tenant data or decision writes.
+        return market_reference(quantity, currency)
 
     @app.get("/api/session")
     def session_info(request: Request):

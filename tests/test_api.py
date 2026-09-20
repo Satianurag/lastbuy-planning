@@ -150,3 +150,17 @@ def test_import_preview_is_read_only_and_reviewed_create_is_explicit(client):
     assert len(client.get("/api/cases").json()) == 2
     snapshot["sources"][0]["text"] = "Tampered without updating source content hash"
     assert client.post("/api/import/preview", json=snapshot).status_code == 422
+
+
+def test_public_market_reference_exposes_no_case_or_purchase_authority(client):
+    r = client.get("/api/market-prices?quantity=250&currency=INR")
+    assert r.status_code == 200
+    assert r.json()["reference"]["manufacturer_part_number"] == "AP0202AT2L00XPGA0-DR"
+    assert r.json()["calculation"]["purchase_authority"] is False
+    assert client.get("/api/cases").status_code == 401
+    assert client.post("/api/market-prices", json={}).status_code in (403, 405)
+
+
+def test_market_endpoint_rejects_invalid_inputs(client):
+    for query in ("quantity=0", "quantity=2.5", "quantity=1000001", "currency=EUR"):
+        assert client.get("/api/market-prices?" + query).status_code == 422

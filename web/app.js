@@ -1,3 +1,4 @@
+import { marketView } from "/assets/market-view.js?v=20260920-prices";
 import {
   initializeAuth,
   authorization,
@@ -9,7 +10,8 @@ const state = {
   session: null,
   cases: [],
   case: null,
-  tab: "overview",
+  tab: new URLSearchParams(window.location.search).get("view") === "market" ? "market" : "overview",
+  market: null,
   busy: false,
 };
 const esc = (value) =>
@@ -27,7 +29,7 @@ const money = (value) =>
     ? "—"
     : new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: state.case?.plan?.currency || "USD",
+        currency: state.case?.plan?.currency || state.case?.snapshot?.quote?.currency || "USD",
         maximumFractionDigits: 0,
       }).format(value / 100);
 const human = (value) =>
@@ -110,7 +112,14 @@ function signIn() {
 function planBlocked(c) {
   return Boolean(c.plan?.blockers?.length) || ["NEEDS_REVIEW", "INFEASIBLE", "REJECTED", "CANCELLED", "ANALYSIS_FAILED", "APPROVAL_WAIT_EXPIRED"].includes(c.status);
 }
+async function loadMarket(quantity = 250, currency = "INR") {
+  state.market = await api(`/market-prices?quantity=${encodeURIComponent(quantity)}&currency=${encodeURIComponent(currency)}`);
+}
 function render() {
+  if (state.tab === "market") {
+    root.innerHTML = marketView(state.market);
+    return;
+  }
   if (!state.session?.actor) {
     root.innerHTML = signIn();
     return;
@@ -130,7 +139,7 @@ function render() {
     .split(" ")
     .map((x) => x[0])
     .join("");
-  root.innerHTML = `<div class="layout"><aside class="sidebar"><div class="brand"><div class="brand-mark">L<span>↗</span></div><div>LastBuy<small>COMMIT WITH EVIDENCE</small></div></div><div class="org"><strong>Northstar Instruments</strong>Service supply chain · Demo</div><div class="nav-label">Workspace</div><button class="nav-item active" data-tab="overview"><span>▦</span> Final-buy cases <span class="count">${state.cases.length}</span></button><button class="nav-item" data-tab="evidence"><span>▤</span> Source evidence</button><button class="nav-item" data-tab="approvals"><span>✓</span> Approvals</button><button class="nav-item" data-tab="audit"><span>◷</span> Decision history</button><div class="org"><strong>Current case</strong><select class="case-picker" id="case-picker" aria-label="Select case">${state.cases.map((x) => `<option value="${esc(x.id)}" ${x.id === c.id ? "selected" : ""}>${esc(x.id)}</option>`).join("")}</select></div><div class="sidebar-bottom"><div class="environment"><span class="dot"></span>Microsoft Foundry<br>Live analysis · deterministic solver</div><p class="side-note">Purchase authority stays with people.<br>Every approval binds to a plan version.</p></div></aside><div class="content"><header class="topbar"><div class="breadcrumb">Procurement &nbsp; / &nbsp; <b>Final-buy decisions</b></div><div class="user"><span class="avatar">${esc(initials)}</span>${state.session.mode === "local-demo" ? `<select id="persona" aria-label="Switch demo role">${(state.session.personas || []).map((x) => `<option value="${esc(x.key)}" ${x.id === actor.id ? "selected" : ""}>${esc(x.name)} · ${esc(x.key)}</option>`).join("")}</select>` : `<span>${esc(actor.name)}</span><button class="btn ghost" id="microsoft-signout">Sign out</button>`}</div></header><div class="demo-strip"><span>◈</span><strong>${c.snapshot.synthetic ? "SYNTHETIC DATA" : "ENTERPRISE CASE"}</strong> &nbsp; ${c.snapshot.synthetic ? "Enterprise records and ERP exports are simulated. Foundry analysis is live." : "Approvals bind to verified source and plan versions."}</div><main id="main" class="main"><div class="mobile-cases"><label for="mobile-case-picker">Current case</label><select id="mobile-case-picker">${state.cases.map((x) => `<option value="${esc(x.id)}" ${x.id === c.id ? "selected" : ""}>${esc(x.id)}</option>`).join("")}</select></div><div class="eyebrow">LAST-TIME-BUY VERIFICATION</div><div class="headline"><div><h1>One final buy. Every unit justified.</h1><p class="subtitle">${esc(c.snapshot.title)} &nbsp;·&nbsp; Resolve the evidence before the order becomes irreversible.</p></div><div class="actions">${state.session.mode === "local-demo" && actor.roles.includes("planner") ? '<button class="btn" id="import-case">＋ Import case</button>' : ""}<button class="btn ghost" id="download-packet">↓ Evidence packet</button><button class="btn primary" id="analyze" ${state.busy || c.status === "ANALYZING" || !actor.roles.includes("planner") || ["EXPORTED", "EXPORT_PENDING", "EXPORT_UNCERTAIN"].includes(c.status) ? "disabled" : ""}>${c.status === "ANALYZING" ? "Analysis running…" : p ? "↻ Re-analyze case" : "↗ Analyze case"}</button>${c.status === "ANALYZING" && actor.roles.includes("planner") ? `<button class="btn" id="cancel-analysis" ${state.busy ? "disabled" : ""}>Cancel analysis</button>` : ""}</div></div><div class="case-ribbon"><div class="ribbon-cell"><span>Case</span>${esc(c.id)}</div><div class="ribbon-cell"><span>Component</span>${esc(c.snapshot.material)}</div><div class="ribbon-cell"><span>Supplier deadline</span>${new Date(c.snapshot.quote.order_deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })} · UTC</div><div class="ribbon-cell"><span>Source revision</span>v${c.snapshot.source_revision} · ${c.snapshot.sources.length} records</div>${badge(c.status)}</div>${stale ? '<div class="callout"><strong>Sources changed. Previous approvals no longer apply.</strong>The figures below belong to the previous plan. Re-analyze the current snapshot and collect new approvals before exporting.</div>' : ""}${c.status === "CANCELLED" ? '<div class="callout"><strong>Analysis cancelled.</strong>Late model results cannot change this case. Start a fresh analysis when ready.</div>' : ""}${c.status === "APPROVAL_WAIT_EXPIRED" ? '<div class="callout"><strong>The approval window expired.</strong>Create a fresh plan and collect new approvals before exporting.</div>' : ""}${c.status === "ANALYSIS_FAILED" ? '<div class="callout error"><strong>Analysis did not finish.</strong>No result was substituted. Inspect the failed specialist below and retry after the provider recovers.</div>' : ""}${p?.blockers?.length ? `<div class="callout error"><strong>This plan is blocked</strong>${p.blockers.map(esc).join("<br>")}</div>` : ""}<div class="metric-grid"><div class="metric ${blocked || stale ? "" : "featured"}"><div class="label">${stale ? "PREVIOUS PLAN · DIFFERENCE" : blocked ? "UNVERIFIED SCENARIO DIFFERENCE" : "MODELED COMMITMENT REDUCTION"}</div><div class="value">${money(p?.commitment_difference_minor)}</div><div class="foot">${blocked ? "Resolve source conflicts before relying on this comparison." : p?.commitment_difference_minor != null ? `${((p.commitment_difference_minor / p.baseline_commitment_minor) * 100).toFixed(1)}% versus original proposal · synthetic scenario` : "Awaiting verified analysis · no savings claimed"}</div></div><div class="metric"><div class="label">${stale ? "PREVIOUS PLAN · PURCHASE" : blocked ? "PROVISIONAL QUANTITY · BLOCKED" : "RECOMMENDED FINAL PURCHASE"}</div><div class="value">${n(p?.purchase_quantity)}<small>units</small></div><div class="foot">${p?.purchase_quantity != null ? `${money(p.commitment_minor)} purchase commitment` : "MOQ, compatibility and coverage constrained"}</div></div><div class="metric"><div class="label">ORIGINAL PURCHASE PROPOSAL</div><div class="value">${money(c.snapshot.baseline_quantity * c.snapshot.quote.unit_price_minor)}</div><div class="foot">${n(c.snapshot.baseline_quantity)} units · ${money(c.snapshot.quote.unit_price_minor)} per unit</div></div></div><nav class="tabs" aria-label="Case sections">${[
+  root.innerHTML = `<div class="layout"><aside class="sidebar"><div class="brand"><div class="brand-mark">L<span>↗</span></div><div>LastBuy<small>COMMIT WITH EVIDENCE</small></div></div><div class="org"><strong>Northstar Instruments</strong>Service supply chain · Demo</div><div class="nav-label">Workspace</div><button class="nav-item" data-tab="market"><span>↗</span> Market evidence</button><button class="nav-item active" data-tab="overview"><span>▦</span> Final-buy cases <span class="count">${state.cases.length}</span></button><button class="nav-item" data-tab="evidence"><span>▤</span> Source evidence</button><button class="nav-item" data-tab="approvals"><span>✓</span> Approvals</button><button class="nav-item" data-tab="audit"><span>◷</span> Decision history</button><div class="org"><strong>Current case</strong><select class="case-picker" id="case-picker" aria-label="Select case">${state.cases.map((x) => `<option value="${esc(x.id)}" ${x.id === c.id ? "selected" : ""}>${esc(x.id)}</option>`).join("")}</select></div><div class="sidebar-bottom"><div class="environment"><span class="dot"></span>Microsoft Foundry<br>Live analysis · deterministic solver</div><p class="side-note">Purchase authority stays with people.<br>Every approval binds to a plan version.</p></div></aside><div class="content"><header class="topbar"><div class="breadcrumb">Procurement &nbsp; / &nbsp; <b>Final-buy decisions</b></div><div class="user"><span class="avatar">${esc(initials)}</span>${state.session.mode === "local-demo" ? `<select id="persona" aria-label="Switch demo role">${(state.session.personas || []).map((x) => `<option value="${esc(x.key)}" ${x.id === actor.id ? "selected" : ""}>${esc(x.name)} · ${esc(x.key)}</option>`).join("")}</select>` : `<span>${esc(actor.name)}</span><button class="btn ghost" id="microsoft-signout">Sign out</button>`}</div></header><div class="demo-strip"><span>◈</span><strong>${c.snapshot.synthetic ? "DEMONSTRATION" : "ENTERPRISE CASE"}</strong> &nbsp; ${c.snapshot.synthetic ? "Example enterprise records · Live Foundry execution · Simulated ERP exports." : "Approvals bind to verified source and plan versions."}</div><main id="main" class="main"><div class="mobile-cases"><label for="mobile-case-picker">Current case</label><select id="mobile-case-picker">${state.cases.map((x) => `<option value="${esc(x.id)}" ${x.id === c.id ? "selected" : ""}>${esc(x.id)}</option>`).join("")}</select></div><div class="eyebrow">LAST-TIME-BUY VERIFICATION</div><div class="headline"><div><h1>One final buy. Every unit justified.</h1><p class="subtitle">${esc(c.snapshot.title)} &nbsp;·&nbsp; Resolve the evidence before the order becomes irreversible.</p></div><div class="actions">${state.session.mode === "local-demo" && actor.roles.includes("planner") ? '<button class="btn" id="import-case">＋ Import case</button>' : ""}<button class="btn ghost" id="download-packet">↓ Evidence packet</button><button class="btn primary" id="analyze" ${state.busy || c.status === "ANALYZING" || !actor.roles.includes("planner") || ["EXPORTED", "EXPORT_PENDING", "EXPORT_UNCERTAIN"].includes(c.status) ? "disabled" : ""}>${c.status === "ANALYZING" ? "Analysis running…" : p ? "↻ Re-analyze case" : "↗ Analyze case"}</button>${c.status === "ANALYZING" && actor.roles.includes("planner") ? `<button class="btn" id="cancel-analysis" ${state.busy ? "disabled" : ""}>Cancel analysis</button>` : ""}</div></div><div class="case-ribbon"><div class="ribbon-cell"><span>Case</span>${esc(c.id)}</div><div class="ribbon-cell"><span>Component</span>${esc(c.snapshot.material)}</div><div class="ribbon-cell"><span>Supplier deadline</span>${new Date(c.snapshot.quote.order_deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })} · UTC</div><div class="ribbon-cell"><span>Source revision</span>v${c.snapshot.source_revision} · ${c.snapshot.sources.length} records</div>${badge(c.status)}</div>${stale ? '<div class="callout"><strong>Sources changed. Previous approvals no longer apply.</strong>The figures below belong to the previous plan. Re-analyze the current snapshot and collect new approvals before exporting.</div>' : ""}${c.status === "CANCELLED" ? '<div class="callout"><strong>Analysis cancelled.</strong>Late model results cannot change this case. Start a fresh analysis when ready.</div>' : ""}${c.status === "APPROVAL_WAIT_EXPIRED" ? '<div class="callout"><strong>The approval window expired.</strong>Create a fresh plan and collect new approvals before exporting.</div>' : ""}${c.status === "ANALYSIS_FAILED" ? '<div class="callout error"><strong>Analysis did not finish.</strong>No result was substituted. Inspect the failed specialist below and retry after the provider recovers.</div>' : ""}${p?.blockers?.length ? `<div class="callout error"><strong>This plan is blocked</strong>${p.blockers.map(esc).join("<br>")}</div>` : ""}<div class="metric-grid"><div class="metric ${blocked || stale ? "" : "featured"}"><div class="label">${stale ? "PREVIOUS PLAN · DIFFERENCE" : blocked ? "UNVERIFIED SCENARIO DIFFERENCE" : "MODELED COMMITMENT REDUCTION"}</div><div class="value">${money(p?.commitment_difference_minor)}</div><div class="foot">${blocked ? "Resolve source conflicts before relying on this comparison." : p?.commitment_difference_minor != null ? `${((p.commitment_difference_minor / p.baseline_commitment_minor) * 100).toFixed(1)}% versus original proposal · planning scenario` : "Awaiting verified analysis · no savings claimed"}</div></div><div class="metric"><div class="label">${stale ? "PREVIOUS PLAN · PURCHASE" : blocked ? "PROVISIONAL QUANTITY · BLOCKED" : "RECOMMENDED FINAL PURCHASE"}</div><div class="value">${n(p?.purchase_quantity)}<small>units</small></div><div class="foot">${p?.purchase_quantity != null ? `${money(p.commitment_minor)} purchase commitment` : "MOQ, compatibility and coverage constrained"}</div></div><div class="metric"><div class="label">ORIGINAL PURCHASE PROPOSAL</div><div class="value">${money(c.snapshot.baseline_quantity * c.snapshot.quote.unit_price_minor)}</div><div class="foot">${n(c.snapshot.baseline_quantity)} units · ${money(c.snapshot.quote.unit_price_minor)} per unit</div></div></div><nav class="tabs" aria-label="Case sections">${[
     ["overview", "Decision overview"],
     ["evidence", "Evidence"],
     ["approvals", "Approvals"],
@@ -302,6 +311,9 @@ document.addEventListener("click", async (event) => {
     return;
   }
   if (target.dataset.tab) {
+    if (target.dataset.tab === "market") {
+      try { await loadMarket(); } catch (error) { toast(error.message); return; }
+    }
     state.tab = target.dataset.tab;
     render();
     return;
@@ -437,6 +449,15 @@ document.addEventListener("change", async (event) => {
   }
 });
 document.addEventListener("submit", async (event) => {
+  if (event.target.id === "market-form") {
+    event.preventDefault();
+    const values = new FormData(event.target);
+    try {
+      await loadMarket(values.get("quantity"), values.get("currency"));
+      render();
+    } catch (error) { toast(error.message); }
+    return;
+  }
   if (event.target.id !== "approval-form") return;
   event.preventDefault();
   const reason = new FormData(event.target).get("reason");
@@ -471,10 +492,15 @@ setInterval(async () => {
   }
 }, 2500);
 try {
-  await initializeAuth();
-  state.session = await api("/session");
-  if (state.session.actor) await refresh();
-  else render();
+  if (state.tab === "market") {
+    await loadMarket();
+    render();
+  } else {
+    await initializeAuth();
+    state.session = await api("/session");
+    if (state.session.actor) await refresh();
+    else render();
+  }
 } catch (error) {
   root.innerHTML = `<main class="error-page"><h1>Workspace unavailable</h1><p>${esc(error.message)}</p><p>Refresh after the API is available.</p></main>`;
 }

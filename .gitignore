@@ -63,3 +63,5 @@ tmp/pdfs/
 !evidence/cloud-historical-gate-verification.json
 !evidence/cloud-export-verification-LIVE-20260920.json
 !evidence/live-release-verification.json
+
+!evidence/market-release-verification.json

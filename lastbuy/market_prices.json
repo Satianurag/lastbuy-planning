@@ -1,0 +1,114 @@
+{
+  "reference_id": "DIGIKEY-AP0202-20260920",
+  "manufacturer": "onsemi",
+  "manufacturer_part_number": "AP0202AT2L00XPGA0-DR",
+  "description": "Image signal processor \u00b7 100-VFBGA, 7 \u00d7 7 mm",
+  "supplier": "DigiKey",
+  "supplier_part_number": "5556-AP0202AT2L00XPGA0-DR-ND",
+  "observed_at": "2026-09-20T17:31:43Z",
+  "verification_method": "Direct browser inspection of US and India distributor pages; manufacturer discontinuance PDF read separately.",
+  "stock_observed": 2201,
+  "backorders_accepted": false,
+  "packaging": "Tray / drypack",
+  "manufacturer_standard_package": 2600,
+  "standard_package_is_minimum_order": false,
+  "lifecycle": "Last Time Buy",
+  "last_time_buy_date": "2026-10-07",
+  "last_ship_date": "2027-04-07",
+  "deadline_timezone": null,
+  "ncnr": true,
+  "notice_id": "PD27281ZA",
+  "notice_issued": "2026-01-07",
+  "notice_url": "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8865/PD27281ZA.pdf",
+  "notice_sha256": "1168330165aaf040ce65a112718a0b2f214f45b7e319b6b27dcf64c329897cdf",
+  "notice_pages": [
+    1,
+    2
+  ],
+  "notice_summary": "The manufacturer lists this DR part for discontinuance and the TR part as replacement. Orders become non-cancelable and non-returnable. Acceptance depends on availability and applicable terms; minimum quantities or values may be imposed. No cutoff time zone is specified.",
+  "replacement": {
+    "manufacturer_part_number": "AP0202AT2L00XPGA0-TR",
+    "qualification": "Manufacturer-recommended replacement; customer board, firmware and assembly-process qualification is not established.",
+    "stock_observed": 1706,
+    "stock_included_in_primary_availability": false,
+    "single_unit_price": {
+      "USD": "11.80000",
+      "INR": "1127.49000"
+    },
+    "url": "https://www.digikey.com/en/products/detail/onsemi/AP0202AT2L00XPGA0-TR/18687866"
+  },
+  "offers": {
+    "USD": {
+      "url": "https://www.digikey.com/en/products/detail/onsemi/AP0202AT2L00XPGA0-DR/7221063",
+      "market": "United States catalogue",
+      "tiers": [
+        {
+          "quantity": 1,
+          "unit_price": "12.46000",
+          "extended_price": "12.46"
+        },
+        {
+          "quantity": 10,
+          "unit_price": "9.78400",
+          "extended_price": "97.84"
+        },
+        {
+          "quantity": 25,
+          "unit_price": "9.11520",
+          "extended_price": "227.88"
+        },
+        {
+          "quantity": 100,
+          "unit_price": "8.37970",
+          "extended_price": "837.97"
+        },
+        {
+          "quantity": 250,
+          "unit_price": "8.37760",
+          "extended_price": "2094.40"
+        }
+      ]
+    },
+    "INR": {
+      "url": "https://www.digikey.in/en/products/detail/onsemi/AP0202AT2L00XPGA0-DR/7221063",
+      "market": "India catalogue",
+      "tiers": [
+        {
+          "quantity": 1,
+          "unit_price": "1190.55000",
+          "extended_price": "1190.55"
+        },
+        {
+          "quantity": 10,
+          "unit_price": "934.86100",
+          "extended_price": "9348.61"
+        },
+        {
+          "quantity": 25,
+          "unit_price": "870.95720",
+          "extended_price": "21773.93"
+        },
+        {
+          "quantity": 100,
+          "unit_price": "800.68030",
+          "extended_price": "80068.03"
+        },
+        {
+          "quantity": 250,
+          "unit_price": "800.47968",
+          "extended_price": "200119.92"
+        }
+      ]
+    }
+  },
+  "excluded_from_total": [
+    "taxes",
+    "duties or tariffs",
+    "shipping",
+    "insurance",
+    "customer-specific discounts"
+  ],
+  "commercial_status": "Public catalogue observation; not a reserved allocation, accepted order or binding customer quote.",
+  "refresh_policy_hours": 24,
+  "conversion_used": false
+}
