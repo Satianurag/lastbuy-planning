@@ -1,0 +1,36 @@
+{
+  "git_commit": "5d74dfd17e49c4c3eda2c1e3881381f0a4687179",
+  "health_status": 200,
+  "unauthenticated_case_access": 401,
+  "unauthenticated_export_access": 401,
+  "agent": {
+    "agent": "lastbuy-analysis",
+    "version": "7",
+    "status": "active",
+    "source_sha256": "5fee21dd08904e7bed02cc6a9fe4d9fa805a8f4dbefb0f9b887c011834c5836e",
+    "archive": "evidence/releases/lastbuy-analysis-5fee21dd08904e7b.zip",
+    "routed": true
+  },
+  "web_package": {
+    "archive": "evidence/releases/lastbuy-functions-4b86339ad0ca8ec9.zip",
+    "sha256": "4b86339ad0ca8ec9184394c5b8c5ec20c69cb5d0231fdcaa0e4b7a960aaae6ca",
+    "files": 29
+  },
+  "export_package": {
+    "archive": "evidence/releases/lastbuy-export-f61938384ece9614.zip",
+    "sha256": "f61938384ece961486ca38460eb6922ae9da4cba0d139e25b7a689674dbd25f5",
+    "files": 22
+  },
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "123",
+    "time": "3.596",
+    "timestamp": "2026-09-20T21:17:02.691645+05:30",
+    "hostname": "MacBook-Pro.local"
+  },
+  "browser_oauth": "Awaiting user completion; Firefox opened and user took control",
+  "actual_billing": "unverified; Cost Management 429"
+}

@@ -50,3 +50,4 @@ evidence/*
 !evidence/npm-audit.json
 !evidence/lastbuy-deployed-model-traces.json
 !evidence/azure-sql-audit-concurrency.json
+!evidence/final-release-check.json
