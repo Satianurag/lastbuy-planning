@@ -18,7 +18,7 @@ The current [Microsoft orchestration guidance](https://learn.microsoft.com/en-us
 | Usability | Let the planner understand 14,000 reported versus 8,000 usable units, inspect the governing record and see the next responsible owner. | Spending the video in portal configuration or showing opaque agent conversations. |
 | Impact | Demonstrate 22,000 protected demand with a 10,000-unit purchase; explain the $640,000 modeled commitment difference and how a customer would measure benefit. | Calling synthetic arithmetic achieved savings or implying that lower purchasing always means a better decision. |
 | Architect depth | Show a source change invalidating approval, one real trace and one recoverable uncertain export. | Listing infrastructure without showing what failure it prevents. |
-| Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting only 147 passing software tests as proof of model accuracy. |
+| Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting only 161 passing software tests as proof of model accuracy. |
 
 ## Why AI and why four roles
 
@@ -30,25 +30,18 @@ The expected benefit of specialization is easier attribution, smaller instructio
 
 ## The strongest three-minute story
 
-1. Establish the buyer's one-time commitment and the $1.44m original proposal.
-2. Open the component-specific coverage evidence and explain the inventory exclusions.
-3. Show the real completed Foundry result: 10,000 units, $800,000, same protected demand.
-4. Change a reservation on a separate prepared case: previous approval loses validity and export stops.
-5. Reconcile a lost-response synthetic export to its original reference.
-6. Close with an actual trace, an observed failure that led to a fix, and the pilot's measurement plan.
-
-This sequence is an editorial recommendation, not a prediction of winning. It combines a comprehensible financial decision with visible operational behavior. Keep actual execution, prepared results and synthetic business data labeled.
+Use the canonical eight-scene [recording guide](08-contest-handover.md): real dated market notice/prices, separate completed Foundry case, governing contract and engineering evidence, stock bridge, captured historical-stock failure, four-role authority, recorded cloud export recovery, and the evaluation/pilot outcome. The guide and PDF share the same timings from `submission/entry.json`. No fresh paid model run is scheduled in the recording. Public market calculations are deterministic; they are not passed off as the Foundry agent workflow.
 
 ## Current quality judgment
 
-The application has a strong, specific problem and more operational evidence than a basic agent demonstration: hosted v7, durable recovery, role checks, separate exporter and reproducible deterministic outputs. The principal weakness is evidence breadth. The v7 set is small and reused after tuning; four clean cases and no silent conflict pass in four conflicts do not establish production reliability. The UX has been exercised, but not by independent target buyers.
+The application has a strong, specific problem and more operational evidence than a basic agent demonstration: hosted v7, durable recovery, role checks, separate exporter and reproducible deterministic outputs. The principal weakness is evidence breadth. The v7 set is small and reused after tuning; four clean cases and no silent conflict pass in four conflicts do not establish production reliability. A later unseen current-balance challenge did silently pass in the previous pipeline; its captured response drove the new source-currentness gate. The UX has been exercised, but not by independent target buyers.
 
-Within the remaining budget, the highest-value work is a clear, correct demonstration and the required supporting design document. Do not spend the last allowance on an incomplete model run or add an untested last-minute integration. Further hosted benchmarking needs verified spend and sufficient admission allowance. Real customer integration and independent evaluation remain production-release work.
+With model admission exhausted and the infrastructure buffer retained, the highest-value work is a clear, correct demonstration and the required supporting design document. Do not spend the last allowance on an incomplete model run or add an untested last-minute integration. Further hosted benchmarking needs verified spend and sufficient admission allowance. Real customer integration and independent evaluation remain production-release work.
 
 ## Submission requirements verified in the signed-in platform
 
 The final assignment has three steps: design the solution, explain production readiness, and show the end-to-end workflow. The upload modal contains a title field, video selection and **required** support material. Video: up to 3 minutes / 150 MB, mp4/mov/m4v. Support: up to 30 MB, pdf/docx/doc. The authenticated form is stricter than the public rules' optional-support wording; provide the PDF.
 
-The supporting document is `output/pdf/LastBuy-Architect-Solution-Design.pdf`, six pages with architecture, role contracts, workflow, evaluation and production gates. It has been rendered and visually checked. Nothing has been uploaded or submitted. The participant still needs to review the materials and create their own final recording/editing as specified by the official rules.
+The supporting document is `output/pdf/LastBuy-Architect-Solution-Design.pdf`, eight pages with architecture, role contracts, workflow, evaluation and production gates. It has been rendered and visually checked. Nothing has been uploaded or submitted. The participant still needs to review the materials and create their own final recording/editing as specified by the official rules.
 
 Review boundary: the signed-in seven-lesson syllabus, the production lesson page and all three final-activity steps/upload controls were inspected. The seven lesson videos were not all watched; clicking the production lesson's summary link did not yield a readable document in the available browser interface. Do not describe that as a complete review of every lesson recording.

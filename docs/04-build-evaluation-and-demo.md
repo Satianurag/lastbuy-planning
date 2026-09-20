@@ -45,19 +45,7 @@ Required edge cases: detector-only warranty incorrectly assumed to cover ASIC; s
 
 ## Three-minute demo
 
-All enterprise records and financial numbers are synthetic; Foundry calls and the running application must be real. Label those two facts separately. No accelerated recording represented as live timing; prepare the input snapshot ahead of the timed demo.
-
-| Time | On screen | Point proved |
-| --- | --- | --- |
-| 0:00–0:20 | Final-buy case: deadline, discontinued ASIC, original 18,000-unit / $1.44m request. | One buyer, one consequential decision. |
-| 0:20–0:55 | Run analysis; show four stage statuses and source evidence. Open the 14,000 → 8,000 inventory bridge. | Duplicate custody, incompatible revision and quarantine change usable supply. |
-| 0:55–1:25 | Open signed synthetic service amendment; 20,000 → 22,000 required units. Show why detector-only warranty does not cover every ASIC repair. | Coverage interpretation changes real constraints; evidence is actionable. |
-| 1:25–1:50 | Plan: 8,000 eligible + 4,000 inbound + 10,000 buy = 22,000. Compare $800k commitment to original $1.44m. | $640k modeled commitment reduction at the same updated coverage. |
-| 1:50–2:20 | Approve a plan, then inject a stock revision change. Export becomes stale/blocked; recompute and require fresh approval. | Governance is implemented behavior, not a disclaimer or fake button. |
-| 2:20–2:40 | Submit approved synthetic requisition; repeat submission returns the same external reference. | Separate human authority and duplicate-write protection. |
-| 2:40–3:00 | Show Foundry trace, exact release test result, source labels and pilot targets. | Reliability and measurable impact; no claims of real SAP connectivity or achieved savings. |
-
-If the full analysis exceeds the allotted portion, show a clearly labeled completed run and execute the freshness/approval/export interaction live. Never hard-code a “successful” agent result to simulate a real run.
+The current recording sequence is generated from `submission/entry.json` into [the contest handover](08-contest-handover.md) and `output/submission/recording-guide.md`. It starts with dated real onsemi market evidence, explicitly switches to the separate completed Foundry enterprise example, shows the captured historical-stock failure, then recorded approval/export recovery. No fresh paid model call is required. Earlier draft timings and the stock-reservation/reanalysis scene are superseded.
 
 ## Contest alignment and source limitations
 

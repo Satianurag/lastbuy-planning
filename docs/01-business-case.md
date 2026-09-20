@@ -1,6 +1,6 @@
 # LastBuy: verify the final semiconductor purchase before it becomes irreversible
 
-Research date: 20 September 2026. This is a proposed product and validation plan, not a deployed enterprise system or a claim of achieved savings.
+Research date: 20 September 2026. This is the business rationale and customer validation plan for the cloud-tested development prototype; no deployed customer system or achieved savings is claimed.
 
 ## Decisive recommendation
 
@@ -54,3 +54,7 @@ These numbers are deliberately constructed test data. The $640,000 is a **modele
 Measure a pilot using matched historical cases: baseline proposed commitment; planner-accepted revised commitment; subsequent receipts/credits; planning labor; service availability; forecast calibration; data remediation cost. Finance signs off the counterfactual. An illustrative 15% annual carrying rate on a genuinely avoided $640,000 balance is $96,000/year before implementation costs—but 15% is a scenario assumption, not a researched customer rate, and principal and annual carrying savings must not be double counted.
 
 Proceed to a commercial pilot only if a buyer supplies at least 10 historical final-buy cases and a data owner confirms identifiers/effectivity. Target at least 50% reduction in active reconciliation time without increased missed coverage constraints, and positive finance-reviewed net benefit after integration and operation costs. If incumbent configuration resolves the same problem cheaply or IDs cannot be reconciled safely, narrow to an incumbent extension or stop the commercial investment. A synthetic contest demo cannot satisfy this customer-validation gate.
+
+## Real public market reference added to the submission
+
+The separate onsemi AP0202AT2L00XPGA0-DR reference now provides directly observed USD/INR prices and manufacturer notice PD27281ZA, with final-buy date 7 October 2026. See [the dated source record](11-public-market-evidence.md). This grounds the commercial context; it does not identify a real thermal-camera customer using that SKU, replace the example ASIC price, or prove customer qualification for the manufacturer-recommended replacement.

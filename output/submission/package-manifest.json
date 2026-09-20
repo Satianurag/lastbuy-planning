@@ -1,0 +1,179 @@
+{
+  "checked_at": "2026-09-20T18:16:52.856449+00:00",
+  "status": "Supporting package verified; participant video/review/submission pending",
+  "source_parent_commit": "a4039f75f2c37b677a6ba8c8251e1f3b8990ae0b",
+  "automated_tests": 161,
+  "pdf_pages": 8,
+  "pdf_bytes": 27383,
+  "narration_words": 338,
+  "planned_video_seconds": 180,
+  "video_present": false,
+  "submitted": false,
+  "participant_pending": [
+    "Final participant-created video with actual application screenshots/example interactions",
+    "Participant review of originality, rights and eligibility",
+    "Upload required PDF and video, then submit on Founderz"
+  ],
+  "market_observed_at": "2026-09-20T17:31:43Z",
+  "manufacturer_notice_sha256": "1168330165aaf040ce65a112718a0b2f214f45b7e319b6b27dcf64c329897cdf",
+  "current_releases": {
+    "functions-source-release": {
+      "archive": "evidence/releases/lastbuy-functions-840ca0ba55733562.zip",
+      "sha256": "840ca0ba55733562de2fcf4d2296d4fe707f94be8abf4a58fbb3dd047aaa4b8f",
+      "files": 36
+    },
+    "export_functions-source-release": {
+      "archive": "evidence/releases/lastbuy-export-1fb04e67b5812ee0.zip",
+      "sha256": "1fb04e67b5812ee0b6a7039ba9219e58f1898f8a32c707f2a1c0edd5cc88ad8c",
+      "files": 26
+    },
+    "lastbuy-agent-release": {
+      "agent": "lastbuy-analysis",
+      "version": "7",
+      "status": "active",
+      "source_sha256": "5fee21dd08904e7bed02cc6a9fe4d9fa805a8f4dbefb0f9b887c011834c5836e",
+      "archive": "evidence/releases/lastbuy-analysis-5fee21dd08904e7b.zip",
+      "routed": true
+    }
+  },
+  "release_note": "Older final-release-check and live-release-verification records are historical snapshots. These current descriptors identify the packaged web/export/hosted source releases.",
+  "evidence_index": {
+    "Market release verification": "evidence/market-release-verification.json",
+    "Novel live acceptance + corrected release verification": [
+      "evidence/live-acceptance-novel.json",
+      "evidence/cloud-historical-gate-verification.json"
+    ],
+    "Cloud historical-evidence gate": "evidence/cloud-historical-gate-verification.json",
+    "Cloud export CREATE / RECOVER": "evidence/cloud-export-verification-LIVE-20260920.json"
+  },
+  "official_review": {
+    "date": "2026-09-20",
+    "rules": "https://founderz.com/agentathon-terms/",
+    "teaching_repository": "https://github.com/microsoft/FrontierWeekHack",
+    "repository_head": "cd7ec1717fbf109bf6e76edfa38a5a7cfc0d88ea",
+    "authenticated_form": "evidence/founderz-platform-review.json",
+    "deadline_note": "Official sections 3/4 use September 24 23:59 PDT; section 9 uses September 24 23:59 GMT. Use the earlier GMT cutoff as a conservative target; this is not an organizer clarification.",
+    "conservative_submit_by_ist": "2026-09-25T05:29:00+05:30"
+  },
+  "new_model_calls_in_package_audit": 0,
+  "checks": [
+    "Eight-page PDF and form size limit",
+    "Matching eight-scene narrative",
+    "161-test zero-failure report",
+    "Exact decimal public price totals",
+    "Current source archive integrity",
+    "Cloud public calculations and private-case authentication",
+    "Historical stock rejection and one-row recovery evidence",
+    "Explicit distinction between public facts, examples and measured results"
+  ],
+  "files": {
+    "output/pdf/LastBuy-Architect-Solution-Design.pdf": {
+      "sha256": "dba33bcac94d2eee24e883b4c3e140411691e2f7eb183a11081947f6971086f2",
+      "bytes": 27383
+    },
+    "submission/entry.json": {
+      "sha256": "3f0095a6e0b965a6ab02583576f5634fe637c2a6c411b572cf163cbf1eab29a0",
+      "bytes": 5475
+    },
+    "lastbuy/market_prices.json": {
+      "sha256": "bb6cb03935412026bccb23ee6b55e5c4b62c09d12a77be24569e2702db384319",
+      "bytes": 3760
+    },
+    "README.md": {
+      "sha256": "d057df4ddd5e09fe51618a22e69e218ed558c2b99b0e8e52a997a8a41c0eda64",
+      "bytes": 6965
+    },
+    "output/submission/README.md": {
+      "sha256": "327e68162f7973af54ef3b178c1717237fd589f43f46539628678104a9e65f73",
+      "bytes": 686
+    },
+    "output/submission/entry-description.txt": {
+      "sha256": "6f5cbce6e4b1523c40f00aa1fa11f18c118a6fb6d25503f6dad09236c29a9423",
+      "bytes": 1338
+    },
+    "output/submission/recording-guide.md": {
+      "sha256": "2eed7c07e66d7bab308bfaf182474d89a4dd7788a638517ec908198680b00454",
+      "bytes": 5323
+    },
+    "docs/01-business-case.md": {
+      "sha256": "40267e495721c4bb85b2eaf2d18c926d09e2179db97e1b0a10cc84088362fc42",
+      "bytes": 10122
+    },
+    "docs/03-architecture-and-contracts.md": {
+      "sha256": "5f75d486fc5eb0f412a17cc3c383b2b2a32bd396f438da5ff2220d3cdd3e3ff0",
+      "bytes": 16779
+    },
+    "docs/08-contest-handover.md": {
+      "sha256": "60555e293f6e6da2266ba62ce84dcd4158e1b576f90e0c1985bad2bd2735c844",
+      "bytes": 8817
+    },
+    "docs/09-completion-audit.md": {
+      "sha256": "d124b7090c23923c18da04e14061446c8d0b2325179f4cff62eb3c91220b090c",
+      "bytes": 6268
+    },
+    "docs/10-contest-strategy-2026-09-20.md": {
+      "sha256": "04cafef6e92fc98252c72421ed8c9eda98eb22a157c590ca7087679385540463",
+      "bytes": 7486
+    },
+    "docs/11-public-market-evidence.md": {
+      "sha256": "f6d81b7e38e7f40311b76eaf94428bf0fb7ca94e10878c805a1a80fe44868e0a",
+      "bytes": 4939
+    },
+    "evidence/implementation-tests.xml": {
+      "sha256": "abb04a4b636e74b95e98d9c7f4bc51e4e5d4adbbedb1772c440f8fabfa0f6e5c",
+      "bytes": 20079
+    },
+    "evidence/evaluation-summary.json": {
+      "sha256": "d6b85c4d29408df22eeed4072670838b798c4f9f56a716e7b862ce85ea735c54",
+      "bytes": 2113
+    },
+    "evidence/evaluation-offline.json": {
+      "sha256": "cf866c8c3acc006393fb60a4a16600768322e187563373d978d82205674b4066",
+      "bytes": 13226
+    },
+    "evidence/full-cloud-release7.json": {
+      "sha256": "1c464c38a32407b5d121bc305f94b45e14b5226593b2c1f290edd9507c5f4f53",
+      "bytes": 51222
+    },
+    "evidence/live-acceptance-summary.json": {
+      "sha256": "1b907f8f0384ed911f35db6cd78dab60625e817ccd04b817d6c665acf1056e3a",
+      "bytes": 5923
+    },
+    "evidence/live-acceptance-novel.json": {
+      "sha256": "930f7a1e5f6b07bb9cf58e2b4e6dbb68968d3e09a3bc8d02b901280346d933aa",
+      "bytes": 5620
+    },
+    "evidence/cloud-historical-gate-verification.json": {
+      "sha256": "118f663a3d2805810404da2e8500f8ea6b8e001c0a5dc1301e532aadac94a976",
+      "bytes": 410
+    },
+    "evidence/cloud-export-verification-LIVE-20260920.json": {
+      "sha256": "37bddcd1eb428e170e5f5a41eb619a563071c1f7cddd17e8cc034d23e6b79e02",
+      "bytes": 1437
+    },
+    "evidence/runtime-v2-checkpoint-completed.json": {
+      "sha256": "8d9afaba7cd32fe08e5005bde46cf213fa7f21c1c1058ca74896e5a21c4e906c",
+      "bytes": 4076
+    },
+    "evidence/market-release-verification.json": {
+      "sha256": "2dfbb4d91279e45568f26446cedf470ba1472456abe774eb381f48f22e2d898a",
+      "bytes": 2015
+    },
+    "evidence/founderz-platform-review.json": {
+      "sha256": "a51b1262d5ffc00755998278cca24dc9643488f79ebc9d189d07cd9c27da5d17",
+      "bytes": 2094
+    },
+    "evidence/functions-source-release.json": {
+      "sha256": "f1f5a64fa8440b214952a8b5aa5003ed83ad69cc0aac9d2d9f544e9888adb01f",
+      "bytes": 170
+    },
+    "evidence/export_functions-source-release.json": {
+      "sha256": "8aebd25b67f97241c99defa30b0d5d72994c849309efae72876a8339a41b8a7d",
+      "bytes": 167
+    },
+    "evidence/lastbuy-agent-release.json": {
+      "sha256": "11f71eae9bb22e0e49a70daee1cf393df49a888a14d61eb0851b5dfc27de9f4f",
+      "bytes": 251
+    }
+  }
+}

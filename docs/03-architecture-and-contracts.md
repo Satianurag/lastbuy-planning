@@ -47,9 +47,11 @@ The browser never receives a model key. API authorization derives organization, 
 
 Proposed states: `DRAFT → SNAPSHOTTED → ANALYZING → NEEDS_REVIEW | INFEASIBLE | READY_FOR_APPROVAL → APPROVAL_PENDING → APPROVED → REVALIDATING → EXPORT_PENDING → EXPORTED`. Source changes can move any unexported approved plan to `STALE`. Failed/uncertain exports have explicit states. `EXPORTED` records are not retroactively changed; superseding decisions reference them.
 
-## Specialist agents and tools
+## Target customer adapter design (planned tools)
 
-| Role | Bounded reasoning responsibility | Allowed tools | Structured output |
+The following tool names are the target customer integration design, not the current deployed tool inventory. The implemented hosted roles each use only `read_case_evidence`; deterministic solving and validation run in server code. Current exact contracts are documented in PDF pages 2-3 and `lastbuy/domain.py`.
+
+| Role | Bounded reasoning responsibility | Planned tools | Target structured output |
 | --- | --- | --- | --- |
 | Engineering applicability | Map notice MPN to released component revisions, board/firmware effectivity and repairable serial cohorts; distinguish candidates from qualified alternates. | `get_released_bom`, `get_effectivity`, `get_approved_substitutions`, `read_source_excerpt` | `ApplicabilityAssessment`: affected cohorts, compatibility edges, source revisions, proposed exclusions, conflicts, required engineer approvals. |
 | Service obligations | Determine component-specific coverage windows, signed amendment precedence and exceptions. | `get_service_coverage_manifest`, `get_installed_base`, `read_contract_clause`, `get_approved_demand_scenarios` | `ObligationAssessment`: covered cohort/component/time tuples, governing clauses, exclusions, uncertainty and service-owner questions. |

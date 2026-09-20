@@ -1,8 +1,8 @@
 > Historical setup checkpoint. The application has since been implemented and deployed; see [current implementation evidence](06-implementation-status.md).
 
-# Verified development setup
+# Archived initial diagnostic setup checkpoint
 
-Verified on 20 September 2026. **Preparation is ready for implementation. LastBuy itself has not been implemented.** The deployed agent is a diagnostic that calls one harmless Python tool and verifies its exact output. It handles no customer records or purchasing logic.
+At the initial checkpoint on 20 September 2026, preparation was ready but LastBuy was not yet implemented. This archived section describes the diagnostic agent that existed at that time; it is not the current release. That agent was a diagnostic that calls one harmless Python tool and verifies its exact output. It handles no customer records or purchasing logic.
 
 ## Selected path and actual proof
 
@@ -113,10 +113,10 @@ To deliberately remove only the diagnostic version later, use `.venv/bin/python 
 - The hosted Invocations endpoint requires `?api-version=v1`; the initial missing-version request returned 400. The corrected request passed.
 - Homebrew required explicit trust of Microsoft's Functions formula alias before linking. Core Tools now returns version 4.14.0.
 
-## Deliberately remaining implementation and pilot work
+## Work outstanding at the initial checkpoint (superseded)
 
-No product UI, domain agents, solver formulation, case database, approval policy, durable business workflow or ERP exporter has been implemented. No Azure SQL, production storage, private network, Function App, Entra application registration, production roles or CI/CD pipeline has been provisioned. Core Tools installation and emulator tests do not prove Durable Functions replay behavior. Evaluation packages are installed; no LastBuy evaluation scores exist yet, and an Invocations evaluation adapter remains to be built.
+At that initial checkpoint, no product UI, domain agents, solver formulation, case database, approval policy, durable business workflow or ERP exporter had been implemented. No Azure SQL, production storage, private network, Function App, Entra application registration, production roles or CI/CD pipeline had been provisioned. Core Tools installation and emulator tests do not prove Durable Functions replay behavior. Evaluation packages were installed; no LastBuy evaluation scores existed then, and an Invocations evaluation adapter remained to be built.
 
-These are explicit build gates in `04-build-evaluation-and-demo.md`, not hidden setup successes. Actual SAP, Windchill, Dataverse and contract-repository connections require customer access and source contracts. Commercial validity requires historical buyer cases and comparison to the incumbent workflow. The public Founderz curriculum path and rules were reviewed; gated lessons and the authenticated submission form were not accessed.
+These are explicit build gates in `04-build-evaluation-and-demo.md`, not hidden setup successes. Actual SAP, Windchill, Dataverse and contract-repository connections require customer access and source contracts. Commercial validity requires historical buyer cases and comparison to the incumbent workflow. The public Founderz curriculum path and rules were reviewed; gated lessons and the authenticated submission form had not yet been accessed. The later authenticated review is recorded in docs 06 and 09.
 
 The next implementation step is Gate 1: freeze the source schemas, evidence precedence, approval policy and independently specified synthetic truth set. That work should precede the production agents and UI.

@@ -1,26 +1,4 @@
-# LastBuy contest handover
-
-## Submission description
-
-**LastBuy: every unit justified before the final order.**
-
-LastBuy helps an industrial thermal-camera manufacturer's service supply-chain director verify a final semiconductor purchase before a non-cancelable order. Four scoped Microsoft Foundry specialists examine engineering applicability, component-specific service obligations, physical supply and supplier commitment. Exact source quotations and critical-fact checks feed a deterministic allocation solver. Four distinct human roles approve the source-bound plan; an isolated exporter rechecks authority and reconciles uncertain writes. Real Foundry, Azure Functions, SQL and Blob executions are recorded. In the example enterprise case, 22,000 units of protected demand require a 10,000-unit buy after stock reconciliation, producing a $640,000 modeled commitment difference at an assumed $80 unit price. A separate public market screen verifies real onsemi pricing and discontinuance evidence; those prices are not substituted into the historical example. Live testing exposed historical stock being selected as current; new approval/export gates reject that evidence. A customer pilot will measure planner effort and coverage quality, targeting at least 50% less active reconciliation time. The public market calculator is deterministic; the Foundry workflow is the agent submission.
-
-## Current supporting material
-
-The eight-page design PDF covers buyer/problem, four-role architecture, human authority, the same eight-scene demo, 161 passing automated tests with live failures disclosed, production gates, real dated market evidence, and recorded interactions. All public prices belong to onsemi AP0202AT2L00XPGA0-DR; the USD 80 / USD 640,000 figures belong only to the separate constructed enterprise case.
-
-Public catalogue calculations are deterministic and do not invoke Foundry. The four specialists in the enterprise workflow are the AI agent solution. A manufacturer-recommended alternative is not a customer engineering approval.
-
-## Judging alignment
-
-- Innovation: exact evidence-to-input checks, deterministic purchase constraints and authority tied to the source version. Servigistics and Z2Data already address this problem category; exclusivity is not claimed.
-- Usability: inspect quantity adjustments, source owners, provisional blocked results and clear next actions. Browser workflows were exercised; independent buyer study remains a pilot task.
-- Impact: reproducible modeled commitment and a measured customer-pilot plan, targeting at least 50% less active reconciliation time without more missed coverage obligations. Targets are not achieved outcomes.
-
-[Official rules](https://founderz.com/agentathon-terms/) give each criterion 30 points and use Innovation first in ties. The final participant video must satisfy their originality requirements.
-
-## Three-minute recording script
+# LastBuy: final recording guide
 
 This is the single current eight-scene script. It uses existing verified results, source inspection and recorded recovery evidence. No new paid model call or new approval/export is required. The participant creates the final recording, screenshots and editing.
 
@@ -52,7 +30,3 @@ Final video, originality/rights/eligibility review and upload/submission remain 
 
 Official sections 3/4 use September 24 23:59 PDT; section 9 uses September 24 23:59 GMT. Use the earlier GMT cutoff as a conservative target; this is not an organizer clarification.
 Conservative target in India: 25 September 2026, 05:29 IST.
-
-## Refinements supported by evidence
-
-Live stock extraction selected a historical quantity; a currentness gate now blocks the captured response and the cloud exporter rejected a legacy-approved fixture with zero writes. A transient SQL connection timeout motivated bounded connection retry. A matched-input single-call baseline used fewer tokens but falsely blocked the clean golden case; this one historical comparison does not establish general superiority. Actual Functions checkpoint recovery completed through approval wait. These are separate evidence sets, not a single perfect accuracy statistic.

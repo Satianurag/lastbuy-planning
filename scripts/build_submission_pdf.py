@@ -1,5 +1,7 @@
 """Build the Architect supporting document from explicit, reviewed project facts."""
 
+import json
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from reportlab.graphics.shapes import Drawing, Line, Polygon, Rect, String
@@ -17,6 +19,14 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "output/pdf/LastBuy-Architect-Solution-Design.pdf"
+ENTRY = json.loads((ROOT / "submission/entry.json").read_text())
+MARKET = json.loads((ROOT / "lastbuy/market_prices.json").read_text())
+TEST_COUNT = (
+    ET.parse(ROOT / "evidence/implementation-tests.xml")
+    .getroot()
+    .find("testsuite")
+    .attrib["tests"]
+)
 GREEN = colors.HexColor("#173e35")
 LIME = colors.HexColor("#dce8b4")
 INK = colors.HexColor("#20362f")
@@ -123,7 +133,9 @@ def footer(c, d):
     c.setFont("Helvetica", 8)
     c.setFillColor(GRAY)
     c.drawString(
-        42, 30, "20 September 2026  |  Synthetic business data; real Foundry execution"
+        42,
+        30,
+        "20 September 2026  |  Public market evidence + example enterprise workflow",
     )
     c.drawRightString(A4[0] - 42, 30, f"LastBuy  /  {d.page}")
     c.setFillColor(GREEN)
@@ -320,7 +332,7 @@ story.append(
 )
 story.append(
     P(
-        "Business basis: manufacturer discontinuation notices, component-specific warranty terms and material inventory exposures support the problem category. They do not prove that a named customer has validated LastBuy. Sources and limitations: page 6.",
+        "Business basis: manufacturer discontinuation notices, component-specific warranty terms and material inventory exposures support the problem category. They do not prove that a named customer has validated LastBuy. Sources and limitations: pages 6-8.",
         "s",
     )
 )
@@ -414,61 +426,24 @@ start(
     "Make the consequence<br/>visible to the planner.",
     "The central interaction is a purchase decision: inspect what changed, which evidence governs it, and who must act.",
 )
-story.append(
-    table(
-        [
-            ["Workspace surface", "User question answered"],
-            [
-                "Quantity bridge",
-                "Why does reported stock differ from usable supply? Open the exact source behind an exclusion.",
-            ],
-            [
-                "Scenario coverage",
-                "Which approved demand envelope is protected? Show allocation per scenario without summing alternatives.",
-            ],
-            [
-                "Blockers and evidence",
-                "What is unresolved, who owns it, and which source revision must be corrected?",
-            ],
-            [
-                "Approval and audit",
-                "Which person approved which plan? Are source and authority still current?",
-            ],
-            [
-                "Requisition receipt",
-                "Was the draft accepted? Can a retry recover the existing reference without another write?",
-            ],
-        ],
-        [132, 378],
-    )
+sec(
+    "Decision workspace",
+    "The quantity bridge links each stock exclusion to its source. Scenario coverage shows the protected demand envelope. Blockers identify the source owner and next action. Version-bound approvals and a recoverable requisition receipt complete the planner's workflow.",
 )
 sec(
     "The decisive demonstration",
-    "Show the verified 10,000-unit plan. Then introduce a 1,000-unit stock reservation on a separate prepared case. The old approval must become stale and export must stop. The deterministic revised requirement is 11,000 units, subject to fresh analysis and approval. Finish by reconciling a lost-response synthetic export to its original receipt.",
+    "Open the public onsemi reference, then switch explicitly to the separate completed Foundry example. Show its verified 10,000-unit plan. Inspect the captured historical-stock failure: the currentness gate blocks approval and labels its figures provisional. Finish with recorded cloud export/recovery evidence. All scenes use existing results; no fresh paid model run is required.",
 )
 story.append(
     table(
         [
             ["Three-minute presentation", "Proof to show"],
-            [
-                "0:00-0:25",
-                "One buyer, the final-order deadline and the $1.44m proposal.",
-            ],
-            [
-                "0:25-1:15",
-                "Coverage clause and stock bridge; the 22,000-unit obligation remains protected.",
-            ],
-            [
-                "1:15-2:05",
-                "The $800,000 plan; changed evidence invalidates authority and blocks export.",
-            ],
-            [
-                "2:05-2:35",
-                "Four visibly synthetic approval roles and one reconciled draft reference.",
-            ],
-            [
-                "2:35-3:00",
-                "Actual trace, one failure-driven refinement and the measured pilot target.",
+            *[
+                [
+                    f"{b['start'] // 60}:{b['start'] % 60:02d}-{b['end'] // 60}:{b['end'] % 60:02d}",
+                    b["screen"],
+                ]
+                for b in ENTRY["beats"]
             ],
         ],
         [132, 378],
@@ -491,8 +466,8 @@ story.append(
         [
             ["Evidence", "What it establishes / limit"],
             [
-                "147 automated tests",
-                "Solver, workflow, authority, replay, cancellation, expiry and export behaviors within covered fixtures. Includes regressions from captured provider failures.",
+                f"{TEST_COUNT} automated tests",
+                "Solver, workflow, authority, replay, cancellation, expiry and export behaviors within covered fixtures. Includes captured provider failures and exact public-price arithmetic.",
             ],
             [
                 "60/60 offline suite",
@@ -599,10 +574,108 @@ for label, url in refs:
     story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
 story.append(
     P(
-        "Source review: 20 September 2026. Repository evidence: full-cloud-release7.json; evaluation-summary.json; implementation-tests.xml; cloud-export-verification.json; final-release-check.json. Full source qualifications and competitor links are in docs/01-business-case.md.",
+        "Source review: 20 September 2026. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Full source qualifications and competitor links are in docs/01-business-case.md.",
         "s",
     )
 )
+
+start(
+    7,
+    "Real commercial evidence.<br/>Precisely bounded use.",
+    "A separate public catalogue reference: onsemi AP0202AT2L00XPGA0-DR, an image signal processor in 100-VFBGA packaging.",
+)
+story.append(
+    P(
+        "<b>Observed 20 September 2026, 17:31:43 UTC.</b> Direct browser inspection of DigiKey US and India listings; currencies are independently observed, not converted. The manufacturer-authored discontinuance notice was retrieved and read."
+    )
+)
+rows = [["Quantity", "USD / unit", "INR / unit", "INR line total"]]
+for usd, inr in zip(MARKET["offers"]["USD"]["tiers"], MARKET["offers"]["INR"]["tiers"]):
+    rows.append(
+        [
+            str(inr["quantity"]),
+            usd["unit_price"],
+            inr["unit_price"],
+            inr["extended_price"],
+        ]
+    )
+story.append(table(rows, [65, 120, 140, 185]))
+sec(
+    "Manufacturer notice PD27281ZA",
+    "Issued 7 January 2026. Last-time-buy: <b>7 October 2026</b>. Final shipment: <b>7 April 2027</b>. Orders become non-cancelable/non-returnable, subject to availability and commercial terms. The notice lists AP0202AT2L00XPGA0-TR as replacement; customer board, firmware and assembly qualification remains a separate engineering decision. No cutoff hour or time zone is invented.",
+)
+sec(
+    "Exact calculation and a meaningful refusal",
+    "At 250 units, INR 800.47968 per unit produces <b>INR 200119.92</b>, rounding the extended line once. Observed DR stock is 2,201 with backorders unavailable. A 10,000-unit request has a 7,799-unit shortfall: the calculator returns <b>QUOTE_REQUIRED</b> without a fabricated subtotal. Replacement stock is not pooled into this allocation.",
+)
+sec(
+    "Price evidence is not purchasing authority",
+    "Catalogue prices exclude taxes, duties, tariffs, freight and customer discounts. The application stops current estimates after its 24-hour observation window; the dated source table remains historical evidence. This public calculator is deterministic. It has not been analyzed as a new Foundry case and does not change the example ASIC's USD 80 price, approval hashes or USD 640,000 modeled difference.",
+)
+for label, url in [
+    ("DigiKey US price source", MARKET["offers"]["USD"]["url"]),
+    ("DigiKey India price source", MARKET["offers"]["INR"]["url"]),
+    ("onsemi discontinuance notice via DigiKey", MARKET["notice_url"]),
+    (
+        "Open deployed public evidence screen",
+        "https://lastbuy-dev-4126.azurewebsites.net/?view=market",
+    ),
+]:
+    story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
+
+start(
+    8,
+    "Recorded interactions.<br/>One consistent release.",
+    "Concrete outcomes from executed tests and displayed application states. These are evidence readouts, not screenshots or a newly run model benchmark.",
+)
+story.append(
+    table(
+        [
+            ["Input / interaction", "Observed result", "Evidence record"],
+            [
+                "Public INR catalogue; 250 units",
+                "CATALOGUE_ESTIMATE; INR 200119.92. USD catalogue: USD 2094.40.",
+                "Market release verification",
+            ],
+            [
+                "Public catalogue; 10,000 units",
+                "QUOTE_REQUIRED; 7,799 units beyond observed stock; no subtotal.",
+                "Market release verification",
+            ],
+            [
+                "Captured live stock response selected historical 6,000 rather than current 4,800",
+                "Replay becomes NEEDS_REVIEW; provisional labels; engineering approval unavailable; export disabled.",
+                "Novel live acceptance + corrected release verification",
+            ],
+            [
+                "Legacy-approved fixture carrying the same historical fact",
+                "Deployed exporter: HTTP 409; zero external requisition rows.",
+                "Cloud historical-evidence gate",
+            ],
+            [
+                "Valid CREATE and preseeded lost-response RECOVER; repeat request",
+                "One external row per case; repeated receipt unchanged; audit chain valid.",
+                "Cloud export CREATE / RECOVER",
+            ],
+        ],
+        [171, 196, 143],
+    )
+)
+sec(
+    "Reviewable enterprise proof",
+    "The completed example case is LTB-CLOUD-RELEASE-7, hosted release v7. Its four specialist results total 12,569 response-reported tokens. The current deployed web and exporter archives, exact tests, supplier reference digest and this PDF are identified in package-manifest.json. Failed model attempts remain in the repository; the public price reference cannot grant access to private cases.",
+)
+sec(
+    "Recording and submission",
+    "Use the same eight scenes in the supplied recording guide. The participant must create the final video, including actual application screenshots/example interactions. The verified form accepts a video up to 3 minutes / 150 MB and requires PDF/Word support up to 30 MB. This PDF is the support document. Final recording, participant review and submission are separate pending actions; no entry has been uploaded.",
+)
+story.append(
+    P(
+        "The rules conflict on PDT versus GMT in different sections. Conservative submission target: 24 September 2026 at 23:59 GMT (25 September 05:29 IST), pending any organizer clarification. Public references are observations dated 20 September; refresh the listing before making a later current-price claim.",
+        "s",
+    )
+)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 SimpleDocTemplate(
     str(OUT),

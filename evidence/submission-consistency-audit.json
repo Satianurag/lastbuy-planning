@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-20T18:16:52.856449+00:00",
+  "passed": true,
+  "pdf_visual_review": "All eight rendered pages inspected; no clipping or overflow",
+  "files_packaged": 28,
+  "bundle_sha256": "2028af7151cbe620a5ce8f73073ecc144fa29511f30dc00d745ea76327d5193a",
+  "pdf_pages": 8,
+  "automated_tests": 161,
+  "new_model_calls": 0,
+  "submitted": false,
+  "participant_pending": [
+    "Final participant-created video with actual application screenshots/example interactions",
+    "Participant review of originality, rights and eligibility",
+    "Upload required PDF and video, then submit on Founderz"
+  ]
+}

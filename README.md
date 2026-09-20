@@ -18,7 +18,7 @@ This is an implemented and cloud-tested development prototype. Enterprise source
 
 ## Demonstration economics
 
-All figures are synthetic. An 18,000-unit proposal at $80 costs $1.44m. Reported 14,000 stock includes 2,000 duplicate-custody units, 3,000 incompatible units and 1,000 quarantined units: 8,000 are usable. Add 4,000 confirmed inbound against 22,000 protected demand. The recommendation is **10,000 new units / $800,000**, a **$640,000 modeled commitment difference**. This is not achieved savings. Reserving 1,000 usable units increases the new purchase to 11,000 and invalidates earlier approvals.
+The enterprise example figures are synthetic. An 18,000-unit proposal at $80 costs $1.44m. Reported 14,000 stock includes 2,000 duplicate-custody units, 3,000 incompatible units and 1,000 quarantined units: 8,000 are usable. Add 4,000 confirmed inbound against 22,000 protected demand. The recommendation is **10,000 new units / $800,000**, a **$640,000 modeled commitment difference**. This is not achieved savings. Reserving 1,000 usable units increases the new purchase to 11,000 and invalidates earlier approvals.
 
 ## Run locally
 
@@ -67,3 +67,7 @@ Research and historical checkpoints are dated. The current implementation report
 ### Real public market evidence
 
 Open [the supplier evidence screen](https://lastbuy-dev-4126.azurewebsites.net/?view=market) for directly observed USD/INR prices, quantity tiers, stock limits and an onsemi discontinuance notice. The calculator preserves five-decimal unit pricing, blocks estimates beyond observed availability or after its freshness window, and cannot write purchase decisions. Research and refresh instructions: [public market evidence](docs/11-public-market-evidence.md).
+
+## Current submission package
+
+The eight-page Architect PDF, short entry description, one canonical recording guide and integrity manifest are indexed in `output/submission/README.md`. Real public onsemi prices are a separate dated reference from the example enterprise case and its assumed USD 80 unit price. Final participant video/screenshots, participant review and Founderz submission are pending; the code and supporting document do not constitute an uploaded entry.
