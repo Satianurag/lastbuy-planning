@@ -48,3 +48,7 @@ Machine-readable evidence: `evidence/final-release-check.json`, `browser-final-v
 - **Production operations:** execute an isolated Azure SQL restore/reconciliation drill, configure a customer-owned alert destination, and complete retention/network/identity reviews before production data or purchasing authority is enabled.
 
 These are concrete completion conditions, not optional caveats. The current deliverable is a functioning, cloud-tested development application with honest evidence and a contest handover; production rollout and contest submission remain open.
+
+## Access recheck
+
+On 20 September 2026, the existing Firefox Founderz tab was located at `https://learn.founderz.com/activities`, but its accessibility state and captured visual state disagreed, so no lesson content could be reliably verified. Opening that exact page in the in-app browser redirected to `https://learn.founderz.com/login`. The participant has been asked to complete sign-in there; no lesson or form has been marked reviewed and no registration/email/submission action was taken. A fresh read-only Azure Cost Management query again returned HTTP 429. No new paid model runs were made. These checks leave the existing access, billing and external-validation gates open.
