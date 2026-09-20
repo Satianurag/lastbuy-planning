@@ -1,0 +1,184 @@
+{
+  "mode": "novel",
+  "manifest_sha256": "4140004603ef93672ebf9e94ee758dd0ab18b8550d68ac72a59ff0f9e879a2f3",
+  "started_at": "2026-09-20T17:00:20.010540+00:00",
+  "budget_before": {
+    "limit_paise": 70000,
+    "reserved_paise": 69000,
+    "unreserved_paise": 1000
+  },
+  "snapshot_sha256": "be7d8139fcecfb939f346630f4db4e9445cfde6af66d10cd151e99113b37a60d",
+  "expected_blocker": true,
+  "outcome": "ACCEPTED",
+  "result": {
+    "assessment": {
+      "role": "supply",
+      "summary": "Confirmed usable supply for ASIC-SYN-017 revision A2 is 10,800 EACH: 4,800 on-hand in LOT-01, 2,000 on-hand in LOT-02, and 4,000 inbound in LOT-05. Exclude LOT-03 as incompatible revision, LOT-04 as quarantined, and the depot record for LOT-02 as duplicate custody of the same physical lot.",
+      "findings": [
+        {
+          "code": "dup_custody_and_exclusions",
+          "severity": "info",
+          "summary": "The reconciliation excludes duplicated custody for LOT-02 and non-eligible stock from LOT-03 and LOT-04; no unresolved blocker remains for the proposed A2 purchase scope.",
+          "evidence": [
+            "depot",
+            "stock",
+            "bom"
+          ],
+          "supporting_quotes": [
+            {
+              "source_id": "depot",
+              "quote": "This is the same physical lot recorded in SAP, not additional inventory."
+            },
+            {
+              "source_id": "stock",
+              "quote": "LOT-03 has 3,000 incompatible A1 units."
+            },
+            {
+              "source_id": "stock",
+              "quote": "LOT-04 has 1,000 quarantined A2 units."
+            },
+            {
+              "source_id": "bom",
+              "quote": "Both accept ASIC-SYN-017 revision A2. Revision A1 is incompatible."
+            }
+          ]
+        },
+        {
+          "code": "confirmed_inbound",
+          "severity": "info",
+          "summary": "Inbound LOT-05 is confirmed and separate physical supply.",
+          "evidence": [
+            "inbound"
+          ],
+          "supporting_quotes": [
+            {
+              "source_id": "inbound",
+              "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+            },
+            {
+              "source_id": "inbound",
+              "quote": "This is separate physical lot LOT-05."
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "key": "SAP-01:quantity",
+          "observed_value": "6000",
+          "supporting_quotes": [
+            {
+              "source_id": "stock",
+              "quote": "LOT-01 opening count was 6,000 owned A2 units."
+            }
+          ]
+        },
+        {
+          "key": "SAP-02:quantity",
+          "observed_value": "2000",
+          "supporting_quotes": [
+            {
+              "source_id": "stock",
+              "quote": "LOT-02 has 2,000 owned A2 units in external depot custody."
+            }
+          ]
+        },
+        {
+          "key": "WMS-02:quantity",
+          "observed_value": "2000",
+          "supporting_quotes": [
+            {
+              "source_id": "depot",
+              "quote": "2,000 A2 units for NORTHSTAR in LOT-02."
+            }
+          ]
+        },
+        {
+          "key": "SAP-03:quantity",
+          "observed_value": "3000",
+          "supporting_quotes": [
+            {
+              "source_id": "stock",
+              "quote": "LOT-03 has 3,000 incompatible A1 units."
+            }
+          ]
+        },
+        {
+          "key": "SAP-04:quantity",
+          "observed_value": "1000",
+          "supporting_quotes": [
+            {
+              "source_id": "stock",
+              "quote": "LOT-04 has 1,000 quarantined A2 units."
+            }
+          ]
+        },
+        {
+          "key": "PO-05:quantity",
+          "observed_value": "4000",
+          "supporting_quotes": [
+            {
+              "source_id": "inbound",
+              "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+            }
+          ]
+        },
+        {
+          "key": "PO-05:confirmed",
+          "observed_value": "true",
+          "supporting_quotes": [
+            {
+              "source_id": "inbound",
+              "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        "bom",
+        "depot",
+        "inbound",
+        "stock"
+      ]
+    },
+    "model": "lastbuy-dev-mini",
+    "prompt_version": "lastbuy-specialists-5",
+    "tool_calls": [
+      "read_case_evidence"
+    ],
+    "duration_ms": 7149,
+    "usage": {
+      "total_token_count": 3777,
+      "reasoning_output_token_count": 0,
+      "cache_creation_input_token_count": 0,
+      "cache_read_input_token_count": 0,
+      "openai.cached_input_tokens": 0,
+      "input_token_count": 3105,
+      "output_token_count": 672,
+      "openai.cache_write_tokens": 0,
+      "openai.reasoning_tokens": 0
+    },
+    "source": "live-foundry",
+    "transport": "foundry-hosted",
+    "agent": "lastbuy-analysis",
+    "agent_version": "7",
+    "agent_session_id": "edbe97e7-ca58-50be-9ed4-a0b2b8853ceb"
+  },
+  "blocked": false,
+  "passed": false,
+  "observed_current_lot_quantity": {
+    "SAP-01:quantity": "6000",
+    "SAP-02:quantity": "2000",
+    "WMS-02:quantity": "2000",
+    "SAP-03:quantity": "3000",
+    "SAP-04:quantity": "1000",
+    "PO-05:quantity": "4000"
+  },
+  "wall_ms": 25137,
+  "budget_after": {
+    "limit_paise": 70000,
+    "reserved_paise": 70000,
+    "unreserved_paise": 0
+  },
+  "completed_at": "2026-09-20T17:00:53.485158+00:00"
+}

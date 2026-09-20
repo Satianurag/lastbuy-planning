@@ -10,6 +10,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 from sqlalchemy.pool import NullPool, StaticPool
 
 from .domain import Actor, digest, now
+from .sql_connect import connect_with_retry
 
 
 class Base(DeclarativeBase):
@@ -123,6 +124,7 @@ class Store:
                 cparams["attrs_before"] = {
                     1256: struct.pack(f"<I{len(raw)}s", len(raw), raw)
                 }
+                return connect_with_retry(dialect.loaded_dbapi, cargs, cparams)
 
         if url.startswith("sqlite"):
 

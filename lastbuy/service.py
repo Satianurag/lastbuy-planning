@@ -17,6 +17,7 @@ from .domain import (
     digest,
     now,
 )
+from .evidence_time import historical_plan_checks
 from .solver import solve, verify_solution
 from .store import (
     Approval,
@@ -341,6 +342,12 @@ class Workflow:
             for f in r["assessment"]["findings"]
             if f["severity"] in {"blocker", "review"}
         ]
+        historical = historical_plan_checks({"assessments": results}, snapshot)
+        if historical:
+            model_blockers.append(
+                "Current source evidence required; historical quantities were selected for: "
+                + ", ".join(historical)
+            )
         plan = {
             **calculation,
             "assessments": results,
@@ -443,6 +450,10 @@ class Workflow:
         if plan["status"] != "READY_FOR_APPROVAL" or plan["blockers"]:
             raise DomainError("Unresolved blockers prevent purchase approval")
         verify_solution(Snapshot.model_validate(case.snapshot), plan)
+        if historical_plan_checks(plan, Snapshot.model_validate(case.snapshot)):
+            raise DomainError(
+                "Historical evidence cannot authorize current purchase quantities; obtain current source evidence"
+            )
         if self.archive:
             if not plan.get("snapshot_archive"):
                 raise DomainError("An archived source snapshot is required")

@@ -18,7 +18,7 @@ The current [Microsoft orchestration guidance](https://learn.microsoft.com/en-us
 | Usability | Let the planner understand 14,000 reported versus 8,000 usable units, inspect the governing record and see the next responsible owner. | Spending the video in portal configuration or showing opaque agent conversations. |
 | Impact | Demonstrate 22,000 protected demand with a 10,000-unit purchase; explain the $640,000 modeled commitment difference and how a customer would measure benefit. | Calling synthetic arithmetic achieved savings or implying that lower purchasing always means a better decision. |
 | Architect depth | Show a source change invalidating approval, one real trace and one recoverable uncertain export. | Listing infrastructure without showing what failure it prevents. |
-| Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting only 134 passing software tests as proof of model accuracy. |
+| Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting only 147 passing software tests as proof of model accuracy. |
 
 ## Why AI and why four roles
 
@@ -26,7 +26,7 @@ The language task is identifying what source statements authorize and where reco
 
 Engineering, service, supply and commitment have separate source scopes and testable responsibilities. The current implementation coordinates them through a shared immutable snapshot and a persisted workflow; it is not an open-ended debate among independent autonomous actors. One scoped read_case_evidence tool is implemented per role. SQL, the verifier and human approval gates remain authoritative.
 
-The expected benefit of specialization is easier attribution, smaller instruction scope and role-specific validation. Superior accuracy or cost is still a hypothesis: no controlled single-agent comparison has been completed. Keep the four-role design for this exact implemented workflow, disclose that limit, and plan consolidation if a matched comparison fails to justify the extra calls. Do not add agents to make an architecture diagram look advanced.
+The expected benefit of specialization is easier attribution, smaller instruction scope and role-specific validation. The first matched-input comparison is now recorded: the four-stage golden run correctly accepted the case; the single-call version falsely requested review of resolved duplicate custody. This one-case historical comparison supports a concrete tradeoff, not a general claim of superiority. Keep the four-role design for this exact implemented workflow, disclose that limit, and plan consolidation if a matched comparison fails to justify the extra calls. Do not add agents to make an architecture diagram look advanced.
 
 ## The strongest three-minute story
 

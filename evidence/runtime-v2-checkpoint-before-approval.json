@@ -1,0 +1,100 @@
+{
+  "name": "lastbuy_orchestrator_v2",
+  "instanceId": "3dfea56f-5e05-4613-9610-02e50566a93b",
+  "runtimeStatus": "Running",
+  "input": "{\"case_id\": \"LTB-CLOUD-RELEASE-7\", \"run_id\": \"3dfea56f-5e05-4613-9610-02e50566a93b\"}",
+  "customStatus": {
+    "phase": "waiting_for_human_approvals",
+    "plan_sha256": "cf5d4b8374faab48943a99a829ac855f4e9117a9ce5a06d987db5ecbc996cb14"
+  },
+  "output": null,
+  "createdTime": "2026-09-20T17:05:34Z",
+  "lastUpdatedTime": "2026-09-20T17:05:38Z",
+  "historyEvents": [
+    {
+      "EventType": "ExecutionStarted",
+      "Input": "\"{\\\"case_id\\\": \\\"LTB-CLOUD-RELEASE-7\\\", \\\"run_id\\\": \\\"3dfea56f-5e05-4613-9610-02e50566a93b\\\"}\"",
+      "Correlation": null,
+      "ParentTraceContext": null,
+      "ScheduledStartTime": null,
+      "Generation": 0,
+      "GenerateNewTrace": false,
+      "Timestamp": "2026-09-20T17:05:34.383483Z",
+      "FunctionName": "lastbuy_orchestrator_v2"
+    },
+    {
+      "EventType": "TaskCompleted",
+      "Result": {
+        "role": "engineering",
+        "result_sha256": "bf9caece02dd15fa3849660afee2aa0833b85ed1342c5a082cba2bbb4e43f7d7",
+        "reused": true
+      },
+      "Timestamp": "2026-09-20T17:05:34.517794Z",
+      "ScheduledTime": "2026-09-20T22:35:34.494874+05:30",
+      "FunctionName": "analyze_stage",
+      "Input": null
+    },
+    {
+      "EventType": "TaskCompleted",
+      "Result": {
+        "role": "service",
+        "result_sha256": "a8ae9b9c3fc154413bfb5e9fc1477db65deaf14ab36bf237596454c736d14fae",
+        "reused": true
+      },
+      "Timestamp": "2026-09-20T17:05:34.563859Z",
+      "ScheduledTime": "2026-09-20T22:35:34.553461+05:30",
+      "FunctionName": "analyze_stage",
+      "Input": null
+    },
+    {
+      "EventType": "TaskCompleted",
+      "Result": {
+        "role": "supply",
+        "result_sha256": "87e58e4a72106742ad88ec22b7281aa0894bbcc2e294f82a4363523395ac5775",
+        "reused": true
+      },
+      "Timestamp": "2026-09-20T17:05:34.587818Z",
+      "ScheduledTime": "2026-09-20T22:35:34.577671+05:30",
+      "FunctionName": "analyze_stage",
+      "Input": null
+    },
+    {
+      "EventType": "TaskCompleted",
+      "Result": {
+        "role": "commitment",
+        "result_sha256": "2fee28c403ca88b0c355f9cd74592e6a21bc013169d6cb23baf2ae88f6cc30c1",
+        "reused": true
+      },
+      "Timestamp": "2026-09-20T17:05:34.609913Z",
+      "ScheduledTime": "2026-09-20T22:35:34.599869+05:30",
+      "FunctionName": "analyze_stage",
+      "Input": null
+    },
+    {
+      "EventType": "TaskCompleted",
+      "Result": {
+        "status": "READY_FOR_APPROVAL",
+        "plan_sha256": "cf5d4b8374faab48943a99a829ac855f4e9117a9ce5a06d987db5ecbc996cb14"
+      },
+      "Timestamp": "2026-09-20T17:05:36.626165Z",
+      "ScheduledTime": "2026-09-20T22:35:34.622341+05:30",
+      "FunctionName": "finalize_analysis",
+      "Input": null
+    },
+    {
+      "EventType": "TaskCompleted",
+      "Result": {
+        "status": "READY_FOR_APPROVAL"
+      },
+      "Timestamp": "2026-09-20T17:05:38.48349Z",
+      "ScheduledTime": "2026-09-20T22:35:38.446054+05:30",
+      "FunctionName": "read_approval_status",
+      "Input": null
+    },
+    {
+      "EventType": "TimerCreated",
+      "FireAt": "2026-09-21T17:05:38.36158Z",
+      "Timestamp": "2026-09-20T17:05:38.502715Z"
+    }
+  ]
+}

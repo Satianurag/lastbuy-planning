@@ -7,6 +7,7 @@ comparison reduce silent disagreements; they do not replace authorized reviewers
 from decimal import Decimal, InvalidOperation
 
 from .domain import Assessment, Finding, Snapshot
+from .evidence_time import historical_numeric_support
 
 
 def critical_fields(role: str, snapshot: Snapshot) -> list[dict]:
@@ -160,6 +161,20 @@ def reconcile(assessment: Assessment, snapshot: Snapshot) -> Assessment:
                 raise ValueError(
                     "Critical numeric extraction is not a number"
                 ) from error
+        if spec["kind"] == "number" and historical_numeric_support(
+            check.model_dump(), sources
+        ):
+            blockers.append(
+                Finding(
+                    code="HISTORICAL_SOURCE_FACT",
+                    severity="blocker",
+                    summary=f"Current evidence required: {spec['record']} / {spec['field']}. The selected number is explicitly historical or superseded and cannot establish the current purchase input.",
+                    evidence=list(
+                        dict.fromkeys(q.source_id for q in check.supporting_quotes)
+                    ),
+                    supporting_quotes=check.supporting_quotes,
+                )
+            )
         if not matches:
             blockers.append(
                 Finding(
@@ -175,6 +190,8 @@ def reconcile(assessment: Assessment, snapshot: Snapshot) -> Assessment:
     result = assessment.model_copy(deep=True)
     # Idempotent: hosted and API boundary both independently reconcile.
     result.findings = [
-        f for f in result.findings if f.code != "SOURCE_FACT_CONFLICT"
+        f
+        for f in result.findings
+        if f.code not in {"SOURCE_FACT_CONFLICT", "HISTORICAL_SOURCE_FACT"}
     ] + blockers
     return result

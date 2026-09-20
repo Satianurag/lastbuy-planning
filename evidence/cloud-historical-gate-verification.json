@@ -1,0 +1,8 @@
+{
+  "scope": "Actual deployed export worker, Azure SQL and real captured provider output replayed into an explicitly synthetic legacy-approved fixture; no new model call",
+  "case_id": "LTB-CLOUD-LEGACY-TIME-20260920",
+  "http_status": 409,
+  "reason": "Historical evidence cannot authorize current purchase quantities; obtain current source evidence",
+  "external_rows": 0,
+  "unsafe_write_prevented": true
+}

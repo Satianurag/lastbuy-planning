@@ -375,7 +375,7 @@ sec(
 )
 story.append(
     P(
-        "<b>Architectural hypothesis, not a benchmark result:</b> four agents have not been proven more accurate or cheaper than one agent using the same tools. The release comparison must hold inputs, model and solver constant; consolidate roles if the extra calls do not improve conflict handling enough to justify cost. Logical roles share one hosted process and are not isolated security principals.",
+        "<b>First matched-input comparison:</b> on the same golden snapshot and model deployment, the four-stage record correctly accepted the case (12,569 response-reported tokens). A single-call comparator using the same four validation contracts falsely flagged resolved duplicate custody (8,363 tokens). This is one case with a historical comparator, not a broad superiority claim. Logical roles share one hosted process.",
         "s",
     )
 )
@@ -491,16 +491,16 @@ story.append(
         [
             ["Evidence", "What it establishes / limit"],
             [
-                "134 automated tests",
-                "Solver, workflow, authority, replay, cancellation, expiry and export behaviors within covered fixtures. Not 134 live model runs.",
+                "147 automated tests",
+                "Solver, workflow, authority, replay, cancellation, expiry and export behaviors within covered fixtures. Includes regressions from captured provider failures.",
             ],
             [
                 "60/60 offline suite",
                 "50 structured solver fixtures and 10 security regression references. Not a full independent language-understanding benchmark.",
             ],
             [
-                "v3 text stress: 12 attempts",
-                "Four of seven conflicts silently passed. The initial system was not safe to trust on contradictory records.",
+                "New live stock challenge",
+                "The model chose 6,000 opening units despite an explicit 4,800 current balance. Captured-response regression drove a currentness gate. The corrected deployed worker rejected a legacy-approved fixture with HTTP 409 and zero ERP rows.",
             ],
             [
                 "v7 regression: 9 attempts",
@@ -508,7 +508,7 @@ story.append(
             ],
             [
                 "Real recovery evidence",
-                "Worker process kill/resume; real SQL concurrency; isolated cloud synthetic export/reconciliation; actual local backup/restore. Azure SQL PITR remains untested.",
+                "Worker kill/resume; actual v2 checkpoint-to-approval completion; real SQL concurrency; cloud export/reconciliation; local backup/restore. Connection timeout evidence drove bounded connection retry.",
             ],
         ],
         [137, 373],
@@ -521,10 +521,6 @@ sec(
 sec(
     "Observability that answers operational questions",
     "Correlate case/run, snapshot and plan hashes across Durable, model and tool spans. Track stage duration, retries, token usage, validation failures, approval transitions and uncertain exports. Input/output content capture is disabled. A successful cloud case reported 12,569 stage tokens and 18.085 seconds of model/tool runtime; this excludes end-to-end overhead and is not p95.",
-)
-sec(
-    "What remains to be measured",
-    "Run a controlled single-agent comparison and an independent buyer usability study. Measure warm/cold end-to-end latency, failure cost and billing per completed case. Production alert destinations, service thresholds and an Azure SQL restore drill require customer-owned operating decisions.",
 )
 start(
     6,

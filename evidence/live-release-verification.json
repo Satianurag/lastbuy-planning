@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-09-20T17:25:50.233815+00:00",
+  "health_status": 200,
+  "auth_config_status": 200,
+  "unauthenticated_case_access": 401,
+  "unauthenticated_export_access": 401,
+  "cloud_ui_matches_local_bytes": true,
+  "web_package": {
+    "archive": "evidence/releases/lastbuy-functions-f5bca03a76c5d1a4.zip",
+    "sha256": "f5bca03a76c5d1a482bad7783dd7a68547d3ce8e9724bcca548c710d32dc9d02",
+    "files": 33
+  },
+  "export_package": {
+    "archive": "evidence/releases/lastbuy-export-1fb04e67b5812ee0.zip",
+    "sha256": "1fb04e67b5812ee0b6a7039ba9219e58f1898f8a32c707f2a1c0edd5cc88ad8c",
+    "files": 26
+  },
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "147",
+    "time": "3.499",
+    "timestamp": "2026-09-20T22:36:37.475439+05:30",
+    "hostname": "MacBook-Pro.local"
+  },
+  "runtime_recovery": "Completed",
+  "historical_gate": {
+    "scope": "Actual deployed export worker, Azure SQL and real captured provider output replayed into an explicitly synthetic legacy-approved fixture; no new model call",
+    "case_id": "LTB-CLOUD-LEGACY-TIME-20260920",
+    "http_status": 409,
+    "reason": "Historical evidence cannot authorize current purchase quantities; obtain current source evidence",
+    "external_rows": 0,
+    "unsafe_write_prevented": true
+  },
+  "browser": {
+    "method": "Actual in-app browser interaction against localhost",
+    "blocked_case": "LTB-LIVE-CURRENT-BALANCE-20260920",
+    "provisional_labels_visible": true,
+    "engineering_approval_unavailable": true,
+    "export_disabled": true,
+    "stock_source_current_4800_and_opening_6000_visible": true,
+    "golden_case_recommendation_preserved": true
+  },
+  "source_parent_commit": "b95ce15f8d0d8445949ecc34ba4bba50c5a1d499",
+  "model_calls_in_this_check": 0,
+  "budget": {
+    "total_user_cap_inr": 1000,
+    "admission_limit_inr": 700.0,
+    "reserved_allowance_inr": 700.0,
+    "unreserved_allowance_inr": 0.0,
+    "infrastructure_buffer_inr": 300,
+    "actual_cost_inr": null,
+    "billing_status": "Cost Management HTTP 429; allowances are not billed amounts"
+  }
+}

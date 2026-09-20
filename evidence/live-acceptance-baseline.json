@@ -1,0 +1,384 @@
+{
+  "mode": "baseline",
+  "manifest_sha256": "4140004603ef93672ebf9e94ee758dd0ab18b8550d68ac72a59ff0f9e879a2f3",
+  "started_at": "2026-09-20T16:59:27.368637+00:00",
+  "budget_before": {
+    "limit_paise": 70000,
+    "reserved_paise": 68000,
+    "unreserved_paise": 2000
+  },
+  "snapshot_sha256": "b46168efed05200364af98912b13a623769be8b3403e3e37f2fc4bf7c06b2383",
+  "expected_blocker": false,
+  "outcome": "ACCEPTED",
+  "result": {
+    "assessments": {
+      "engineering": {
+        "role": "engineering",
+        "summary": "Released engineering records support both required cohorts and show the incompatible A1 revision is not part of the qualified set.",
+        "findings": [
+          {
+            "code": "ENG-QUALIFIED-COHORTS",
+            "severity": "info",
+            "summary": "Both target cohorts are released and accept the quoted A2 revision.",
+            "evidence": [
+              "bom"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "bom",
+                "quote": "TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999. Both accept ASIC-SYN-017 revision A2."
+              }
+            ]
+          },
+          {
+            "code": "ENG-INCOMPATIBLE-REVISION",
+            "severity": "info",
+            "summary": "Revision A1 is explicitly incompatible; no substitute is engineering-qualified.",
+            "evidence": [
+              "bom"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "bom",
+                "quote": "Revision A1 is incompatible. No substitute is engineering-qualified."
+              }
+            ]
+          }
+        ],
+        "checks": [
+          {
+            "key": "TC-640:released",
+            "observed_value": "true",
+            "supporting_quotes": [
+              {
+                "source_id": "bom",
+                "quote": "TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999. Both accept ASIC-SYN-017 revision A2."
+              }
+            ]
+          },
+          {
+            "key": "TC-320:released",
+            "observed_value": "true",
+            "supporting_quotes": [
+              {
+                "source_id": "bom",
+                "quote": "TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999. Both accept ASIC-SYN-017 revision A2."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          "bom"
+        ]
+      },
+      "service": {
+        "role": "service",
+        "summary": "The signed component-specific amendment governs ASIC coverage for both cohorts, and the approved service demand is stated for each.",
+        "findings": [
+          {
+            "code": "SRV-AMD-GOVERNS",
+            "severity": "info",
+            "summary": "The amendment, not the detector warranty, governs ASIC coverage and remains signed.",
+            "evidence": [
+              "amendment",
+              "warranty"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "amendment",
+                "quote": "This component-specific amendment, not the detector warranty, governs ASIC coverage."
+              },
+              {
+                "source_id": "warranty",
+                "quote": "It does not cover the image-processing ASIC. Do not infer ASIC coverage from this warranty."
+              }
+            ]
+          },
+          {
+            "code": "SRV-APPROVED-DEMAND",
+            "severity": "info",
+            "summary": "Approved service quantities are explicitly stated for both cohorts.",
+            "evidence": [
+              "forecast"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "forecast",
+                "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31. These are approved scenario quantities, not calibrated failure probabilities."
+              }
+            ]
+          }
+        ],
+        "checks": [
+          {
+            "key": "SERVICE-PROTECTED:0:coverage",
+            "observed_value": "2031-12-31",
+            "supporting_quotes": [
+              {
+                "source_id": "amendment",
+                "quote": "ASIC-SYN-017 repairs for TC-640 and TC-320 remain covered through 2031-12-31."
+              }
+            ]
+          },
+          {
+            "key": "SERVICE-PROTECTED:0:signed",
+            "observed_value": "true",
+            "supporting_quotes": [
+              {
+                "source_id": "amendment",
+                "quote": "SYNTHETIC SIGNED SERVICE AMENDMENT: supersedes revision 1 for these serial cohorts."
+              }
+            ]
+          },
+          {
+            "key": "SERVICE-PROTECTED:0:demand",
+            "observed_value": "10000",
+            "supporting_quotes": [
+              {
+                "source_id": "forecast",
+                "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31."
+              }
+            ]
+          },
+          {
+            "key": "SERVICE-PROTECTED:1:coverage",
+            "observed_value": "2031-12-31",
+            "supporting_quotes": [
+              {
+                "source_id": "amendment",
+                "quote": "ASIC-SYN-017 repairs for TC-640 and TC-320 remain covered through 2031-12-31."
+              }
+            ]
+          },
+          {
+            "key": "SERVICE-PROTECTED:1:signed",
+            "observed_value": "true",
+            "supporting_quotes": [
+              {
+                "source_id": "amendment",
+                "quote": "SYNTHETIC SIGNED SERVICE AMENDMENT: supersedes revision 1 for these serial cohorts."
+              }
+            ]
+          },
+          {
+            "key": "SERVICE-PROTECTED:1:demand",
+            "observed_value": "12000",
+            "supporting_quotes": [
+              {
+                "source_id": "forecast",
+                "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31. These are approved scenario quantities, not calibrated failure probabilities."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          "amendment",
+          "forecast",
+          "warranty"
+        ]
+      },
+      "supply": {
+        "role": "supply",
+        "summary": "Supply is backed by distinct physical lots, with the depot entry duplicating LOT-02 rather than adding inventory, and one lot quarantined plus one incompatible lot excluded.",
+        "findings": [
+          {
+            "code": "SUP-DUPLICATE-LOT",
+            "severity": "review",
+            "summary": "LOT-02 appears in both SAP and depot sources, but the depot text says it is the same physical lot and not additional inventory.",
+            "evidence": [
+              "stock",
+              "depot"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "stock",
+                "quote": "LOT-02 has 2,000 owned A2 units in external depot custody."
+              },
+              {
+                "source_id": "depot",
+                "quote": "This is the same physical lot recorded in SAP, not additional inventory."
+              }
+            ]
+          },
+          {
+            "code": "SUP-EXCLUDED-UNITS",
+            "severity": "info",
+            "summary": "A1 inventory is incompatible and one A2 lot is quarantined, so those units are not counted as usable supply.",
+            "evidence": [
+              "stock"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "stock",
+                "quote": "LOT-03 has 3,000 incompatible A1 units. LOT-04 has 1,000 quarantined A2 units."
+              }
+            ]
+          }
+        ],
+        "checks": [
+          {
+            "key": "SAP-01:quantity",
+            "observed_value": "6000",
+            "supporting_quotes": [
+              {
+                "source_id": "stock",
+                "quote": "LOT-01 has 6,000 owned A2 units."
+              }
+            ]
+          },
+          {
+            "key": "SAP-02:quantity",
+            "observed_value": "2000",
+            "supporting_quotes": [
+              {
+                "source_id": "stock",
+                "quote": "LOT-02 has 2,000 owned A2 units in external depot custody."
+              }
+            ]
+          },
+          {
+            "key": "WMS-02:quantity",
+            "observed_value": "2000",
+            "supporting_quotes": [
+              {
+                "source_id": "depot",
+                "quote": "2,000 A2 units for NORTHSTAR in LOT-02."
+              }
+            ]
+          },
+          {
+            "key": "SAP-03:quantity",
+            "observed_value": "3000",
+            "supporting_quotes": [
+              {
+                "source_id": "stock",
+                "quote": "LOT-03 has 3,000 incompatible A1 units."
+              }
+            ]
+          },
+          {
+            "key": "SAP-04:quantity",
+            "observed_value": "1000",
+            "supporting_quotes": [
+              {
+                "source_id": "stock",
+                "quote": "LOT-04 has 1,000 quarantined A2 units."
+              }
+            ]
+          },
+          {
+            "key": "PO-05:quantity",
+            "observed_value": "4000",
+            "supporting_quotes": [
+              {
+                "source_id": "inbound",
+                "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+              }
+            ]
+          },
+          {
+            "key": "PO-05:confirmed",
+            "observed_value": "true",
+            "supporting_quotes": [
+              {
+                "source_id": "inbound",
+                "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          "depot",
+          "inbound",
+          "stock"
+        ]
+      },
+      "commitment": {
+        "role": "commitment",
+        "summary": "The quote and allocation cap support the planned purchase quantity and modeled commitment reduction; no unsupported savings claim is made.",
+        "findings": [
+          {
+            "code": "COM-QUOTE-SUPPORT",
+            "severity": "info",
+            "summary": "The supplier quote states the unit price and maximum allocation for the referenced part.",
+            "evidence": [
+              "pcn"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "pcn",
+                "quote": "Quote: USD 80 per EACH, revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+              }
+            ]
+          },
+          {
+            "code": "COM-NONCANCELLABLE",
+            "severity": "info",
+            "summary": "The order is explicitly non-cancellable and a planning fixture, so the plan should not be treated as an executed purchase commitment change.",
+            "evidence": [
+              "pcn"
+            ],
+            "supporting_quotes": [
+              {
+                "source_id": "pcn",
+                "quote": "Non-cancellable order; this is a planning fixture."
+              }
+            ]
+          }
+        ],
+        "checks": [
+          {
+            "key": "quote:price",
+            "observed_value": "80",
+            "supporting_quotes": [
+              {
+                "source_id": "pcn",
+                "quote": "Quote: USD 80 per EACH, revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+              }
+            ]
+          },
+          {
+            "key": "quote:max",
+            "observed_value": "25000",
+            "supporting_quotes": [
+              {
+                "source_id": "pcn",
+                "quote": "Quote: USD 80 per EACH, revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          "pcn"
+        ]
+      }
+    },
+    "usage": {
+      "openai.reasoning_tokens": 0,
+      "cache_read_input_token_count": 1408,
+      "cache_creation_input_token_count": 0,
+      "openai.cache_write_tokens": 0,
+      "openai.cached_input_tokens": 1408,
+      "reasoning_output_token_count": 0,
+      "total_token_count": 8363,
+      "output_token_count": 1853,
+      "input_token_count": 6510
+    },
+    "tool_calls": [
+      "read_case_evidence"
+    ],
+    "source": "live-foundry",
+    "transport": "local SDK to actual Foundry deployment",
+    "model": "lastbuy-dev-mini",
+    "snapshot_sha256": "b46168efed05200364af98912b13a623769be8b3403e3e37f2fc4bf7c06b2383"
+  },
+  "blocked": true,
+  "passed": false,
+  "wall_ms": 21031,
+  "budget_after": {
+    "limit_paise": 70000,
+    "reserved_paise": 69000,
+    "unreserved_paise": 1000
+  },
+  "completed_at": "2026-09-20T16:59:58.279849+00:00"
+}

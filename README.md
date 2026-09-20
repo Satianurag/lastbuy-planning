@@ -14,7 +14,7 @@ This is an implemented and cloud-tested development prototype. Enterprise source
 - Four distinct engineering, service, finance and procurement identities, with current role/amount authority checked before export. Unresolved review findings block approval.
 - Separate export Function identity and separate SQL ERP simulator, with a unique external reference and recovery after an uncertain write. No purchase-order release API exists.
 - Entra PKCE sign-in verified in Firefox, API JWT checks and budget admission guard; responsive case workspace, scenario coverage, source review, import preview and evidence packet download.
-- Source-owner validation, analysis cancellation and authoritative approval timeout. Versioned Durable orchestration preserves existing replay histories.
+- Source-owner and historical-number validation, analysis cancellation and authoritative approval timeout. Versioned Durable orchestration preserves existing replay histories. Live acceptance checks exposed and drove fixes for a historical-stock error and a SQL connection timeout.
 
 ## Demonstration economics
 

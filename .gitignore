@@ -55,3 +55,11 @@ evidence/*
 !evidence/browser-final-verification.json
 !evidence/founderz-platform-review.json
 tmp/pdfs/
+!evidence/live-acceptance-baseline.json
+!evidence/live-acceptance-novel.json
+!evidence/live-acceptance-summary.json
+!evidence/runtime-v2-checkpoint-before-approval.json
+!evidence/runtime-v2-checkpoint-completed.json
+!evidence/cloud-historical-gate-verification.json
+!evidence/cloud-export-verification-LIVE-20260920.json
+!evidence/live-release-verification.json

@@ -1,8 +1,10 @@
 """Synthetic identity-boundary integration test, explicitly uses a model test double."""
 
+import argparse
 import asyncio
 import json
 import os
+import re
 import subprocess
 from pathlib import Path
 
@@ -17,6 +19,11 @@ from lastbuy.sql_erp import Requisition, SQLSyntheticERP
 from lastbuy.store import Outbox, Store
 
 ROOT = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser()
+parser.add_argument("--label", default="TEST")
+args = parser.parse_args()
+if not re.fullmatch(r"[A-Z0-9-]{1,24}", args.label):
+    parser.error("label must contain 1-24 uppercase letters, digits or hyphens")
 settings = json.loads((ROOT / "evidence/export-public-settings.json").read_text())
 os.environ["LASTBUY_ARCHIVE_URL"] = settings["LASTBUY_ARCHIVE_URL"]
 store = Store(settings["LASTBUY_DATABASE_URL"], initialize=False)
@@ -59,7 +66,7 @@ key_response = subprocess.run(
 key = json.loads(key_response.stdout)["functionKeys"]["default"]
 records = []
 for suffix, lost in [("CREATE", False), ("RECOVER", True)]:
-    case_id = "LTB-CLOUD-EXPORT-TEST-" + suffix
+    case_id = "LTB-CLOUD-EXPORT-" + args.label + "-" + suffix
     snapshot = demo_snapshot(case_id)
     snapshot.title = "Synthetic worker identity test · model test double"
     if not any(c["id"] == case_id for c in workflow.listing(DEMO_ACTORS["planner"])):
@@ -120,7 +127,13 @@ report = {
     "scope": "Real cloud worker identity, primary Azure SQL, separate synthetic ERP Azure SQL, Blob archive. Explicit model/approver test fixtures; not authentic finance approvals or SAP.",
     "records": records,
 }
-(ROOT / "evidence/cloud-export-verification.json").write_text(
-    json.dumps(report, indent=2)
-)
+(
+    ROOT
+    / "evidence"
+    / (
+        "cloud-export-verification.json"
+        if args.label == "TEST"
+        else f"cloud-export-verification-{args.label}.json"
+    )
+).write_text(json.dumps(report, indent=2))
 print(json.dumps(report, indent=2))

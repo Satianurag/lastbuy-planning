@@ -43,7 +43,7 @@ Install locked tooling with `npm ci --prefix tooling`; start Azurite on loopback
 
 Both processes must share the **same absolute case database**. Durable history stores case/run IDs, not source documents. Azurite persists queues/history; killing the worker does not delete state. A crashed activity may remain invisible until its storage queue lease expires (observed about five minutes). Avoid manually starting a second run while waiting for lease recovery.
 
-New starts use `lastbuy_orchestrator_v2`. The original `lastbuy_orchestrator` is retained unchanged in `orchestration_v1.py` for existing histories. Do not remove v1 while instances still reference it, or rename activities used by its history. V2 adds authoritative expiry and pending-timer cleanup. Its branches have offline generator tests and its registration is verified in Azure; no new full model run was made after that update.
+New starts use `lastbuy_orchestrator_v2`. The original `lastbuy_orchestrator` is retained unchanged in `orchestration_v1.py` for existing histories. Do not remove v1 while instances still reference it, or rename activities used by its history. V2 adds authoritative expiry and pending-timer cleanup. Its branches have offline generator tests, registration is verified in Azure, and actual local Functions/Azurite execution resumed recorded v7 checkpoints and completed the approval wait. This recovery verification reused committed model outputs; it did not invoke another full model run.
 
 ## Recovery and authority
 
@@ -54,7 +54,7 @@ New starts use `lastbuy_orchestrator_v2`. The original `lastbuy_orchestrator` is
 - Approval expiry: approvals expire after 24 hours; server validates current actor role, organization and amount authority again. V2 also transitions an unfinished approval wait to APPROVAL_WAIT_EXPIRED. An old run cannot expire a newer one. Expiry does not grant authorization.
 - Source ownership: fix an invalid source-owner manifest before analysis. A supplier citation cannot stand in for engineering release or service-coverage authority. This is manifest validation, not external connector authentication.
 - Export timeout: reconcile the existing outbox key. The ERP may already have accepted the draft. Never mint a replacement key or manually change `EXPORT_UNCERTAIN` to `APPROVED`.
-- SQL cold start: a free serverless database may require a first request to resume and can time out. Retry the request after resumption. Do not broaden the firewall or switch to password authentication in response to a transient timeout.
+- SQL cold start: a free serverless database may require a first request to resume and can time out. Connection establishment now makes at most two attempts for recognized transient SQL states, including HYT00; authentication failures are not retried. A second failure remains visible and may require retry after resumption. SQL statements and external writes are not automatically replayed by this connection helper. Do not broaden the firewall or switch to password authentication in response to a transient timeout.
 - Database conflict: optimistic version failures mean another actor changed the case. Refresh and review; do not retry an outdated approval automatically.
 
 The exporter validates current source/archive/approval authority before its first write. After an uncertain write, it looks up the already-issued receipt before checking whether a new write would now be allowed. That is reconciliation, not renewed authorization.

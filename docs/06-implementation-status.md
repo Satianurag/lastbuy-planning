@@ -24,12 +24,12 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 | Actual process crash/resume | `durable-before-crash.json`, `durable-after-restart.json`, `durable-completed-history.json`; same run resumed after worker SIGKILL using persisted Azurite history |
 | Real SQL transactions and optimistic concurrency | `azure-sql-verification.json`; explicit test-double model, real Entra/TLS SQL |
 | Real Blob content-addressed source archive | `azure-blob-verification.json`, current cloud plan archive receipt; conditional create and hash verification |
-| Separate exporter identity and independent ERP database | `cloud-export-verification.json`: actual cloud worker created one synthetic requisition; repeat returned same receipt; separate preseeded lost-response case reconciled one receipt. Model/approval identities in this integration test are explicit fixtures. |
+| Separate exporter identity and independent ERP database | `cloud-export-verification-LIVE-20260920.json` (fresh re-run after connection fix): actual cloud worker created one synthetic requisition; repeat returned same receipt; separate preseeded lost-response case reconciled one receipt. Model/approval identities in this integration test are explicit fixtures. |
 | Browser workflow | Real Firefox Microsoft sign-in and protected cloud case data verified. Local import, case switch, source viewer, four demo approvals, lost-response/reconcile and 390px layout checked. Current result shows 10,000 / $800,000 / $640,000, with scenario coverage. Cancellation was exercised on an explicitly seeded no-model fixture; Return/Escape source-dialog focus behavior passed. See `browser-final-verification.json`. |
 | Source-owner boundary | Engineering requires Windchill, coverage requires Contracts/Dataverse, demand requires Planning, lots require SAP/Depot and terms require Supplier manifest references. Five wrong-owner cases fail before analysis. These checks trust the ingester’s manifest; external authenticity is not proven. |
-| Cancellation and approval timeout | Authoritative CANCELLED/APPROVAL_WAIT_EXPIRED transitions, no late result commit, no old-run expiry of a newer run; preserved approved-at-boundary behavior. V1 retained for history replay; v2 registered in cloud and tested offline, without a new paid full cloud run. |
+| Cancellation and approval timeout | Authoritative CANCELLED/APPROVAL_WAIT_EXPIRED transitions, no late result commit, no old-run expiry of a newer run; preserved approved-at-boundary behavior. V1 retained for history replay; v2 registered in cloud; actual local Functions/Azurite checkpoint-to-approval completion plus offline cancellation/expiry branches. Recovery reused recorded model responses. |
 | Actual local backup/restore | SQLite backup restored while the independent synthetic ERP retained a newer receipt; reconciliation returned the same reference, one external row and a valid audit chain. `local-restore-verification.json`; model test double, not Azure SQL PITR. |
-| Automated checks | **134 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
+| Automated checks | **147 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
 | Observability | `lastbuy-deployed-model-traces.json` contains correlated model/tool spans; input/output content capture disabled explicitly for current hosted release and Durable |
 | Budget enforcement | Shared SQL admission ledger, atomic reservation, retained failure allowance, full-run preflight, concurrency tests; no automatic replenishment |
 
@@ -43,9 +43,21 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 
 In the v7 conflict subset, one case returned an explicit blocker and three failed validation/abstained. **Do not call this 100% model accuracy or 100% conflict explanation quality.** No silent conflict pass was observed in this small subset; it does not establish a production false-negative rate. The source-injection case also completed without following the injected approval/export instruction.
 
-The final regression reused cases after inspection; it is not a new holdout. The original 60-case offline suite is not 60 live LLM tests. All labels/cases are author-created and synthetic. A controlled single-agent comparison, incumbent/manual comparison, independent buyer usability study and customer-data evaluation have not been completed. Four-agent superiority is unproven.
+The final regression reused cases after inspection; it is not a new holdout. The original 60-case offline suite is not 60 live LLM tests. All labels/cases are author-created and synthetic. A matched-input single-call comparison has now been executed on the recorded golden case: four stages correctly accepted it; the single-call comparator returned an unnecessary review blocker. Broader incumbent/manual, buyer-usability and customer-data studies remain release-plan work. The one-case result does not establish universal four-agent superiority.
 
 Raw records, failed attempts, suite hashes and summary are retained in `evaluations/` and `evidence/evaluation-summary.json`.
+
+## Additional live acceptance run
+
+Two actual Foundry calls were made after freezing `evaluations/live-acceptance-20260920.json`. The single-call comparator used the same four scoped assessment contracts, mandatory critical-field checks and server validation as the historical four-stage record. It used 8,363 response-reported tokens versus 12,569 for the four-stage record, but falsely escalated already-resolved duplicate custody. This is a one-case historical comparison, not a concurrent randomized trial or measured billing comparison.
+
+A new stock test explicitly stated a 6,000-unit opening count and a 4,800-unit current balance. Hosted v7 selected the historical 6,000 and the previous validator accepted it. The captured raw failure is retained. The corrected API/workflow/authority gate now detects explicitly historical numeric evidence, including quotations that omit the temporal label by checking the surrounding source sentence. Replaying the actual response produces an explicit blocker and prevents plan approval. This is an evidence-validation fix; it does not claim that the model has learned the correct extraction. The actual deployed exporter also rejected a legacy-approved fixture using that response with HTTP 409 and zero external rows (`cloud-historical-gate-verification.json`). See `live-acceptance-summary.json`.
+
+Actual Functions v2 executed all four saved stage checkpoints, archived/finalized the plan, waited, and completed after four synthetic role approvals. The model responses are exact recorded v7 results; no new inference was made for the recovery test. Histories are in `runtime-v2-checkpoint-*.json`.
+
+Browser verification of the captured-failure case confirmed **NEEDS_REVIEW**, visibly provisional quantities, source inspection showing both 6,000 opening and 4,800 current units, and disabled approval/export even as the engineering demo role. The valid golden case retains its recommendation. Recorded model narrative is preserved with a reminder that decision gates govern the result.
+
+A real cloud export attempt also exposed a transient SQL HYT00 connection failure. A bounded connection-only retry was added; fresh create and lost-response reconciliation tests then each retained exactly one external row and a valid audit chain. SQL statement execution is not replayed by this helper.
 
 ## Fixes motivated by observed failures
 
@@ -68,7 +80,7 @@ Development limits: hosted input is capped at 12,000 UTF-8 bytes per snapshot fo
 
 ## ₹1,000 development/testing cap
 
-The user authorized **₹1,000 total**. The shared ledger has a ₹700 admission allowance (including ₹200 reserved for prior activity) and ₹300 infrastructure buffer. Latest checkpoint: **₹680 reserved allowance, ₹20 unreserved allowance**. These are deliberately conservative allocations, **not an invoice**. A new four-stage analysis needs ₹40 allowance and is therefore blocked before any paid call. Existing results, approvals, source review and synthetic export can still be demonstrated.
+The user authorized **₹1,000 total**. The shared ledger has a ₹700 admission allowance (including ₹200 reserved for prior activity) and ₹300 infrastructure buffer. Latest checkpoint: **₹700 reserved allowance, ₹0 unreserved allowance**. These are deliberately conservative allocations, **not an invoice**. A new four-stage analysis needs ₹40 allowance and is therefore blocked before any paid call. Existing results, approvals, source review and synthetic export can still be demonstrated.
 
 Azure Cost Management repeatedly returned HTTP 429. Actual billed spend is **unverified**, not zero. Empty/zero token metrics are not proof of no usage. No extra paid benchmarking is authorized beyond the existing cap, and the ledger has not been replenished to finish tests. See `budget-status.json` and `cost-management-current.json`.
 

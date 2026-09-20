@@ -11,28 +11,28 @@
     "routed": true
   },
   "web_package": {
-    "archive": "evidence/releases/lastbuy-functions-51a25f09f68e6b8f.zip",
-    "sha256": "51a25f09f68e6b8f643cd39f6c7c7236484fefa96b740e1f5686675b83855328",
-    "files": 31
+    "archive": "evidence/releases/lastbuy-functions-f5bca03a76c5d1a4.zip",
+    "sha256": "f5bca03a76c5d1a482bad7783dd7a68547d3ce8e9724bcca548c710d32dc9d02",
+    "files": 33
   },
   "export_package": {
-    "archive": "evidence/releases/lastbuy-export-82de3cd912bc5c1f.zip",
-    "sha256": "82de3cd912bc5c1f372444761e23b9edcbeb2b369d314128e6260272cb91a30b",
-    "files": 24
+    "archive": "evidence/releases/lastbuy-export-1fb04e67b5812ee0.zip",
+    "sha256": "1fb04e67b5812ee0b6a7039ba9219e58f1898f8a32c707f2a1c0edd5cc88ad8c",
+    "files": 26
   },
   "tests": {
     "name": "pytest",
     "errors": "0",
     "failures": "0",
     "skipped": "0",
-    "tests": "134",
-    "time": "3.593",
-    "timestamp": "2026-09-20T21:39:09.306723+05:30",
+    "tests": "147",
+    "time": "3.499",
+    "timestamp": "2026-09-20T22:36:37.475439+05:30",
     "hostname": "MacBook-Pro.local"
   },
   "browser_oauth": "Verified in Firefox: signed-in user and protected cloud case data visible; planner-only",
   "actual_billing": "unverified; Cost Management 429",
-  "checked_at": "2026-09-20T16:14:24.616579+00:00",
+  "checked_at": "2026-09-20T17:25:50.233815+00:00",
   "registered_functions": [
     "lastbuy-dev-4126/analyze_stage",
     "lastbuy-dev-4126/expire_approval_wait",
@@ -46,7 +46,8 @@
     "lastbuy-dev-4126/start",
     "lastbuy-dev-4126/web"
   ],
-  "orchestrator_v2_validation": "Registered in cloud; cancellation/expiry generator tests offline. No new paid full cloud run on v2.",
-  "source_parent_commit": "0a6ad486c6e8c7676773f066ba985f9423453c7a",
-  "source_identification": "Deployed source is identified by the content-addressed web/export archives; local commit also includes verification records."
+  "orchestrator_v2_validation": "Cloud registration plus actual local Functions/Azurite checkpoint replay through approval wait completion; reused recorded v7 model responses.",
+  "source_parent_commit": "b95ce15f8d0d8445949ecc34ba4bba50c5a1d499",
+  "source_identification": "Deployed source is identified by the content-addressed web/export archives; local commit also includes verification records.",
+  "latest_verification": "evidence/live-release-verification.json"
 }

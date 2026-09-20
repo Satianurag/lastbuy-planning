@@ -1,8 +1,8 @@
 {
   "total_user_cap_inr": 1000,
   "admission_limit_inr": 700.0,
-  "reserved_allowance_inr": 680.0,
-  "unreserved_allowance_inr": 20.0,
+  "reserved_allowance_inr": 700.0,
+  "unreserved_allowance_inr": 0.0,
   "infrastructure_buffer_inr": 300,
   "actual_cost_inr": null,
   "billing_status": "Cost Management HTTP 429; allowances are not billed amounts"
