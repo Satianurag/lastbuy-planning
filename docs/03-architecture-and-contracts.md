@@ -69,7 +69,7 @@ Tools accept constrained IDs, source versions and enums. No arbitrary SQL, unres
 | Depot/WMS and supplier | Physical lot ownership/custody, quarantine, release dates, confirmed stock, written NCNR/short-shipment terms, last-order/ship deadlines, pack size/MOQ. | Read-only APIs/exports. Supplier availability is a scenario input until committed/confirmed; receipt confirmation still carries delivery risk. |
 | Existing planning system | Approved demand/scenario version, horizon, service-level definition, confidence assumptions and planner signoff. | Import rather than replace Servigistics/Syncron when present. LastBuy measures improvement in reconciling the inputs and committing the correct decision. |
 
-Demo adapters are clearly labeled synthetic and implement these contracts, including paging/failure behavior. Real integrations cannot be “set up” without the customer's environment, API licensing and data access.
+The current implementation accepts normalized synthetic snapshots through import. The richer adapter APIs listed here, including complete paging/failure handling, are target contracts rather than implemented customer connectors. Each hosted role currently has one scoped `read_case_evidence` tool; deterministic solve/verify and export are server code. Real integrations require the customer's environment, API licensing and data access.
 
 ## Typed records
 

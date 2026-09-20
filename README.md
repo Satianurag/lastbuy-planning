@@ -53,6 +53,8 @@ Live evaluation consumes the shared allowance. Do not run it automatically on ev
 - [Requirement-by-requirement completion audit](docs/09-completion-audit.md)
 - [Operations, deployment, rollback and cleanup](docs/07-runbook.md)
 - [Contest handover and three-minute recording script](docs/08-contest-handover.md)
+- [Professional contest assessment, 20 September 2026](docs/10-contest-strategy-2026-09-20.md)
+- [Required Architect supporting PDF](output/pdf/LastBuy-Architect-Solution-Design.pdf)
 - [Exact buyer, financial evidence and competitors](docs/01-business-case.md)
 - [Foundry feature decisions](docs/02-foundry-capability-audit.md)
 - [Architecture and contracts](docs/03-architecture-and-contracts.md)

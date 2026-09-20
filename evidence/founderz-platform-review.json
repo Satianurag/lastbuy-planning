@@ -1,0 +1,47 @@
+{
+  "reviewed_at": "2026-09-20T16:46:12.701096+00:00",
+  "method": "Read-only CUA authenticated Founderz page inspection",
+  "syllabus": [
+    "Welcome: Build production-ready AI solutions (01:58)",
+    "Set up your Foundry environment (02:28)",
+    "Introduction to Microsoft Foundry (07:41)",
+    "Monitor and trace agent behavior (05:31)",
+    "Evaluate agent quality (08:58)",
+    "Orchestrate multi-agent workflows (07:33)",
+    "From prototype to production (02:01)",
+    "Final activity: Design and deliver a multi-agent solution"
+  ],
+  "assignment_url": "https://learn.founderz.com/lesson/final-activity-design-and-deliver-a-multi-agent-solution/294477ca-84d6-4c42-b258-b56fa24a331b",
+  "verified_steps": [
+    "Solution design: problem, users, at least two distinct agents, tools/data, multi-agent rationale and information flow",
+    "Production-readiness plan: monitoring/traces, dataset/criteria/development lifecycle, governance/reliability/grounding",
+    "Workflow: sequence, passed information, tools/retrieval, final output and deployment/monitoring/evaluation/improvement"
+  ],
+  "form": {
+    "title_field": true,
+    "video": {
+      "max_minutes": 3,
+      "max_mb": 150,
+      "formats": [
+        "mp4",
+        "mov",
+        "m4v"
+      ]
+    },
+    "support_material": {
+      "required": true,
+      "max_mb": 30,
+      "formats": [
+        "pdf",
+        "docx",
+        "doc"
+      ]
+    },
+    "action": "Send assignment"
+  },
+  "scope_correction": "Written assignment requires a production-readiness design and plan, not proof of an already completed customer production rollout.",
+  "review_limits": "Seven video recordings not all watched; production lesson summary link did not yield readable content through available browser interface.",
+  "submitted": false,
+  "uploaded": false,
+  "paid_model_runs": 0
+}

@@ -1,54 +1,30 @@
-# Completion audit against the requested project
+# Completion audit against the verified Architect assignment
 
-Audited 20 September 2026. The development application is built and deployed. The broader production, independent-validation and contest-submission requirements are **not all complete**. This audit preserves those requirements rather than treating a working synthetic demonstration as proof of them.
+Updated 20 September 2026 after authenticated Founderz access. The earlier audit conflated customer production-rollout gates with contest deliverables. The actual assignment requires a production-readiness design and plan; it does not require a completed enterprise pilot. Both scopes are preserved below, with different completion conditions.
 
-## Original request
+## Contest and original project requirements
 
-| Requirement | Status and concrete evidence | Remaining requirement |
+| Requirement | Authoritative evidence | Current result |
 |---|---|---|
-| Review Microsoft event, FrontierWeekHack, Founderz Architect, rules and judging | Public event, repository at pinned commit, public Architect path and official rules reviewed; research in docs 01–04, rubric and recording requirements in doc 08 | Authenticated Founderz curriculum and actual submission form were not reviewed. Public path descriptions do not establish full curriculum coverage. |
-| Choose one specific enterprise problem with financial significance | LastBuy: final discontinued image-processing ASIC commitment for a thermal-camera OEM; Director of Global Service Supply Chain buyer, scoped users and economic mechanism in doc 01 | Primary-source market evidence establishes the problem category; it is not customer validation of this exact proposed product. |
-| Define workflow, source systems, specialist roles, tools, data and outputs | Architecture/contracts in doc 03; executable typed snapshots, four scoped roles, evidence citations, deterministic allocations and plan hashes | SAP/Windchill/Dataverse records are synthetic imports. Live connectors, complete paginated ingestion and authoritative revision refetch remain absent. |
-| Security and human approval boundaries | Entra sign-in, server roles/amount authority, four distinct approval identities, freshness checks, source-owner manifests, isolated exporter identity, no model write tool | Four real customer approvers, trusted connector provenance, private endpoints, locked retention, production workload-token exporter transport and customer control review remain pending. |
-| Observability, evaluation and measurable outcome | Real correlated Foundry model/tool traces, 134 passing tests, frozen offline and live records, explicit failures/abstentions; reproducible $640,000 synthetic commitment difference | Independent holdout, single-agent/manual comparisons, buyer usability, measured end-to-end p95/cost and finance-verified pilot benefit are unproven. |
-| Microsoft Foundry implementation | Hosted v7 is active; four roles completed a real cloud synthetic case; Functions, SQL, Blob and Entra verified | Logical role separation is not separate security isolation or evidence that four agents beat a simpler design. |
-| Innovation, Usability, Impact and differentiation | Doc 01 compares actual incumbent capabilities; doc 08 maps the specific reconciliation/approval workflow to the rubric | No claim of globally unique invention, incumbent superiority or measured adoption. Independent buyer validation is still required. |
-| Compelling three-minute demonstration | Exact scenario and participant narration in doc 08; recorded real results can be inspected without another model call; local synthetic approvals/export available | Participant's own final filming/editing, size/duration check, authenticated form review and submission remain outstanding. No entry was uploaded. |
-| Build within ₹1,000 total development/testing cap | Shared SQL allowance: ₹700 model/prior-use admission plus ₹300 infrastructure buffer; ₹680 reserved, ₹20 unreserved at checkpoint; ₹40 full run preflight prevents another complete analysis | Actual Azure billing remains unverified because Cost Management returned 429. Allowance arithmetic is not an invoice or platform-wide hard cap. No new paid runs were made during this audit. |
+| Official Microsoft/FrontierWeekHack/Founderz/rules review | Public primary sources in docs 01-04; authenticated syllabus, all three assignment steps and upload modal in `founderz-platform-review.json` | Syllabus, full written assignment and form reviewed. Seven lesson videos not all watched; summary attachment not readable through available interface. |
+| One specific, financially significant enterprise problem | Doc 01: final discontinued ASIC purchase, named economic buyer/users, primary financial/industry evidence and competitor analysis | Defined and substantiated at problem-category level. Exact buyer adoption and recoverable customer benefit remain unvalidated. |
+| Specialized agents, inputs, tools, flow and structured outputs | Executable `lastbuy/` and `hosted/`; design PDF pages 2-3; actual hosted v7 cloud result | Implemented with synthetic source snapshots; four scoped roles, bounded tools, deterministic quantities and persisted decisions. |
+| Justify multi-agent design | Design PDF page 2 and doc 10 | Rationale based on distinct source ownership, instructions and evaluation scope provided. Controlled superiority over one agent is not proven and is not claimed. |
+| Observability, evaluation and governance plan | PDF pages 5-6, runbook, versioned test and trace evidence | Plan and scoped implementation evidence present: 134 tests, offline/live records, actual traces, disclosed failures and production extensions. |
+| Enterprise workflow and human boundaries | Real Entra sign-in, four distinct role checks, source/approval freshness, deterministic verifier, separate exporter and recovery evidence | Cloud-tested development implementation; real purchasing systems and customer approvals are not represented as connected. |
+| Innovation/Usability/Impact presentation | Doc 10 assessment and doc 08 script | Specific differentiation hypothesis, quantitative synthetic bridge and visible failure/recovery story prepared; no guaranteed score or winning claim. |
+| Required PDF/Word support document | Authenticated upload modal; six-page `output/pdf/LastBuy-Architect-Solution-Design.pdf` | Created, rendered and visually verified; below 30 MB. Not uploaded. |
+| Recorded presentation / final submission | Authenticated form: video up to 3 min/150 MB, mp4/mov/m4v; required support up to 30 MB, pdf/docx/doc | Participant's final recording/editing and submission remain outstanding. No entry has been submitted. |
+| User's INR 1,000 total cap | Shared budget record: INR 680 reserved of INR 700 admission allowance; INR 300 infrastructure buffer | Another INR 40 full run is blocked with INR 20 unreserved. Actual charges unverified after billing HTTP 429. No new paid model runs for platform review or PDF creation. |
 
-## Original build gates
+## Production-release gates, not extra contest eligibility conditions
 
-These refer to the original acceptance plan in doc 04. “Partial” means useful implementation exists but the stated evidence gate has not been fully met.
+A customer rollout still needs trusted SAP/PLM/Dataverse adapters, complete ingestion and authoritative source refetch; named customer approvers; independent historical-case and usability evaluation; a matched manual/single-agent baseline; actual finance-reviewed benefit; reviewed network/retention controls; owned alert routing and an Azure SQL restore drill. These remain genuine uncompleted engineering and validation work. They must be described as the route to production, not claimed as done or used as an invented prerequisite for entering the contest.
 
-| Gate | Result | Evidence or missing proof |
-|---|---|---|
-| 0 — Preparation | Implemented for this development account | Pinned dependencies/releases, actual hosted tool call, Azure region/quota and identity probes. Fresh-account installation is not a universal one-command procedure. |
-| 1 — Domain contract | Partial | Schemas, source precedence, approval policy and traceable synthetic truth set exist. Independent engineering/service review and customer-data validation have not occurred. |
-| 2 — Deterministic core | Implemented and tested within fixture scope | Solver/reference checks, conservation, scenarios, state/authorization/replay/export tests. This does not certify unspecified customer policies. |
-| 3 — Agent extraction | Partial | Bounded tools, exact quotes, critical-field checks and live stress records exist. Original v3 missed conflicts; later post-tuning regressions cannot substitute for an untouched holdout. |
-| 4 — Vertical workflow | Synthetic development path verified | Real cloud analysis; local four-persona approvals; source-change invalidation; isolated cloud synthetic export and lost-response reconciliation. End-to-end real customer workflow not run. |
-| 5 — Decision UI | Partial | Quantity bridge, scenario coverage, evidence, approval and export views, keyboard dialog behavior, responsive layout and cancellation verified. Independent ≥90% task-success gate not measured. |
-| 6 — Operations | Partial | Durable crash/resume, SQL audit concurrency, actual local backup/restore, Entra access denial, Blob hashing, MI separation and telemetry verified. Azure SQL PITR, owned alert routing and production network/retention review remain missing. |
-| 7 — Contest release | Partial | Exact source archives, current running version, evidence, lessons and script ready. Final participant recording and submission are not complete. |
-| 8 — Customer pilot | Not performed | No customer adapters/data agreement, buyer-approved baseline or finance-reviewed outcomes. Synthetic figures cannot close this gate. |
+The original build plan in doc 04 remains the acceptance plan for that future release. Partial gates there do not automatically mean the written Architect assignment is incomplete. Conversely, satisfying the assignment does not certify a production system.
 
-## Latest release verification
+## Verified release boundaries
 
-The latest web and exporter packages include analysis cancellation, authoritative approval-wait expiry and source-owner validation. Both deployments succeeded. Azure registers both the preserved v1 and new v2 orchestrators, so old histories can continue replaying. The v2 branches have offline generator tests; **a new complete paid v2 model run has not been made**. The earlier verified full cloud case still pins hosted v7.
+Hosted v7 completed a full synthetic cloud case. The latest web/export packages add source-owner checks, cancellation and authoritative approval-wait expiry. Both old and new Durable orchestrators are registered; v2 has offline branch tests, but no new complete paid v2 model run was made. Local SQLite restore/reconciliation was tested; Azure SQL point-in-time restore was not.
 
-The local restore test restores an actual SQLite backup while retaining a newer external synthetic ERP receipt. It reconciles exactly one external row with a valid audit chain. This is deliberately distinct from an Azure SQL point-in-time restore drill.
-
-Machine-readable evidence: `evidence/final-release-check.json`, `browser-final-verification.json`, `local-restore-verification.json`, `full-cloud-release7.json` and `implementation-tests.xml`. Release archives are SHA-256 identified; code and evidence are retained in local Git, without a public remote.
-
-## What can close the remaining gates
-
-- **Participant/platform access:** inspect the authenticated Founderz lessons and form, create the required participant-original recording, and submit the entry. A written script does not satisfy the recording requirement.
-- **Customer participation:** obtain approved source connections, four named approvers, engineering/service labels and historical cases. Run the matched baseline and usability study; finance must validate actual benefit.
-- **Evaluation allowance and billing visibility:** resolve actual spend and fund any additional hosted holdout/baseline runs within an explicitly authorized total. Do not replenish the current ledger to hide an exhausted allowance.
-- **Production operations:** execute an isolated Azure SQL restore/reconciliation drill, configure a customer-owned alert destination, and complete retention/network/identity reviews before production data or purchasing authority is enabled.
-
-These are concrete completion conditions, not optional caveats. The current deliverable is a functioning, cloud-tested development application with honest evidence and a contest handover; production rollout and contest submission remain open.
-
-## Access recheck
-
-On 20 September 2026, the existing Firefox Founderz tab was located at `https://learn.founderz.com/activities`, but its accessibility state and captured visual state disagreed, so no lesson content could be reliably verified. Opening that exact page in the in-app browser redirected to `https://learn.founderz.com/login`. The participant has been asked to complete sign-in there; no lesson or form has been marked reviewed and no registration/email/submission action was taken. A fresh read-only Azure Cost Management query again returned HTTP 429. No new paid model runs were made. These checks leave the existing access, billing and external-validation gates open.
+Reproducible records: `final-release-check.json`, `full-cloud-release7.json`, `implementation-tests.xml`, `evaluation-summary.json`, `browser-final-verification.json`, `local-restore-verification.json`, `cloud-export-verification.json` and `founderz-platform-review.json`. Source archives use SHA-256 identifiers. Local Git retains the work; there is no public remote.

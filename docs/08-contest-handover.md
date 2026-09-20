@@ -22,7 +22,7 @@ Built with Microsoft Foundry hosted agents, Microsoft Agent Framework, Azure Dur
 | Usability — 30 points | A planner sees what changes the quantity and exactly which authority is missing; each approver has one scoped action | Responsive workspace and import/approval/export paths exercised. No independent buyer usability study completed. |
 | Impact — 30 points | Show the $640,000 modeled difference and why preserving service obligations sometimes increases the buy | Synthetic arithmetic is reproducible. Actual savings, buyer adoption and net ROI need a customer pilot. |
 
-The [official rules](https://founderz.com/agentathon-terms/) prioritize Innovation in tie-breaking. Their video limit is three minutes and 150 MB; the participant must do their own filming/editing/design. Confirm fields in the authenticated Founderz submission form before uploading; gated lesson videos and that form have not been accessed in this build.
+The [official rules](https://founderz.com/agentathon-terms/) prioritize Innovation in tie-breaking. Their video limit is three minutes and 150 MB; the participant must do their own filming/editing/design. The authenticated form was reviewed on 20 September 2026: title, video (mp4/mov/m4v; 3 minutes/150 MB), and REQUIRED supporting document (pdf/docx/doc; 30 MB). The six-page design PDF is in `output/pdf/LastBuy-Architect-Solution-Design.pdf`. The seven lesson videos were not all watched.
 
 ## Three-minute recording script
 
@@ -52,6 +52,6 @@ Keep the stock-change and final export on different prepared cases so the source
 
 ## Ready assets and remaining participant actions
 
-Code, frozen cases, execution evidence, research, architecture, runbook and this script are in the repository. Record screenshots from the actual local/cloud workspace; preserve the synthetic-data notice. Record/edit the final video yourself, check duration/file size, sign into Founderz, confirm eligibility and form fields, and submit your own entry. No entry has been uploaded and no public repository has been published automatically.
+Code, frozen cases, execution evidence, research, architecture, runbook and this script are in the repository. Record screenshots from the actual local/cloud workspace; preserve the synthetic-data notice. Record/edit the final video yourself, check duration/file size, use the verified Founderz form, attach the required design PDF, confirm eligibility, and submit your own entry. No entry has been uploaded and no public repository has been published automatically.
 
 The official rules contain a PDT/GMT cutoff inconsistency described in the original research. Use the earlier stated cutoff as a conservative target and verify any clarification on the official platform. Build completion does not extend the contest deadline.

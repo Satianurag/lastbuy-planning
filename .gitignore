@@ -53,3 +53,5 @@ evidence/*
 !evidence/final-release-check.json
 !evidence/local-restore-verification.json
 !evidence/browser-final-verification.json
+!evidence/founderz-platform-review.json
+tmp/pdfs/
