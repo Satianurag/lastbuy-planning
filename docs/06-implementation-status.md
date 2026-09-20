@@ -25,8 +25,11 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 | Real SQL transactions and optimistic concurrency | `azure-sql-verification.json`; explicit test-double model, real Entra/TLS SQL |
 | Real Blob content-addressed source archive | `azure-blob-verification.json`, current cloud plan archive receipt; conditional create and hash verification |
 | Separate exporter identity and independent ERP database | `cloud-export-verification.json`: actual cloud worker created one synthetic requisition; repeat returned same receipt; separate preseeded lost-response case reconciled one receipt. Model/approval identities in this integration test are explicit fixtures. |
-| Browser workflow | Import, case switch, source viewer, four local demo approvals, lost-response/reconcile; 390px layout checked. Latest cloud plan visibly shows 10,000 / $800,000 / $640,000 in local workspace. |
-| Automated checks | **123 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
+| Browser workflow | Real Firefox Microsoft sign-in and protected cloud case data verified. Local import, case switch, source viewer, four demo approvals, lost-response/reconcile and 390px layout checked. Current result shows 10,000 / $800,000 / $640,000, with scenario coverage. Cancellation was exercised on an explicitly seeded no-model fixture; Return/Escape source-dialog focus behavior passed. See `browser-final-verification.json`. |
+| Source-owner boundary | Engineering requires Windchill, coverage requires Contracts/Dataverse, demand requires Planning, lots require SAP/Depot and terms require Supplier manifest references. Five wrong-owner cases fail before analysis. These checks trust the ingester’s manifest; external authenticity is not proven. |
+| Cancellation and approval timeout | Authoritative CANCELLED/APPROVAL_WAIT_EXPIRED transitions, no late result commit, no old-run expiry of a newer run; preserved approved-at-boundary behavior. V1 retained for history replay; v2 registered in cloud and tested offline, without a new paid full cloud run. |
+| Actual local backup/restore | SQLite backup restored while the independent synthetic ERP retained a newer receipt; reconciliation returned the same reference, one external row and a valid audit chain. `local-restore-verification.json`; model test double, not Azure SQL PITR. |
+| Automated checks | **134 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
 | Observability | `lastbuy-deployed-model-traces.json` contains correlated model/tool spans; input/output content capture disabled explicitly for current hosted release and Durable |
 | Budget enforcement | Shared SQL admission ledger, atomic reservation, retained failure allowance, full-run preflight, concurrency tests; no automatic replenishment |
 
@@ -71,7 +74,7 @@ Azure Cost Management repeatedly returned HTTP 429. Actual billed spend is **unv
 
 ## Remaining external gates
 
-- The real user's browser OAuth/MFA login for the new LastBuy app is awaiting confirmation. The sign-in redirect, API 401 boundary and JWT validation tests passed; successful browser login must not be claimed yet.
+- Microsoft sign-in is verified for the real planner. Real engineering, service, finance and procurement approvers have not been onboarded; local role switching remains explicitly synthetic.
 - Customer-owned SAP, PLM, contract and service data/adapters, registered real approvers, independent evaluation, buyer validation and finance-verified savings are necessary before production use. Source-system labels and model extraction are not substitutes for trusted connector authority.
 - The participant must review the authenticated Founderz form, create their own recording/editing, and submit the entry. Gated curriculum and final submission form were not accessed. No public Git repository or contest entry has been published.
 

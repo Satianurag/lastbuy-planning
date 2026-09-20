@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from sqlalchemy import select
 
 from .agents import ROLES
+from .authority import authority_issues
 from .domain import (
     APPROVAL_ROLES,
     POLICY_VERSION,
@@ -74,6 +75,14 @@ class Workflow:
         if case is None or case.organization != actor.organization:
             raise DomainError("Case not found", 404)
         return case
+
+    @staticmethod
+    def validate_authority(snapshot):
+        issues = authority_issues(snapshot)
+        if issues:
+            raise DomainError(
+                "Source authority is unresolved: " + "; ".join(issues), 422
+            )
 
     def create(self, snapshot: Snapshot, actor: Actor):
         self.require(actor, "planner")
@@ -194,8 +203,6 @@ class Workflow:
 
     def begin(self, case_id, actor):
         self.require(actor, "planner")
-        if hasattr(self.analyst, "ensure_run_allowance"):
-            self.analyst.ensure_run_allowance()
         with self.store.transaction() as session:
             case = self.case(session, case_id, actor)
             if case.status in {
@@ -207,6 +214,10 @@ class Workflow:
                 raise DomainError(
                     "Case cannot start another analysis in its current state"
                 )
+            snapshot = Snapshot.model_validate(case.snapshot)
+            self.validate_authority(snapshot)
+            if hasattr(self.analyst, "ensure_run_allowance"):
+                self.analyst.ensure_run_allowance()
             run_id = str(uuid.uuid4())
             case.status, case.analysis_id = "ANALYZING", run_id
             case.analysis_started = self.clock().isoformat()
@@ -219,7 +230,49 @@ class Workflow:
                 "ANALYSIS_STARTED",
                 {"run_id": run_id, "snapshot_sha256": digest(case.snapshot)},
             )
-            return run_id, Snapshot.model_validate(case.snapshot)
+            return run_id, snapshot
+
+    def cancel_analysis(self, case_id, actor):
+        self.require(actor, "planner")
+        with self.store.transaction() as session:
+            case = self.case(session, case_id, actor)
+            if case.status != "ANALYZING":
+                raise DomainError("Only an active analysis can be cancelled")
+            case.status = "CANCELLED"
+            case.stages = [
+                {**stage, "status": "CANCELLED"}
+                if stage["status"] in {"RUNNING", "QUEUED"}
+                else stage
+                for stage in case.stages
+            ]
+            audit(
+                session,
+                case,
+                actor.id,
+                "ANALYSIS_CANCELLED",
+                {"run_id": case.analysis_id, "in_flight_call_may_finish": True},
+            )
+            self.orchestration_message(session, case, "notify")
+        return self.get(case_id, actor)
+
+    def expire_approval_wait(self, case_id, run_id):
+        with self.store.transaction() as session:
+            case = session.get(Case, case_id)
+            if not case or case.analysis_id != run_id:
+                return {"status": "STALE"}
+            if case.status == "APPROVED":
+                self._fresh(case)
+                self._valid_approvals(session, case.plan)
+            elif case.status in {"READY_FOR_APPROVAL", "APPROVAL_PENDING"}:
+                case.status = "APPROVAL_WAIT_EXPIRED"
+                audit(
+                    session,
+                    case,
+                    "approval-timer",
+                    "APPROVAL_WAIT_EXPIRED",
+                    {"run_id": run_id},
+                )
+            return {"status": case.status}
 
     def stage(self, case_id, run_id, role, status, result=None):
         with self.store.transaction() as session:
@@ -253,6 +306,7 @@ class Workflow:
                     "reused": True,
                 }
             snapshot = Snapshot.model_validate(case.snapshot)
+        self.validate_authority(snapshot)
         calculation = await asyncio.to_thread(solve, snapshot, self.clock())
         self.stage(case_id, run_id, role, "RUNNING")
         result = await self.analyst.assess(role, snapshot, calculation)
@@ -279,6 +333,7 @@ class Workflow:
                 raise DomainError("Not all specialist activities are complete")
             snapshot = Snapshot.model_validate(case.snapshot)
             results = [s["result"] for s in case.stages]
+        self.validate_authority(snapshot)
         calculation = solve(snapshot, self.clock())
         model_blockers = [
             f["summary"]
@@ -369,6 +424,7 @@ class Workflow:
 
     def _fresh(self, case):
         plan = case.plan
+        self.validate_authority(Snapshot.model_validate(case.snapshot))
         if not plan or plan["input_snapshot_sha256"] != digest(case.snapshot):
             raise DomainError("Sources changed; analyze and approve a fresh plan")
         unhashed = {k: v for k, v in plan.items() if k != "plan_sha256"}

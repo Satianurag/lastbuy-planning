@@ -1,6 +1,6 @@
 # Build order, evidence gates and contest demonstration
 
-This document defines future work. A planned test is not a passed test. The current setup report identifies what has actually run.
+This document preserves the original build and acceptance plan. Much of the prototype is now implemented, but planned acceptance gates are not automatically passed. See [current implementation evidence](06-implementation-status.md) and the [requirement-by-requirement audit](09-completion-audit.md).
 
 ## Build in dependency order
 

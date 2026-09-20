@@ -1,0 +1,33 @@
+{
+  "observed_date": "2026-09-20",
+  "method": "CUA native Firefox screenshot and local IAB accessibility/UI interactions; no tokens captured",
+  "cloud": {
+    "url": "https://lastbuy-dev-4126.azurewebsites.net/",
+    "microsoft_sign_in": "Signed-in user, Sign out and protected case data observed in Firefox",
+    "authority": "Real user is planner-only; no real approval/export performed"
+  },
+  "local": {
+    "url": "http://127.0.0.1:8810/?case=LTB-CLOUD-RELEASE-7",
+    "recorded_foundry_result": {
+      "units": 10000,
+      "commitment_usd": 800000,
+      "modeled_difference_usd": 640000
+    },
+    "scenario_table": {
+      "scenario": "SERVICE-PROTECTED",
+      "demand": 22000,
+      "allocated": 22000
+    },
+    "keyboard_source_dialog": "Return opened dialog and focused Close; Escape closed and restored focus to Evidence button",
+    "cancel_fixture": {
+      "case": "LTB-CANCEL-UI",
+      "seed": "Explicit synthetic ANALYZING/QUEUED state; no model started",
+      "observed_result": "CANCELLED; queued stages CANCELLED; audit valid; cancelled banner visible"
+    }
+  },
+  "limitations": [
+    "No new paid model calls for these UI checks",
+    "Cancellation fixture does not demonstrate physical interruption of a provider request",
+    "Not an independent buyer usability study"
+  ]
+}

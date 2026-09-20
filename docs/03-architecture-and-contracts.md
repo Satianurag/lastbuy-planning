@@ -1,6 +1,6 @@
 # LastBuy architecture and execution contract
 
-Design status: proposed; implementation intentionally not started. Setup probes are separate and contain no LastBuy logic.
+Design contract, with a deployed development implementation as of 20 September 2026. This document retains the intended enterprise architecture; SAP/Windchill/Dataverse connectors and customer production controls are not implemented. The current prototype imports synthetic snapshots and exports to a separate synthetic ERP database. See [implementation evidence](06-implementation-status.md) and the [requirement audit](09-completion-audit.md) for verified boundaries.
 
 ## System boundary
 

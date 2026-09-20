@@ -1143,3 +1143,5 @@ dialog h2 {
     overflow-x: auto;
   }
 }
+
+.table-scroll { overflow-x: auto; max-width: 100%; }

@@ -5,12 +5,11 @@ from datetime import timedelta
 import azure.durable_functions as df
 
 
-def lastbuy_orchestrator_v2(context):
+def lastbuy_orchestrator(context):
     request = context.get_input()
     retry = df.RetryOptions(
         first_retry_interval_in_milliseconds=5000, max_number_of_attempts=2
     )
-    expiry = None
     try:
         for role in ("engineering", "service", "supply", "commitment"):
             context.set_custom_status({"phase": "analysis", "role": role})
@@ -31,22 +30,18 @@ def lastbuy_orchestrator_v2(context):
         deadline = context.current_utc_datetime + timedelta(hours=24)
         expiry = context.create_timer(deadline)
         while True:
-            state = yield context.call_activity_with_retry(
-                "read_approval_status", retry, request
-            )
+            state = yield context.call_activity("read_approval_status", request)
             if state["status"] not in {"READY_FOR_APPROVAL", "APPROVAL_PENDING"}:
+                expiry.cancel()
                 return state
             notification = context.wait_for_external_event("decision_changed")
             winner = yield context.task_any([notification, expiry])
             if winner == expiry:
                 # Read authoritative state once more to handle an approval at the boundary.
-                return (
-                    yield context.call_activity_with_retry(
-                        "expire_approval_wait", retry, request
-                    )
-                )
+                state = yield context.call_activity("read_approval_status", request)
+                if state["status"] == "APPROVED":
+                    return state
+                return {"status": "APPROVAL_WAIT_EXPIRED"}
     except Exception:
-        return (yield context.call_activity("record_analysis_failure", request))
-    finally:
-        if expiry is not None and not expiry.is_completed:
-            expiry.cancel()
+        yield context.call_activity("record_analysis_failure", request)
+        return {"status": "ANALYSIS_FAILED"}

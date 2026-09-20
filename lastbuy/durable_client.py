@@ -82,7 +82,7 @@ class NativeDurableDispatcher(DurableDispatcher):
         current = await self.client.get_status(run_id)
         if current is None or current.runtime_status is None:
             await self.client.start_new(
-                "lastbuy_orchestrator",
+                "lastbuy_orchestrator_v2",
                 instance_id=run_id,
                 client_input={"case_id": case_id, "run_id": run_id},
             )

@@ -1,5 +1,4 @@
 {
-  "git_commit": "5d74dfd17e49c4c3eda2c1e3881381f0a4687179",
   "health_status": 200,
   "unauthenticated_case_access": 401,
   "unauthenticated_export_access": 401,
@@ -12,25 +11,42 @@
     "routed": true
   },
   "web_package": {
-    "archive": "evidence/releases/lastbuy-functions-4b86339ad0ca8ec9.zip",
-    "sha256": "4b86339ad0ca8ec9184394c5b8c5ec20c69cb5d0231fdcaa0e4b7a960aaae6ca",
-    "files": 29
+    "archive": "evidence/releases/lastbuy-functions-51a25f09f68e6b8f.zip",
+    "sha256": "51a25f09f68e6b8f643cd39f6c7c7236484fefa96b740e1f5686675b83855328",
+    "files": 31
   },
   "export_package": {
-    "archive": "evidence/releases/lastbuy-export-f61938384ece9614.zip",
-    "sha256": "f61938384ece961486ca38460eb6922ae9da4cba0d139e25b7a689674dbd25f5",
-    "files": 22
+    "archive": "evidence/releases/lastbuy-export-82de3cd912bc5c1f.zip",
+    "sha256": "82de3cd912bc5c1f372444761e23b9edcbeb2b369d314128e6260272cb91a30b",
+    "files": 24
   },
   "tests": {
     "name": "pytest",
     "errors": "0",
     "failures": "0",
     "skipped": "0",
-    "tests": "123",
-    "time": "3.596",
-    "timestamp": "2026-09-20T21:17:02.691645+05:30",
+    "tests": "134",
+    "time": "3.593",
+    "timestamp": "2026-09-20T21:39:09.306723+05:30",
     "hostname": "MacBook-Pro.local"
   },
-  "browser_oauth": "Awaiting user completion; Firefox opened and user took control",
-  "actual_billing": "unverified; Cost Management 429"
+  "browser_oauth": "Verified in Firefox: signed-in user and protected cloud case data visible; planner-only",
+  "actual_billing": "unverified; Cost Management 429",
+  "checked_at": "2026-09-20T16:14:24.616579+00:00",
+  "registered_functions": [
+    "lastbuy-dev-4126/analyze_stage",
+    "lastbuy-dev-4126/expire_approval_wait",
+    "lastbuy-dev-4126/finalize_analysis",
+    "lastbuy-dev-4126/lastbuy_orchestrator",
+    "lastbuy-dev-4126/lastbuy_orchestrator_v2",
+    "lastbuy-dev-4126/notify",
+    "lastbuy-dev-4126/read_approval_status",
+    "lastbuy-dev-4126/record_analysis_failure",
+    "lastbuy-dev-4126/recover_handoffs",
+    "lastbuy-dev-4126/start",
+    "lastbuy-dev-4126/web"
+  ],
+  "orchestrator_v2_validation": "Registered in cloud; cancellation/expiry generator tests offline. No new paid full cloud run on v2.",
+  "source_parent_commit": "0a6ad486c6e8c7676773f066ba985f9423453c7a",
+  "source_identification": "Deployed source is identified by the content-addressed web/export archives; local commit also includes verification records."
 }

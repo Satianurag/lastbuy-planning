@@ -43,12 +43,16 @@ Install locked tooling with `npm ci --prefix tooling`; start Azurite on loopback
 
 Both processes must share the **same absolute case database**. Durable history stores case/run IDs, not source documents. Azurite persists queues/history; killing the worker does not delete state. A crashed activity may remain invisible until its storage queue lease expires (observed about five minutes). Avoid manually starting a second run while waiting for lease recovery.
 
+New starts use `lastbuy_orchestrator_v2`. The original `lastbuy_orchestrator` is retained unchanged in `orchestration_v1.py` for existing histories. Do not remove v1 while instances still reference it, or rename activities used by its history. V2 adds authoritative expiry and pending-timer cleanup. Its branches have offline generator tests and its registration is verified in Azure; no new full model run was made after that update.
+
 ## Recovery and authority
 
 - Failed model call: case becomes `ANALYSIS_FAILED`; consumed allowance stays reserved. Inspect provider/validation failure, then retry explicitly. There is no success-shaped fallback.
 - Stale plan: source revision/hash or policy mismatch invalidates approval. Re-analyze and collect all four approvals. Preserve prior plan versions.
 - Rejected/unresolved evidence: correct the authoritative record/import, then rerun. Never edit a stored finding from blocker to info.
-- Approval expiry: approvals expire after 24 hours; server validates current actor role, organization and amount authority again. Orchestrator timeout does not grant authorization.
+- Cancellation: a planner can cancel ANALYZING. Pending stages become CANCELLED; a paid call already in flight may finish and its allowance is not refunded. Its late result cannot commit a plan or authorize export.
+- Approval expiry: approvals expire after 24 hours; server validates current actor role, organization and amount authority again. V2 also transitions an unfinished approval wait to APPROVAL_WAIT_EXPIRED. An old run cannot expire a newer one. Expiry does not grant authorization.
+- Source ownership: fix an invalid source-owner manifest before analysis. A supplier citation cannot stand in for engineering release or service-coverage authority. This is manifest validation, not external connector authentication.
 - Export timeout: reconcile the existing outbox key. The ERP may already have accepted the draft. Never mint a replacement key or manually change `EXPORT_UNCERTAIN` to `APPROVED`.
 - SQL cold start: a free serverless database may require a first request to resume and can time out. Retry the request after resumption. Do not broaden the firewall or switch to password authentication in response to a transient timeout.
 - Database conflict: optimistic version failures mean another actor changed the case. Refresh and review; do not retry an outdated approval automatically.
@@ -86,7 +90,7 @@ Evaluate exact quantity/constraints, critical evidence contradictions and absten
 
 ## Backup, retention and rollback
 
-Azure SQL platform backups exist, but a point-in-time restore drill has not been executed. Before production, restore to an isolated database, verify plan/source hashes and audit chains, compare outbox receipts against the external ERP, and rehearse identity/permission restoration. Never restore a ledger and blindly replay its outbox; the external system may contain writes newer than the database backup.
+An actual local SQLite backup/restore test keeps the independent synthetic ERP newer than the restored ledger, then reconciles its existing receipt without another row; the audit chain remains valid (`evidence/local-restore-verification.json`). It uses a model test double. Azure SQL platform backups exist, but a point-in-time restore drill has not been executed. Before production, restore to an isolated database, verify plan/source hashes and audit chains, compare outbox receipts against the external ERP, and rehearse identity/permission restoration. Never restore a ledger and blindly replay its outbox; the external system may contain writes newer than the database backup.
 
 Blob snapshots are content-addressed and hash-verified, **not locked WORM**. Current frontend host-storage permissions are broader than an archive-only writer because host and archive share a development storage account. Production should separate archive storage and apply reviewed retention/legal-hold policies.
 
@@ -94,7 +98,7 @@ To roll back application code, deploy a retained known-good archive and its comp
 
 ## Cost stop / cleanup
 
-The user authorized ₹1,000 **total** additional development/testing. The SQL admission ledger reserves ₹10 per attempted specialist call, retaining reservations for failed/uncertain work. It has ₹700 total allowance including a ₹200 conservative reserve for earlier activity; ₹300 is held outside that ledger for infrastructure. These are allowances, not measured Azure charges. Cost Management has returned HTTP 429; report actual spend as unverified until billing can be read.
+The user authorized ₹1,000 **total** development/testing. The SQL admission ledger reserves ₹10 per attempted specialist call, retaining reservations for failed/uncertain work. It has ₹700 total allowance including a ₹200 conservative reserve for earlier activity; ₹300 is held outside that ledger for infrastructure. These are allowances, not measured Azure charges. Cost Management has returned HTTP 429; report actual spend as unverified until billing can be read.
 
 To close model admission without deleting evidence, an operator sets `budget_accounts.limit_paise = reserved_paise` for account `development` inside a transaction. Stop both Function Apps to prevent further executions, and terminate this task's hosted sessions if needed after exporting decision evidence. Keep SQL free-exhaustion AutoPause and zero always-ready settings. Do not assume stopping Functions deletes storage charges or model deployment state.
 

@@ -13,7 +13,8 @@ This is an implemented and cloud-tested development prototype. Enterprise source
 - Durable Functions orchestration; SQL decision ledger; source archive; optimistic concurrency; hash-linked audit; approval expiry and invalidation when sources/policy change.
 - Four distinct engineering, service, finance and procurement identities, with current role/amount authority checked before export. Unresolved review findings block approval.
 - Separate export Function identity and separate SQL ERP simulator, with a unique external reference and recovery after an uncertain write. No purchase-order release API exists.
-- Entra PKCE sign-in and API JWT checks; budget admission guard; responsive case workspace, source review, import preview and evidence packet download.
+- Entra PKCE sign-in verified in Firefox, API JWT checks and budget admission guard; responsive case workspace, scenario coverage, source review, import preview and evidence packet download.
+- Source-owner validation, analysis cancellation and authoritative approval timeout. Versioned Durable orchestration preserves existing replay histories.
 
 ## Demonstration economics
 
@@ -49,6 +50,7 @@ Live evaluation consumes the shared allowance. Do not run it automatically on ev
 ## Deployment and review
 
 - [Current implementation and evidence](docs/06-implementation-status.md)
+- [Requirement-by-requirement completion audit](docs/09-completion-audit.md)
 - [Operations, deployment, rollback and cleanup](docs/07-runbook.md)
 - [Contest handover and three-minute recording script](docs/08-contest-handover.md)
 - [Exact buyer, financial evidence and competitors](docs/01-business-case.md)

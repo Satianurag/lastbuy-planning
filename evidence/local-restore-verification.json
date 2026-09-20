@@ -1,0 +1,8 @@
+{
+  "scope": "Actual SQLite backup/restore of synthetic decision ledger; independent ERP file retained. Model test double. Not Azure SQL PITR.",
+  "restored_outbox_initial_status": "PENDING",
+  "external_receipt_newer_than_backup": true,
+  "reconciled_same_receipt": true,
+  "external_rows": 1,
+  "audit_chain_valid": true
+}

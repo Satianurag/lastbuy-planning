@@ -13,13 +13,15 @@ import azure.functions as func
 from lastbuy.archive import BlobArchive
 from lastbuy.durable_client import NativeDurableDispatcher
 from lastbuy.erp import SyntheticERP
-from lastbuy.orchestration import lastbuy_orchestrator
+from lastbuy.orchestration import lastbuy_orchestrator_v2
+from lastbuy.orchestration_v1 import lastbuy_orchestrator
 from lastbuy.remote import HostedAnalyst
 from lastbuy.service import Workflow
 from lastbuy.store import Case, Store
 
 app = df.DFApp(http_auth_level=func.AuthLevel.FUNCTION)
 app.orchestration_trigger(context_name="context")(lastbuy_orchestrator)
+app.orchestration_trigger(context_name="context")(lastbuy_orchestrator_v2)
 
 
 @lru_cache
@@ -51,7 +53,7 @@ async def start(req: func.HttpRequest, client):
     existing = await client.get_status(run_id)
     if existing is None or existing.runtime_status is None:
         await client.start_new(
-            "lastbuy_orchestrator",
+            "lastbuy_orchestrator_v2",
             instance_id=run_id,
             client_input={"case_id": case_id, "run_id": run_id},
         )
@@ -96,11 +98,21 @@ def read_approval_status(request):
 
 
 @app.activity_trigger(input_name="request")
+def expire_approval_wait(request):
+    return workflow().expire_approval_wait(request["case_id"], request["run_id"])
+
+
+@app.activity_trigger(input_name="request")
 def record_analysis_failure(request):
     workflow().fail_analysis(
         request["case_id"], request["run_id"], "DurableActivityFailed"
     )
-    return {"recorded": True}
+    state = workflow().approval_status(request["case_id"], request["run_id"])
+    return (
+        state
+        if state["status"] in {"CANCELLED", "STALE"}
+        else {"status": "ANALYSIS_FAILED"}
+    )
 
 
 if os.getenv("LASTBUY_ENABLE_WEB") == "1":

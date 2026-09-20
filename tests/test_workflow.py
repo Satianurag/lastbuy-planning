@@ -296,3 +296,128 @@ def test_concurrent_events_with_unchanged_status_cannot_branch_audit(workflow):
         first.close()
         second.close()
     assert workflow.get("LTB-2026-017", DEMO_ACTORS["planner"])["audit_valid"]
+
+
+@pytest.mark.parametrize("record", ["cohort", "coverage", "forecast", "stock", "quote"])
+def test_wrong_system_cannot_supply_business_authority(workflow, record):
+    snapshot = demo_snapshot()
+    if record == "cohort":
+        snapshot.cohorts[0].evidence = ["pcn"]
+    if record == "coverage":
+        snapshot.scenarios[0].demand[0].evidence = ["forecast"]
+    if record == "forecast":
+        snapshot.scenarios[0].demand[0].evidence = ["amendment"]
+    if record == "stock":
+        snapshot.lots[0].evidence = ["bom"]
+    if record == "quote":
+        snapshot.quote.evidence = ["stock"]
+    case = workflow.get(snapshot.case_id, DEMO_ACTORS["planner"])
+    snapshot.source_revision += 1
+    workflow.replace_snapshot(
+        snapshot.case_id, snapshot, case["revision"], DEMO_ACTORS["planner"]
+    )
+    with pytest.raises(DomainError, match="Source authority"):
+        workflow.begin(snapshot.case_id, DEMO_ACTORS["planner"])
+    assert workflow.get(snapshot.case_id, DEMO_ACTORS["planner"])["status"] == "DRAFT"
+
+
+def test_cancelled_analysis_discards_late_result_and_cannot_approve(workflow):
+    run, snapshot = workflow.begin("LTB-2026-017", DEMO_ACTORS["planner"])
+    workflow.cancel_analysis(snapshot.case_id, DEMO_ACTORS["planner"])
+    with pytest.raises(DomainError):
+        workflow.stage(
+            snapshot.case_id, run, "engineering", "COMPLETE", {"ignored": True}
+        )
+    workflow.fail_analysis(snapshot.case_id, run, "CancelledWorker")
+    assert workflow.approval_status(snapshot.case_id, run)["status"] == "CANCELLED"
+    assert workflow.get(snapshot.case_id, DEMO_ACTORS["planner"])["audit_valid"]
+    with pytest.raises(DomainError):
+        workflow.enqueue_export(snapshot.case_id, "a" * 64, DEMO_ACTORS["procurement"])
+
+
+def test_approval_expiry_updates_state_and_is_idempotent(workflow):
+    case = analyzed(workflow)
+    result = workflow.expire_approval_wait(case["id"], case["analysis_id"])
+    assert result["status"] == "APPROVAL_WAIT_EXPIRED"
+    assert workflow.expire_approval_wait(case["id"], case["analysis_id"]) == result
+    current = workflow.get(case["id"], DEMO_ACTORS["planner"])
+    assert (
+        len(
+            [
+                a
+                for a in current["audit"]
+                if a["data"]["action"] == "APPROVAL_WAIT_EXPIRED"
+            ]
+        )
+        == 1
+    )
+    with pytest.raises(DomainError):
+        approve_all(workflow, case["plan"])
+    newer, _ = workflow.begin(case["id"], DEMO_ACTORS["planner"])
+    assert (
+        workflow.expire_approval_wait(case["id"], case["analysis_id"])["status"]
+        == "STALE"
+    )
+    assert workflow.get(case["id"], DEMO_ACTORS["planner"])["analysis_id"] == newer
+
+
+def test_approval_at_expiry_boundary_is_not_revoked(workflow):
+    case = analyzed(workflow)
+    approve_all(workflow, case["plan"])
+    assert (
+        workflow.expire_approval_wait(case["id"], case["analysis_id"])["status"]
+        == "APPROVED"
+    )
+
+
+def test_restored_ledger_reconciles_external_write_newer_than_backup(
+    workflow, tmp_path
+):
+    import sqlite3
+    from pathlib import Path
+
+    from lastbuy.store import Outbox
+
+    case = analyzed(workflow)
+    approve_all(workflow, case["plan"])
+    job = workflow.enqueue_export(
+        case["id"], case["plan"]["plan_sha256"], DEMO_ACTORS["procurement"]
+    )
+    restored_path = tmp_path / "restored.db"
+    with sqlite3.connect(workflow.store.engine.url.database) as original:
+        with sqlite3.connect(restored_path) as backup:
+            original.backup(backup)
+    receipt = workflow.dispatch(job["key"])
+    restored = Workflow(
+        Store("sqlite:///" + str(restored_path)),
+        TestAnalyst(),
+        SyntheticERP(workflow.erp.path),
+        clock=lambda: FIXTURE_CLOCK,
+    )
+    with restored.store.session() as session:
+        assert session.get(Outbox, job["key"]).status == "PENDING"
+    assert restored.dispatch(job["key"]) == receipt
+    state = restored.get(case["id"], DEMO_ACTORS["planner"])
+    assert state["status"] == "EXPORTED" and state["audit_valid"]
+    with sqlite3.connect(workflow.erp.path) as external:
+        assert (
+            external.execute(
+                "SELECT count(*) FROM requisitions WHERE external_key=?", (job["key"],)
+            ).fetchone()[0]
+            == 1
+        )
+    import json
+
+    Path("evidence/local-restore-verification.json").write_text(
+        json.dumps(
+            {
+                "scope": "Actual SQLite backup/restore of synthetic decision ledger; independent ERP file retained. Model test double. Not Azure SQL PITR.",
+                "restored_outbox_initial_status": "PENDING",
+                "external_receipt_newer_than_backup": True,
+                "reconciled_same_receipt": True,
+                "external_rows": 1,
+                "audit_chain_valid": True,
+            },
+            indent=2,
+        )
+    )

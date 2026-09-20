@@ -389,6 +389,10 @@ def create_app(workflow=None, demo=None):
         task.add_done_callback(tasks.discard)
         return {"run_id": run_id, "status": "ANALYZING"}
 
+    @app.post("/api/cases/{case_id}/cancel")
+    def cancel(case_id: str, actor=Depends(identity)):
+        return workflow.cancel_analysis(case_id, actor)
+
     @app.post("/api/cases/{case_id}/approvals")
     def approve(case_id: str, data: ApprovalRequest, actor=Depends(identity)):
         return workflow.approve(case_id, data, actor)
