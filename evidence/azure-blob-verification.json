@@ -1,0 +1,12 @@
+{
+  "idempotent": true,
+  "hash_verified": true,
+  "receipt": {
+    "container": "snapshots",
+    "blob": "NORTHSTAR/BLOB-VERIFY-001/759b7154ac301ae88b540ed77d875c7a7402dd119bf51238069334473a4dcfd0.json",
+    "snapshot_sha256": "759b7154ac301ae88b540ed77d875c7a7402dd119bf51238069334473a4dcfd0",
+    "etag": "\"0x8DF172524A22192\"",
+    "version_id": null,
+    "retention": "content-addressed; production WORM policy configured separately"
+  }
+}

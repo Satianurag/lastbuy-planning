@@ -1,0 +1,116 @@
+{
+  "status": "ANALYZING",
+  "run_id": "77ded2b3-7f51-4139-8b82-5bb1fe56d7b4",
+  "stages": [
+    {
+      "role": "engineering",
+      "status": "COMPLETE",
+      "result": {
+        "assessment": {
+          "role": "engineering",
+          "summary": "The snapshot supports engineering-released applicability for revision A2 on both listed cohorts, with no qualified substitute proposed. No unresolved engineering blocker is present in the immutable case snapshot.",
+          "findings": [
+            {
+              "code": "ENGINEERING_APPLICABILITY",
+              "severity": "info",
+              "summary": "Both released cohorts accept the proposed A2 revision within their stated board, firmware, and serial ranges.",
+              "evidence": [
+                "bom"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999."
+                },
+                {
+                  "source_id": "bom",
+                  "quote": "Both accept ASIC-SYN-017 revision A2."
+                }
+              ]
+            },
+            {
+              "code": "NO_QUALIFIED_SUBSTITUTE",
+              "severity": "info",
+              "summary": "No engineering-qualified substitute is proposed or needed for this purchase scope.",
+              "evidence": [
+                "bom",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "No substitute is engineering-qualified."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            },
+            {
+              "code": "REVISION_SCOPE_CLARITY",
+              "severity": "info",
+              "summary": "The snapshot explicitly excludes incompatible stock and identifies A1 as incompatible, so there is no unsupported A1 interpretation affecting the proposed A2 purchase.",
+              "evidence": [
+                "bom",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "Revision A1 is incompatible."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "bom",
+            "pcn"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 3396,
+        "usage": {
+          "cache_creation_input_token_count": 0,
+          "openai.cached_input_tokens": 1024,
+          "total_token_count": 2089,
+          "output_token_count": 395,
+          "openai.reasoning_tokens": 0,
+          "reasoning_output_token_count": 0,
+          "cache_read_input_token_count": 1024,
+          "input_token_count": 1694,
+          "openai.cache_write_tokens": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      }
+    },
+    {
+      "role": "service",
+      "status": "RUNNING"
+    },
+    {
+      "role": "supply",
+      "status": "QUEUED"
+    },
+    {
+      "role": "commitment",
+      "status": "QUEUED"
+    }
+  ],
+  "host_pids": [
+    25488,
+    25921
+  ]
+}

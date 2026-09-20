@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@azure/msal-browser": "^5.22.0",
+    "azurite": "3.37.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.8"
+  }
+}

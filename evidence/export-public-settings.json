@@ -1,0 +1,9 @@
+{
+  "AzureWebJobsStorage__accountName": "lastbuydev4126",
+  "AzureWebJobsStorage__credential": "managedidentity",
+  "LASTBUY_DATABASE_URL": "mssql+pyodbc://@lastbuy-dev-4126.database.windows.net/lastbuy?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no&Connection+Timeout=60",
+  "LASTBUY_SCHEMA_MODE": "managed",
+  "LASTBUY_ARCHIVE_URL": "https://lastbuydev4126.blob.core.windows.net",
+  "OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT": "false",
+  "LASTBUY_ERP_DATABASE_URL": "mssql+pyodbc://@lastbuy-dev-4126.database.windows.net/lastbuy-erp-sim?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no&Connection+Timeout=60"
+}

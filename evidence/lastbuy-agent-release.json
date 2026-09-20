@@ -1,0 +1,8 @@
+{
+  "agent": "lastbuy-analysis",
+  "version": "7",
+  "status": "active",
+  "source_sha256": "5fee21dd08904e7bed02cc6a9fe4d9fa805a8f4dbefb0f9b887c011834c5836e",
+  "archive": "evidence/releases/lastbuy-analysis-5fee21dd08904e7b.zip",
+  "routed": true
+}

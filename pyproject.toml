@@ -1,0 +1,24 @@
+[project]
+name = "lastbuy"
+version = "0.1.0"
+description = "Evidence-bound final semiconductor purchase verification"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "fastapi==0.141.1", "uvicorn[standard]", "sqlalchemy==2.0.54",
+  "pydantic==2.13.5", "pyjwt[crypto]", "httpx", "itsdangerous==2.2.0", "ortools==9.15.6755",
+  "agent-framework-foundry==1.13.1", "azure-identity==1.25.3",
+  "azure-ai-projects==2.6.1", "azure-ai-agentserver-invocations==1.1.0",
+  "azure-ai-agentserver-core==2.1.0", "azure-functions==2.3.0",
+  "azure-functions-durable==1.7.0", "azure-monitor-opentelemetry==1.8.10",
+  "azure-storage-blob", "azure-ai-evaluation==1.18.5", "pyodbc==5.3.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

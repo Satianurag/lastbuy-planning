@@ -1,0 +1,37 @@
+{
+  "scope": "Real cloud worker identity, primary Azure SQL, separate synthetic ERP Azure SQL, Blob archive. Explicit model/approver test fixtures; not authentic finance approvals or SAP.",
+  "records": [
+    {
+      "case_id": "LTB-CLOUD-EXPORT-TEST-CREATE",
+      "lost_response_preseeded": false,
+      "repeat_same_receipt": true,
+      "external_rows": 1,
+      "receipt": {
+        "external_reference": "SYN-CLOUD-PR-29E55B04F28E",
+        "external_key": "29e55b04f28e0eb56a95350d6dd4f5fa2f34c4300d62640f40dd62d432f1ddbd",
+        "status": "DRAFT_REQUISITION",
+        "synthetic": true,
+        "payload_sha256": "11d96208753643b83472b631b417b6edec18c077b8126e31f9012020d23b5375",
+        "at": "2026-09-20T15:29:32.338340+00:00"
+      },
+      "status": "EXPORTED",
+      "audit_valid": true
+    },
+    {
+      "case_id": "LTB-CLOUD-EXPORT-TEST-RECOVER",
+      "lost_response_preseeded": true,
+      "repeat_same_receipt": true,
+      "external_rows": 1,
+      "receipt": {
+        "external_reference": "SYN-CLOUD-PR-6B20B8A337C4",
+        "external_key": "6b20b8a337c4bb33c780deb5ca060790b7dcb85abcc4b267e192075f8db0f34e",
+        "status": "DRAFT_REQUISITION",
+        "synthetic": true,
+        "payload_sha256": "95d14d10be43bb9c02b70ce99bdc68564eb67678fa3baf67ef7dc3e24f64dcc4",
+        "at": "2026-09-20T15:31:45.089680+00:00"
+      },
+      "status": "EXPORTED",
+      "audit_valid": true
+    }
+  ]
+}

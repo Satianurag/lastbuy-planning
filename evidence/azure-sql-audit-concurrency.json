@@ -1,0 +1,10 @@
+{
+  "database": "Azure SQL",
+  "case_id": "LTB-AUDIT-CAS-001",
+  "scope": "Synthetic QA organization; no model call or purchase",
+  "unchanged_status": "DRAFT",
+  "before_revision": 1,
+  "after_revision": 2,
+  "stale_concurrent_append": "rejected",
+  "audit_chain_valid": true
+}

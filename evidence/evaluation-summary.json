@@ -1,0 +1,56 @@
+{
+  "reports": [
+    {
+      "release_scope": "v3 frozen original text stress set",
+      "source_file": "evaluation-live-records.jsonl",
+      "attempts": 12,
+      "accepted": 11,
+      "classification_correct": 7,
+      "abstained": 1,
+      "conflict_cases": 7,
+      "conflict_explicit_block": 2,
+      "conflict_abstained": 1,
+      "conflict_silent_pass": 4,
+      "clean_cases": 3,
+      "clean_accepted_without_blocker": 3,
+      "wall_ms_median": 27737.5,
+      "wall_ms_max": 49395,
+      "statistical_limit": "Small author-created synthetic samples; not independent/customer validation; wall time includes transport and budget database."
+    },
+    {
+      "release_scope": "v4 synthetic acceptance after tuning",
+      "source_file": "evaluation-release4-records.jsonl",
+      "attempts": 12,
+      "accepted": 9,
+      "classification_correct": 9,
+      "abstained": 3,
+      "conflict_cases": 7,
+      "conflict_explicit_block": 6,
+      "conflict_abstained": 1,
+      "conflict_silent_pass": 0,
+      "clean_cases": 4,
+      "clean_accepted_without_blocker": 3,
+      "wall_ms_median": 25236.0,
+      "wall_ms_max": 47325,
+      "statistical_limit": "Small author-created synthetic samples; not independent/customer validation; wall time includes transport and budget database."
+    },
+    {
+      "release_scope": "v7 selected regression after fixes",
+      "source_file": "evaluation-release7-regression-records.jsonl",
+      "attempts": 9,
+      "accepted": 6,
+      "classification_correct": 6,
+      "abstained": 3,
+      "conflict_cases": 4,
+      "conflict_explicit_block": 1,
+      "conflict_abstained": 3,
+      "conflict_silent_pass": 0,
+      "clean_cases": 4,
+      "clean_accepted_without_blocker": 4,
+      "wall_ms_median": 22429,
+      "wall_ms_max": 25750,
+      "statistical_limit": "Small author-created synthetic samples; not independent/customer validation; wall time includes transport and budget database."
+    }
+  ],
+  "baseline": "No controlled single-agent/manual/incumbent comparison completed. Four roles provide scope separation; superior accuracy/cost is unproven."
+}

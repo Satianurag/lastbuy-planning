@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/api/health",
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "auth_mode": "entra",
+      "data_mode": "enterprise",
+      "model": "lastbuy-dev-mini"
+    }
+  },
+  {
+    "path": "/api/auth/config",
+    "status": 200,
+    "body": {
+      "mode": "entra",
+      "tenant": "aa7798f0-6ce0-4027-bbd3-98480699a8fe",
+      "client_id": "2f1dc01e-10f7-467f-a24a-9b7c2725aefe",
+      "scope": "api://2f1dc01e-10f7-467f-a24a-9b7c2725aefe/access_as_user"
+    }
+  },
+  {
+    "path": "/api/session",
+    "status": 200,
+    "body": {
+      "mode": "entra",
+      "actor": null
+    }
+  },
+  {
+    "path": "/api/cases",
+    "status": 401,
+    "body": {
+      "detail": "Entra access token required"
+    }
+  }
+]

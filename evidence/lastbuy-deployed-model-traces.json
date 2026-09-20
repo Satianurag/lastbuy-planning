@@ -1,0 +1,219 @@
+{
+  "tables": [
+    {
+      "columns": [
+        {
+          "name": "timestamp",
+          "type": "datetime"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "operation_Id",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "duration",
+          "type": "real"
+        },
+        {
+          "name": "success",
+          "type": "string"
+        },
+        {
+          "name": "resultCode",
+          "type": "string"
+        }
+      ],
+      "name": "PrimaryResult",
+      "rows": [
+        [
+          "2026-09-20T14:34:41.732003Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "b68655d75b406b9b2182161d249ba89c",
+          "06a24784176ff01d",
+          1910,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:41.725428Z",
+          "chat lastbuy-dev-mini",
+          "b68655d75b406b9b2182161d249ba89c",
+          "6c7a7cd740198cb7",
+          1919,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:41.724354Z",
+          "execute_tool read_case_evidence",
+          "b68655d75b406b9b2182161d249ba89c",
+          "7fe456d1857e0b8e",
+          1,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:40.883302Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "b68655d75b406b9b2182161d249ba89c",
+          "b1e9f416cf9d312e",
+          839,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:40.812056Z",
+          "chat lastbuy-dev-mini",
+          "b68655d75b406b9b2182161d249ba89c",
+          "08461b9ec84ec1f4",
+          912,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:40.811762Z",
+          "invoke_agent lastbuy-commitment",
+          "b68655d75b406b9b2182161d249ba89c",
+          "288a1561b7ec6c41",
+          2833,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:34.616256Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "45abde94b8aa4b5915ce340471968cef",
+          "e5450e3fa46747cd",
+          2671,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:34.610019Z",
+          "chat lastbuy-dev-mini",
+          "45abde94b8aa4b5915ce340471968cef",
+          "b67339562758ca54",
+          2679,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:34.608902Z",
+          "execute_tool read_case_evidence",
+          "45abde94b8aa4b5915ce340471968cef",
+          "83cc0324bb48dd89",
+          1,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:33.748991Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "45abde94b8aa4b5915ce340471968cef",
+          "c99ecffe4731465a",
+          858,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:33.701151Z",
+          "chat lastbuy-dev-mini",
+          "45abde94b8aa4b5915ce340471968cef",
+          "7398c66e43df63ae",
+          907,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:33.700854Z",
+          "invoke_agent lastbuy-supply",
+          "45abde94b8aa4b5915ce340471968cef",
+          "4e0896974da35ac4",
+          3589,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:30.407627Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "7356eb1de58137d471c8ae07a59a9301",
+          "4097568afbb3cc05",
+          3105,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:30.397723Z",
+          "chat lastbuy-dev-mini",
+          "7356eb1de58137d471c8ae07a59a9301",
+          "e82eefb0e5427fa0",
+          3117,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:30.396579Z",
+          "execute_tool read_case_evidence",
+          "7356eb1de58137d471c8ae07a59a9301",
+          "2540a64d55652d15",
+          1,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:29.41317Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "7356eb1de58137d471c8ae07a59a9301",
+          "68db14605f620899",
+          981,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:29.365166Z",
+          "chat lastbuy-dev-mini",
+          "7356eb1de58137d471c8ae07a59a9301",
+          "8122eae44ea3573e",
+          1031,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:29.364839Z",
+          "invoke_agent lastbuy-supply",
+          "7356eb1de58137d471c8ae07a59a9301",
+          "8ec733b74ca6ff2c",
+          4150,
+          "True",
+          "0"
+        ],
+        [
+          "2026-09-20T14:34:23.394749Z",
+          "POST /api/projects/anuragsati6476-4126/openai/v1/responses",
+          "2bacd4de4ab9b897ce30acc35688318d",
+          "83147240e90068bd",
+          2793,
+          "True",
+          "200"
+        ],
+        [
+          "2026-09-20T14:34:23.388688Z",
+          "chat lastbuy-dev-mini",
+          "2bacd4de4ab9b897ce30acc35688318d",
+          "a279fc15a0c6a9ac",
+          2804,
+          "True",
+          "0"
+        ]
+      ]
+    }
+  ]
+}

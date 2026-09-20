@@ -1,0 +1,10 @@
+{
+  "http_status": 429,
+  "scope": "Whole existing resource group, not all costs attributable to LastBuy",
+  "body": {
+    "error": {
+      "code": "429",
+      "message": "Too many requests. Please retry."
+    }
+  }
+}

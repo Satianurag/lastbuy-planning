@@ -1,0 +1,18 @@
+{
+  "database": "Azure SQL lastbuy",
+  "auth": "Entra access token / TLS verified",
+  "model": "explicit test double for database test",
+  "case_id": "SQL-VERIFY-d8a22856",
+  "restart_export_reconciled": true,
+  "optimistic_conflict_rejected": true,
+  "audit_valid": true,
+  "status": "EXPORTED",
+  "receipt": {
+    "at": "2026-09-20T14:28:47.000399+00:00",
+    "external_key": "2ae3b514d22b90039e656a96b7d3b5112a2654ce86a14b77a3772ee064cee569",
+    "external_reference": "SYN-PR-2AE3B514D22B",
+    "payload_sha256": "8d54b04998943209327ff3c0b30a3365373ef97ba52af92805f10128e51cdc36",
+    "status": "DRAFT_REQUISITION",
+    "synthetic": true
+  }
+}

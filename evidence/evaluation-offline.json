@@ -1,0 +1,718 @@
+{
+  "suite_sha256": "fabf7d4564efbd2ed829b7def20f02e7d55d9688e361c3c9e7c2a1f892064415",
+  "scope": "50 structured constraint fixtures plus 10 security regressions; not LLM accuracy",
+  "passed": 60,
+  "total": 60,
+  "records": [
+    {
+      "id": "EVAL-001",
+      "name": "base",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-002",
+      "name": "reservation-whole-lot",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        16000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        16000
+      ]
+    },
+    {
+      "id": "EVAL-003",
+      "name": "reservation-1000",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        11000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        11000
+      ]
+    },
+    {
+      "id": "EVAL-004",
+      "name": "reservation-half-multiple",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        11000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        11000
+      ]
+    },
+    {
+      "id": "EVAL-005",
+      "name": "reservation-1500",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        12000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        12000
+      ]
+    },
+    {
+      "id": "EVAL-006",
+      "name": "more-owned-stock",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        9000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        9000
+      ]
+    },
+    {
+      "id": "EVAL-007",
+      "name": "less-owned-stock",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        11000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        11000
+      ]
+    },
+    {
+      "id": "EVAL-008",
+      "name": "baseline-not-objective",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-009",
+      "name": "higher-unit-price",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-010",
+      "name": "minimum-binds",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        12000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        12000
+      ]
+    },
+    {
+      "id": "EVAL-011",
+      "name": "multiple-3000",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        12000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        12000
+      ]
+    },
+    {
+      "id": "EVAL-012",
+      "name": "multiple-4000",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        12000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        12000
+      ]
+    },
+    {
+      "id": "EVAL-013",
+      "name": "more-confirmed-inbound",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        8000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        8000
+      ]
+    },
+    {
+      "id": "EVAL-014",
+      "name": "less-confirmed-inbound",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        12000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        12000
+      ]
+    },
+    {
+      "id": "EVAL-015",
+      "name": "higher-cohort-640-demand",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        11000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        11000
+      ]
+    },
+    {
+      "id": "EVAL-016",
+      "name": "higher-cohort-320-demand",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        11000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        11000
+      ]
+    },
+    {
+      "id": "EVAL-017",
+      "name": "earlier-quote-delivery",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-018",
+      "name": "zero-minimum",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-019",
+      "name": "fine-order-multiple",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-020",
+      "name": "allocation-cap-exact",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        10000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        10000
+      ]
+    },
+    {
+      "id": "EVAL-021",
+      "name": "unreleased-640",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-022",
+      "name": "unknown-release-320",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-023",
+      "name": "unsigned-coverage-640",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-024",
+      "name": "unknown-coverage-320",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-025",
+      "name": "coverage-is-detector",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-026",
+      "name": "coverage-ended-before-need",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-027",
+      "name": "forecast-not-approved",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-028",
+      "name": "forecast-authority-unknown",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-029",
+      "name": "manifest-incomplete",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-030",
+      "name": "unknown-stock-revision",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-031",
+      "name": "unknown-quarantine",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-032",
+      "name": "unknown-inbound-confirmation",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-033",
+      "name": "duplicate-quantity-conflict",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-034",
+      "name": "duplicate-reservation-conflict",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-035",
+      "name": "supplier-deadline-expired",
+      "passed": true,
+      "expected": [
+        "NEEDS_REVIEW",
+        null
+      ],
+      "observed": [
+        "NEEDS_REVIEW",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-036",
+      "name": "inbound-unconfirmed",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        14000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        14000
+      ]
+    },
+    {
+      "id": "EVAL-037",
+      "name": "inbound-quarantined",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        14000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        14000
+      ]
+    },
+    {
+      "id": "EVAL-038",
+      "name": "inbound-wrong-owner",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        14000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        14000
+      ]
+    },
+    {
+      "id": "EVAL-039",
+      "name": "owned-stock-held",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        16000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        16000
+      ]
+    },
+    {
+      "id": "EVAL-040",
+      "name": "owned-stock-incompatible",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        16000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        16000
+      ]
+    },
+    {
+      "id": "EVAL-041",
+      "name": "stock-is-consignment",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        16000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        16000
+      ]
+    },
+    {
+      "id": "EVAL-042",
+      "name": "stock-expires-before-repair",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        16000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        16000
+      ]
+    },
+    {
+      "id": "EVAL-043",
+      "name": "stock-arrives-after-horizon",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        16000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        16000
+      ]
+    },
+    {
+      "id": "EVAL-044",
+      "name": "inbound-arrives-after-horizon",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        14000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        14000
+      ]
+    },
+    {
+      "id": "EVAL-045",
+      "name": "reservations-in-inbound",
+      "passed": true,
+      "expected": [
+        "READY_FOR_APPROVAL",
+        11000
+      ],
+      "observed": [
+        "READY_FOR_APPROVAL",
+        11000
+      ]
+    },
+    {
+      "id": "EVAL-046",
+      "name": "supplier-cap-too-small",
+      "passed": true,
+      "expected": [
+        "INFEASIBLE",
+        null
+      ],
+      "observed": [
+        "INFEASIBLE",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-047",
+      "name": "delivery-after-all-repairs",
+      "passed": true,
+      "expected": [
+        "INFEASIBLE",
+        null
+      ],
+      "observed": [
+        "INFEASIBLE",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-048",
+      "name": "proposed-revision-unqualified",
+      "passed": true,
+      "expected": [
+        "INFEASIBLE",
+        null
+      ],
+      "observed": [
+        "INFEASIBLE",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-049",
+      "name": "protected-demand-exceeds-all-capacity",
+      "passed": true,
+      "expected": [
+        "INFEASIBLE",
+        null
+      ],
+      "observed": [
+        "INFEASIBLE",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-050",
+      "name": "no-protected-scenario",
+      "passed": true,
+      "expected": [
+        "INVALID_CONTRACT",
+        null
+      ],
+      "observed": [
+        "INVALID_CONTRACT",
+        null
+      ]
+    },
+    {
+      "id": "EVAL-051",
+      "name": "wrong-approval-role",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-052",
+      "name": "cross-organization",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-053",
+      "name": "revoked-approver",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-054",
+      "name": "expired-approval",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-055",
+      "name": "stale-source",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-056",
+      "name": "lost-external-response",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-057",
+      "name": "same-human-two-duties",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-058",
+      "name": "tampered-decision",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-059",
+      "name": "source-change-mid-run",
+      "passed": true,
+      "checks": 1
+    },
+    {
+      "id": "EVAL-060",
+      "name": "forged-monetary-output",
+      "passed": true,
+      "checks": 5
+    }
+  ]
+}

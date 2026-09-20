@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "functionTimeout": "00:05:00",
+  "extensions": {
+    "http": {"routePrefix": ""},
+    "durableTask": {
+      "hubName": "LastBuyDevelopment",
+      "maxConcurrentActivityFunctions": 1,
+      "maxConcurrentOrchestratorFunctions": 2,
+      "tracing": {"traceInputsAndOutputs": false}
+    }
+  },
+  "logging": {
+    "logLevel": {"default": "Warning", "Host.Results": "Information"},
+    "applicationInsights": {"samplingSettings": {"isEnabled": true}}
+  },
+  "extensionBundle": {"id": "Microsoft.Azure.Functions.ExtensionBundle", "version": "[4.*, 5.0.0)"}
+}

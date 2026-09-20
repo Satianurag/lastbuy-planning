@@ -1,0 +1,1300 @@
+{
+  "id": "LTB-DURABLE-001",
+  "analysis_id": "77ded2b3-7f51-4139-8b82-5bb1fe56d7b4",
+  "revision": 16,
+  "status": "EXPORTED",
+  "snapshot": {
+    "schema_version": "1",
+    "case_id": "LTB-DURABLE-001",
+    "organization": "NORTHSTAR",
+    "material": "ASIC-SYN-017",
+    "title": "Durable recovery verification",
+    "synthetic": true,
+    "source_revision": 1,
+    "complete": true,
+    "missing_sources": [],
+    "baseline_quantity": 18000,
+    "cohorts": [
+      {
+        "id": "TC-640",
+        "board_revision": "C",
+        "firmware": "4.2",
+        "serial_from": "N640-0001",
+        "serial_to": "N640-9999",
+        "compatible_revisions": [
+          "A2"
+        ],
+        "engineering_released": true,
+        "evidence": [
+          "bom"
+        ]
+      },
+      {
+        "id": "TC-320",
+        "board_revision": "B",
+        "firmware": "3.8",
+        "serial_from": "N320-0001",
+        "serial_to": "N320-9999",
+        "compatible_revisions": [
+          "A2"
+        ],
+        "engineering_released": true,
+        "evidence": [
+          "bom"
+        ]
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "SERVICE-PROTECTED",
+        "label": "Approved service envelope",
+        "approved": true,
+        "protected": true,
+        "demand": [
+          {
+            "cohort": "TC-640",
+            "due": "2030-12-31",
+            "quantity": 10000,
+            "coverage_component": "ASIC-SYN-017",
+            "coverage_end": "2031-12-31",
+            "signed_coverage": true,
+            "evidence": [
+              "amendment",
+              "forecast"
+            ]
+          },
+          {
+            "cohort": "TC-320",
+            "due": "2031-12-31",
+            "quantity": 12000,
+            "coverage_component": "ASIC-SYN-017",
+            "coverage_end": "2031-12-31",
+            "signed_coverage": true,
+            "evidence": [
+              "amendment",
+              "forecast"
+            ]
+          }
+        ]
+      }
+    ],
+    "lots": [
+      {
+        "id": "SAP-01",
+        "physical_id": "LOT-01",
+        "kind": "on_hand",
+        "owner": "NORTHSTAR",
+        "custodian": "MAIN",
+        "revision": "A2",
+        "quantity": 6000,
+        "reserved": 0,
+        "unit": "EACH",
+        "available": "2026-09-19",
+        "expires": null,
+        "quarantined": false,
+        "confirmed": true,
+        "evidence": [
+          "stock"
+        ]
+      },
+      {
+        "id": "SAP-02",
+        "physical_id": "LOT-02",
+        "kind": "on_hand",
+        "owner": "NORTHSTAR",
+        "custodian": "MAIN",
+        "revision": "A2",
+        "quantity": 2000,
+        "reserved": 0,
+        "unit": "EACH",
+        "available": "2026-09-19",
+        "expires": null,
+        "quarantined": false,
+        "confirmed": true,
+        "evidence": [
+          "stock"
+        ]
+      },
+      {
+        "id": "WMS-02",
+        "physical_id": "LOT-02",
+        "kind": "on_hand",
+        "owner": "NORTHSTAR",
+        "custodian": "DEPOT",
+        "revision": "A2",
+        "quantity": 2000,
+        "reserved": 0,
+        "unit": "EACH",
+        "available": "2026-09-19",
+        "expires": null,
+        "quarantined": false,
+        "confirmed": true,
+        "evidence": [
+          "depot"
+        ]
+      },
+      {
+        "id": "SAP-03",
+        "physical_id": "LOT-03",
+        "kind": "on_hand",
+        "owner": "NORTHSTAR",
+        "custodian": "MAIN",
+        "revision": "A1",
+        "quantity": 3000,
+        "reserved": 0,
+        "unit": "EACH",
+        "available": "2026-09-19",
+        "expires": null,
+        "quarantined": false,
+        "confirmed": true,
+        "evidence": [
+          "stock"
+        ]
+      },
+      {
+        "id": "SAP-04",
+        "physical_id": "LOT-04",
+        "kind": "on_hand",
+        "owner": "NORTHSTAR",
+        "custodian": "MAIN",
+        "revision": "A2",
+        "quantity": 1000,
+        "reserved": 0,
+        "unit": "EACH",
+        "available": "2026-09-19",
+        "expires": null,
+        "quarantined": true,
+        "confirmed": true,
+        "evidence": [
+          "stock"
+        ]
+      },
+      {
+        "id": "PO-05",
+        "physical_id": "LOT-05",
+        "kind": "inbound",
+        "owner": "NORTHSTAR",
+        "custodian": "MAIN",
+        "revision": "A2",
+        "quantity": 4000,
+        "reserved": 0,
+        "unit": "EACH",
+        "available": "2027-01-01",
+        "expires": null,
+        "quarantined": false,
+        "confirmed": true,
+        "evidence": [
+          "inbound"
+        ]
+      }
+    ],
+    "quote": {
+      "revision": "A2",
+      "unit_price_minor": 8000,
+      "currency": "USD",
+      "minimum": 1000,
+      "multiple": 1000,
+      "max_quantity": 25000,
+      "available": "2027-01-01",
+      "order_deadline": "2026-10-15T23:59:00Z",
+      "evidence": [
+        "pcn"
+      ]
+    },
+    "sources": [
+      {
+        "id": "pcn",
+        "system": "Supplier",
+        "record_id": "PCN-SYN-017",
+        "revision": "1",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Notice \u00a72",
+        "text": "SYNTHETIC: ASIC-SYN-017 final order deadline 2026-10-15 23:59 UTC. Quote: USD 80 per EACH, revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000. Delivery by 2027-01-01. Non-cancellable order; this is a planning fixture.",
+        "sha256": "6cde48b268a358f32b8aaf4a34c4a6e11f23a048bb75079fb24e6f2636448233"
+      },
+      {
+        "id": "bom",
+        "system": "Windchill",
+        "record_id": "ECO-SYN-482",
+        "revision": "C",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Released BOM rows 17\u201318",
+        "text": "SYNTHETIC RELEASED ENGINEERING RECORD: TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999. Both accept ASIC-SYN-017 revision A2. Revision A1 is incompatible. No substitute is engineering-qualified.",
+        "sha256": "86d92df517b37ad55593a0fad66a86e22e3ef069f97c51caeb40722f061f2247"
+      },
+      {
+        "id": "warranty",
+        "system": "Contracts",
+        "record_id": "WARRANTY-SYN-10",
+        "revision": "1",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Warranty \u00a74",
+        "text": "SYNTHETIC: Ten-year detector warranty covers the detector only. It does not cover the image-processing ASIC. Do not infer ASIC coverage from this warranty.",
+        "sha256": "d41605b55dc6d7d7bc9f50d339aa2ef66064186b95675819f58dcfffce40c26e"
+      },
+      {
+        "id": "amendment",
+        "system": "Contracts",
+        "record_id": "SERVICE-SYN-A07",
+        "revision": "2",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Signed amendment \u00a73",
+        "text": "SYNTHETIC SIGNED SERVICE AMENDMENT: supersedes revision 1 for these serial cohorts. ASIC-SYN-017 repairs for TC-640 and TC-320 remain covered through 2031-12-31. Approved service forecast increases from 20,000 to 22,000 total units. This component-specific amendment, not the detector warranty, governs ASIC coverage.",
+        "sha256": "3e6143962cf4659e562950252b4929649ac8aef8fd62f54988c6c2b09e5b9e81"
+      },
+      {
+        "id": "forecast",
+        "system": "Planning",
+        "record_id": "FORECAST-SYN-2031",
+        "revision": "3",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Approved scenario rows 1\u20132",
+        "text": "SYNTHETIC PLANNER-APPROVED conservative demand envelope: TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31. These are approved scenario quantities, not calibrated failure probabilities.",
+        "sha256": "7fad0f1d7cc5ea131819a71808ba44c4ab174a430800a58415ded05902ff1eb8"
+      },
+      {
+        "id": "stock",
+        "system": "SAP",
+        "record_id": "STOCK-SYN-0919",
+        "revision": "7",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Material stock / batch rows",
+        "text": "SYNTHETIC: LOT-01 has 6,000 owned A2 units. LOT-02 has 2,000 owned A2 units in external depot custody. LOT-03 has 3,000 incompatible A1 units. LOT-04 has 1,000 quarantined A2 units. No reservations. All amounts are EACH.",
+        "sha256": "b5bd84c271cf6e41e3cbb200c137e723ac3ded0a2c40c6eef331ad04a94eaa70"
+      },
+      {
+        "id": "depot",
+        "system": "Depot",
+        "record_id": "DEPOT-SYN-002",
+        "revision": "2",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Custody ledger row 12",
+        "text": "SYNTHETIC: 2,000 A2 units for NORTHSTAR in LOT-02. This is the same physical lot recorded in SAP, not additional inventory.",
+        "sha256": "b46d8ad32e6aa83164a9ac1dd4011b60036b10c5d384933bc1d52ccff9ed52e0"
+      },
+      {
+        "id": "inbound",
+        "system": "SAP",
+        "record_id": "PO-SYN-401",
+        "revision": "4",
+        "effective_at": "2026-09-19",
+        "observed_at": "2026-09-20T12:00:00Z",
+        "locator": "Confirmed schedule line 10",
+        "text": "SYNTHETIC: 4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01. This is separate physical lot LOT-05. No quarantine or reservations.",
+        "sha256": "61836eb4767a87c9f06773de6841beb80070cac4ea66053269daa5174dce00af"
+      }
+    ]
+  },
+  "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+  "plan": {
+    "schema_version": "1",
+    "case_id": "LTB-DURABLE-001",
+    "input_snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+    "policy_version": "lastbuy-policy-2",
+    "solver_version": "lastbuy-cpsat-1/ortools-9.15.6755",
+    "currency": "USD",
+    "unit_price_minor": 8000,
+    "baseline_quantity": 18000,
+    "baseline_commitment_minor": 144000000,
+    "reported_on_hand": 14000,
+    "eligible_on_hand": 8000,
+    "confirmed_inbound": 4000,
+    "exclusions": [
+      {
+        "lot": "SAP-03",
+        "quantity": 3000,
+        "reason": "incompatible revision",
+        "evidence": [
+          "stock"
+        ]
+      },
+      {
+        "lot": "SAP-04",
+        "quantity": 1000,
+        "reason": "quarantined",
+        "evidence": [
+          "stock"
+        ]
+      },
+      {
+        "lot": "WMS-02",
+        "quantity": 2000,
+        "reason": "duplicate custody",
+        "evidence": [
+          "depot"
+        ]
+      }
+    ],
+    "blockers": [],
+    "evidence": [
+      "pcn",
+      "bom",
+      "warranty",
+      "amendment",
+      "forecast",
+      "stock",
+      "depot",
+      "inbound"
+    ],
+    "allocations": [
+      {
+        "scenario": "SERVICE-PROTECTED",
+        "demand_index": 0,
+        "cohort": "TC-640",
+        "due": "2030-12-31",
+        "lot": "PO-05",
+        "quantity": 4000
+      },
+      {
+        "scenario": "SERVICE-PROTECTED",
+        "demand_index": 0,
+        "cohort": "TC-640",
+        "due": "2030-12-31",
+        "lot": "SAP-01",
+        "quantity": 4000
+      },
+      {
+        "scenario": "SERVICE-PROTECTED",
+        "demand_index": 0,
+        "cohort": "TC-640",
+        "due": "2030-12-31",
+        "lot": "SAP-02",
+        "quantity": 2000
+      },
+      {
+        "scenario": "SERVICE-PROTECTED",
+        "demand_index": 1,
+        "cohort": "TC-320",
+        "due": "2031-12-31",
+        "lot": "SAP-01",
+        "quantity": 2000
+      },
+      {
+        "scenario": "SERVICE-PROTECTED",
+        "demand_index": 1,
+        "cohort": "TC-320",
+        "due": "2031-12-31",
+        "lot": "NEW_PURCHASE",
+        "quantity": 10000
+      }
+    ],
+    "status": "READY_FOR_APPROVAL",
+    "solver_status": "OPTIMAL",
+    "purchase_quantity": 10000,
+    "commitment_minor": 80000000,
+    "commitment_difference_minor": 64000000,
+    "scenario_requirements": [
+      {
+        "id": "SERVICE-PROTECTED",
+        "quantity": 22000,
+        "protected": true
+      }
+    ],
+    "optimality_gap_units": 0,
+    "assessments": [
+      {
+        "assessment": {
+          "role": "engineering",
+          "summary": "The snapshot supports engineering-released applicability for revision A2 on both listed cohorts, with no qualified substitute proposed. No unresolved engineering blocker is present in the immutable case snapshot.",
+          "findings": [
+            {
+              "code": "ENGINEERING_APPLICABILITY",
+              "severity": "info",
+              "summary": "Both released cohorts accept the proposed A2 revision within their stated board, firmware, and serial ranges.",
+              "evidence": [
+                "bom"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999."
+                },
+                {
+                  "source_id": "bom",
+                  "quote": "Both accept ASIC-SYN-017 revision A2."
+                }
+              ]
+            },
+            {
+              "code": "NO_QUALIFIED_SUBSTITUTE",
+              "severity": "info",
+              "summary": "No engineering-qualified substitute is proposed or needed for this purchase scope.",
+              "evidence": [
+                "bom",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "No substitute is engineering-qualified."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            },
+            {
+              "code": "REVISION_SCOPE_CLARITY",
+              "severity": "info",
+              "summary": "The snapshot explicitly excludes incompatible stock and identifies A1 as incompatible, so there is no unsupported A1 interpretation affecting the proposed A2 purchase.",
+              "evidence": [
+                "bom",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "Revision A1 is incompatible."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "bom",
+            "pcn"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 3396,
+        "usage": {
+          "cache_creation_input_token_count": 0,
+          "openai.cached_input_tokens": 1024,
+          "total_token_count": 2089,
+          "output_token_count": 395,
+          "openai.reasoning_tokens": 0,
+          "reasoning_output_token_count": 0,
+          "cache_read_input_token_count": 1024,
+          "input_token_count": 1694,
+          "openai.cache_write_tokens": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      },
+      {
+        "assessment": {
+          "role": "service",
+          "summary": "Signed amendment controls ASIC-SYN-017 service coverage for the specified cohorts; the detector warranty does not extend ASIC coverage. Approved forecast quantities fall within the signed service envelope.",
+          "findings": [
+            {
+              "code": "SERVICE_COVERAGE_AUTHORITY",
+              "severity": "info",
+              "summary": "ASIC-SYN-017 coverage is established by the signed component-specific amendment for TC-640 and TC-320 through 2031-12-31.",
+              "evidence": [
+                "amendment"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "amendment",
+                  "quote": "ASIC-SYN-017 repairs for TC-640 and TC-320 remain covered through 2031-12-31."
+                },
+                {
+                  "source_id": "amendment",
+                  "quote": "This component-specific amendment, not the detector warranty, governs ASIC coverage."
+                }
+              ]
+            },
+            {
+              "code": "WARRANTY_NO_ASIC_COVERAGE",
+              "severity": "info",
+              "summary": "The detector warranty explicitly excludes ASIC coverage, so it cannot be used as authority for ASIC-SYN-017.",
+              "evidence": [
+                "warranty"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "warranty",
+                  "quote": "It does not cover the image-processing ASIC."
+                },
+                {
+                  "source_id": "warranty",
+                  "quote": "Do not infer ASIC coverage from this warranty."
+                }
+              ]
+            },
+            {
+              "code": "APPROVED_SERVICE_ENVELOPE",
+              "severity": "info",
+              "summary": "The approved service forecast quantities are 10,000 for TC-640 and 12,000 for TC-320, within the stated approved envelope of 22,000 total units.",
+              "evidence": [
+                "forecast",
+                "amendment"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "forecast",
+                  "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31."
+                },
+                {
+                  "source_id": "amendment",
+                  "quote": "Approved service forecast increases from 20,000 to 22,000 total units."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "amendment",
+            "forecast",
+            "warranty"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 5095,
+        "usage": {
+          "output_token_count": 431,
+          "cache_creation_input_token_count": 0,
+          "input_token_count": 1873,
+          "reasoning_output_token_count": 0,
+          "openai.cache_write_tokens": 0,
+          "total_token_count": 2304,
+          "openai.cached_input_tokens": 0,
+          "openai.reasoning_tokens": 0,
+          "cache_read_input_token_count": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      },
+      {
+        "assessment": {
+          "role": "supply",
+          "summary": "Eligible supply is 8,000 A2 units on hand plus 4,000 confirmed inbound, with 3,000 A1 excluded for incompatibility, 1,000 A2 quarantined excluded, and 2,000 units in external depot custody already counted in SAP to avoid double count. No blocker remains for the proposed A2 purchase scope.",
+          "findings": [
+            {
+              "code": "dup-custody-lot-02",
+              "severity": "info",
+              "summary": "LOT-02 is the same physical lot in SAP and depot custody, so it must not be counted twice.",
+              "evidence": [
+                "stock",
+                "depot"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "stock",
+                  "quote": "LOT-02 has 2,000 owned A2 units in external depot custody."
+                },
+                {
+                  "source_id": "depot",
+                  "quote": "This is the same physical lot recorded in SAP, not additional inventory."
+                }
+              ]
+            },
+            {
+              "code": "eligible-on-hand-exclusion",
+              "severity": "info",
+              "summary": "Eligible on-hand excludes incompatible A1 and quarantined A2 stock, leaving 8,000 eligible on-hand units.",
+              "evidence": [
+                "stock"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "stock",
+                  "quote": "LOT-03 has 3,000 incompatible A1 units."
+                },
+                {
+                  "source_id": "stock",
+                  "quote": "LOT-04 has 1,000 quarantined A2 units."
+                }
+              ]
+            },
+            {
+              "code": "a2-acceptance-and-inbound",
+              "severity": "info",
+              "summary": "The requested A2 revision is accepted by the released BOM, and 4,000 confirmed inbound units are a separate lot with no reservations.",
+              "evidence": [
+                "bom",
+                "inbound"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "Both accept ASIC-SYN-017 revision A2."
+                },
+                {
+                  "source_id": "inbound",
+                  "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "bom",
+            "depot",
+            "inbound",
+            "stock"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 3627,
+        "usage": {
+          "output_token_count": 427,
+          "cache_creation_input_token_count": 0,
+          "input_token_count": 2005,
+          "reasoning_output_token_count": 0,
+          "openai.cache_write_tokens": 0,
+          "total_token_count": 2432,
+          "openai.cached_input_tokens": 0,
+          "openai.reasoning_tokens": 0,
+          "cache_read_input_token_count": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      },
+      {
+        "assessment": {
+          "role": "commitment",
+          "summary": "Deterministic plan is internally consistent and solver-ready: purchase 10,000 units of revision A2 at USD 80.00 each for a commitment of USD 800,000.00, with the service amendment supporting the protected demand envelope of 22,000 units. No unresolved deterministic blockers are shown in the case snapshot. Commitment reduction is modeled, not a claimed savings realization.",
+          "findings": [
+            {
+              "code": "PLAN-PRICE-QTY",
+              "severity": "info",
+              "summary": "Solver output sets the purchase plan at 10,000 units and USD 800,000.00 commitment under the stated unit price.",
+              "evidence": [
+                "forecast",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "forecast",
+                  "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "USD 80 per EACH, revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "amendment",
+            "forecast",
+            "pcn"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 2871,
+        "usage": {
+          "output_token_count": 267,
+          "cache_creation_input_token_count": 0,
+          "input_token_count": 2174,
+          "reasoning_output_token_count": 0,
+          "openai.cache_write_tokens": 0,
+          "total_token_count": 2441,
+          "openai.cached_input_tokens": 0,
+          "openai.reasoning_tokens": 0,
+          "cache_read_input_token_count": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      }
+    ],
+    "run_id": "77ded2b3-7f51-4139-8b82-5bb1fe56d7b4",
+    "created_at": "2026-09-20T14:34:43.774803+00:00",
+    "required_approvals": [
+      "engineering",
+      "service",
+      "finance",
+      "procurement"
+    ],
+    "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512"
+  },
+  "stages": [
+    {
+      "role": "engineering",
+      "status": "COMPLETE",
+      "result": {
+        "assessment": {
+          "role": "engineering",
+          "summary": "The snapshot supports engineering-released applicability for revision A2 on both listed cohorts, with no qualified substitute proposed. No unresolved engineering blocker is present in the immutable case snapshot.",
+          "findings": [
+            {
+              "code": "ENGINEERING_APPLICABILITY",
+              "severity": "info",
+              "summary": "Both released cohorts accept the proposed A2 revision within their stated board, firmware, and serial ranges.",
+              "evidence": [
+                "bom"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "TC-640 board C firmware 4.2, serial N640-0001 through N640-9999; TC-320 board B firmware 3.8, serial N320-0001 through N320-9999."
+                },
+                {
+                  "source_id": "bom",
+                  "quote": "Both accept ASIC-SYN-017 revision A2."
+                }
+              ]
+            },
+            {
+              "code": "NO_QUALIFIED_SUBSTITUTE",
+              "severity": "info",
+              "summary": "No engineering-qualified substitute is proposed or needed for this purchase scope.",
+              "evidence": [
+                "bom",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "No substitute is engineering-qualified."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            },
+            {
+              "code": "REVISION_SCOPE_CLARITY",
+              "severity": "info",
+              "summary": "The snapshot explicitly excludes incompatible stock and identifies A1 as incompatible, so there is no unsupported A1 interpretation affecting the proposed A2 purchase.",
+              "evidence": [
+                "bom",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "Revision A1 is incompatible."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "bom",
+            "pcn"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 3396,
+        "usage": {
+          "cache_creation_input_token_count": 0,
+          "openai.cached_input_tokens": 1024,
+          "total_token_count": 2089,
+          "output_token_count": 395,
+          "openai.reasoning_tokens": 0,
+          "reasoning_output_token_count": 0,
+          "cache_read_input_token_count": 1024,
+          "input_token_count": 1694,
+          "openai.cache_write_tokens": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      }
+    },
+    {
+      "role": "service",
+      "status": "COMPLETE",
+      "result": {
+        "assessment": {
+          "role": "service",
+          "summary": "Signed amendment controls ASIC-SYN-017 service coverage for the specified cohorts; the detector warranty does not extend ASIC coverage. Approved forecast quantities fall within the signed service envelope.",
+          "findings": [
+            {
+              "code": "SERVICE_COVERAGE_AUTHORITY",
+              "severity": "info",
+              "summary": "ASIC-SYN-017 coverage is established by the signed component-specific amendment for TC-640 and TC-320 through 2031-12-31.",
+              "evidence": [
+                "amendment"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "amendment",
+                  "quote": "ASIC-SYN-017 repairs for TC-640 and TC-320 remain covered through 2031-12-31."
+                },
+                {
+                  "source_id": "amendment",
+                  "quote": "This component-specific amendment, not the detector warranty, governs ASIC coverage."
+                }
+              ]
+            },
+            {
+              "code": "WARRANTY_NO_ASIC_COVERAGE",
+              "severity": "info",
+              "summary": "The detector warranty explicitly excludes ASIC coverage, so it cannot be used as authority for ASIC-SYN-017.",
+              "evidence": [
+                "warranty"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "warranty",
+                  "quote": "It does not cover the image-processing ASIC."
+                },
+                {
+                  "source_id": "warranty",
+                  "quote": "Do not infer ASIC coverage from this warranty."
+                }
+              ]
+            },
+            {
+              "code": "APPROVED_SERVICE_ENVELOPE",
+              "severity": "info",
+              "summary": "The approved service forecast quantities are 10,000 for TC-640 and 12,000 for TC-320, within the stated approved envelope of 22,000 total units.",
+              "evidence": [
+                "forecast",
+                "amendment"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "forecast",
+                  "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31."
+                },
+                {
+                  "source_id": "amendment",
+                  "quote": "Approved service forecast increases from 20,000 to 22,000 total units."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "amendment",
+            "forecast",
+            "warranty"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 5095,
+        "usage": {
+          "output_token_count": 431,
+          "cache_creation_input_token_count": 0,
+          "input_token_count": 1873,
+          "reasoning_output_token_count": 0,
+          "openai.cache_write_tokens": 0,
+          "total_token_count": 2304,
+          "openai.cached_input_tokens": 0,
+          "openai.reasoning_tokens": 0,
+          "cache_read_input_token_count": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      }
+    },
+    {
+      "role": "supply",
+      "status": "COMPLETE",
+      "result": {
+        "assessment": {
+          "role": "supply",
+          "summary": "Eligible supply is 8,000 A2 units on hand plus 4,000 confirmed inbound, with 3,000 A1 excluded for incompatibility, 1,000 A2 quarantined excluded, and 2,000 units in external depot custody already counted in SAP to avoid double count. No blocker remains for the proposed A2 purchase scope.",
+          "findings": [
+            {
+              "code": "dup-custody-lot-02",
+              "severity": "info",
+              "summary": "LOT-02 is the same physical lot in SAP and depot custody, so it must not be counted twice.",
+              "evidence": [
+                "stock",
+                "depot"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "stock",
+                  "quote": "LOT-02 has 2,000 owned A2 units in external depot custody."
+                },
+                {
+                  "source_id": "depot",
+                  "quote": "This is the same physical lot recorded in SAP, not additional inventory."
+                }
+              ]
+            },
+            {
+              "code": "eligible-on-hand-exclusion",
+              "severity": "info",
+              "summary": "Eligible on-hand excludes incompatible A1 and quarantined A2 stock, leaving 8,000 eligible on-hand units.",
+              "evidence": [
+                "stock"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "stock",
+                  "quote": "LOT-03 has 3,000 incompatible A1 units."
+                },
+                {
+                  "source_id": "stock",
+                  "quote": "LOT-04 has 1,000 quarantined A2 units."
+                }
+              ]
+            },
+            {
+              "code": "a2-acceptance-and-inbound",
+              "severity": "info",
+              "summary": "The requested A2 revision is accepted by the released BOM, and 4,000 confirmed inbound units are a separate lot with no reservations.",
+              "evidence": [
+                "bom",
+                "inbound"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "bom",
+                  "quote": "Both accept ASIC-SYN-017 revision A2."
+                },
+                {
+                  "source_id": "inbound",
+                  "quote": "4,000 confirmed A2 units owned by NORTHSTAR, expected 2027-01-01."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "bom",
+            "depot",
+            "inbound",
+            "stock"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 3627,
+        "usage": {
+          "output_token_count": 427,
+          "cache_creation_input_token_count": 0,
+          "input_token_count": 2005,
+          "reasoning_output_token_count": 0,
+          "openai.cache_write_tokens": 0,
+          "total_token_count": 2432,
+          "openai.cached_input_tokens": 0,
+          "openai.reasoning_tokens": 0,
+          "cache_read_input_token_count": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      }
+    },
+    {
+      "role": "commitment",
+      "status": "COMPLETE",
+      "result": {
+        "assessment": {
+          "role": "commitment",
+          "summary": "Deterministic plan is internally consistent and solver-ready: purchase 10,000 units of revision A2 at USD 80.00 each for a commitment of USD 800,000.00, with the service amendment supporting the protected demand envelope of 22,000 units. No unresolved deterministic blockers are shown in the case snapshot. Commitment reduction is modeled, not a claimed savings realization.",
+          "findings": [
+            {
+              "code": "PLAN-PRICE-QTY",
+              "severity": "info",
+              "summary": "Solver output sets the purchase plan at 10,000 units and USD 800,000.00 commitment under the stated unit price.",
+              "evidence": [
+                "forecast",
+                "pcn"
+              ],
+              "supporting_quotes": [
+                {
+                  "source_id": "forecast",
+                  "quote": "TC-640 requires 10,000 ASIC units by 2030-12-31; TC-320 requires 12,000 by 2031-12-31."
+                },
+                {
+                  "source_id": "pcn",
+                  "quote": "USD 80 per EACH, revision A2, minimum 1,000, order multiple 1,000, max allocation 25,000."
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            "amendment",
+            "forecast",
+            "pcn"
+          ]
+        },
+        "model": "lastbuy-dev-mini",
+        "prompt_version": "lastbuy-specialists-3",
+        "tool_calls": [
+          "read_case_evidence"
+        ],
+        "duration_ms": 2871,
+        "usage": {
+          "output_token_count": 267,
+          "cache_creation_input_token_count": 0,
+          "input_token_count": 2174,
+          "reasoning_output_token_count": 0,
+          "openai.cache_write_tokens": 0,
+          "total_token_count": 2441,
+          "openai.cached_input_tokens": 0,
+          "openai.reasoning_tokens": 0,
+          "cache_read_input_token_count": 0
+        },
+        "source": "live-foundry",
+        "transport": "foundry-hosted",
+        "agent": "lastbuy-analysis",
+        "agent_version": "2",
+        "agent_session_id": "f39ddbe5-6a2c-5da3-ad70-742165674eea"
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512",
+      "role": "engineering",
+      "decision": "approve",
+      "reason": "Synthetic recovery test: reviewed released A2 compatibility for both serial cohorts.",
+      "actor": "demo-engineering",
+      "actor_name": "Arjun Rao",
+      "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+      "policy_version": "lastbuy-policy-2",
+      "at": "2026-09-20T14:35:54.607457+00:00",
+      "expires_at": "2026-09-21T14:35:54.607462+00:00"
+    },
+    {
+      "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512",
+      "role": "service",
+      "decision": "approve",
+      "reason": "Synthetic recovery test: signed ASIC amendment governs the 22,000-unit service envelope.",
+      "actor": "demo-service",
+      "actor_name": "Elena Ortiz",
+      "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+      "policy_version": "lastbuy-policy-2",
+      "at": "2026-09-20T14:36:16.233495+00:00",
+      "expires_at": "2026-09-21T14:36:16.233500+00:00"
+    },
+    {
+      "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512",
+      "role": "finance",
+      "decision": "approve",
+      "reason": "Synthetic recovery test: reviewed the modeled USD 800,000 commitment, not realized savings.",
+      "actor": "demo-finance",
+      "actor_name": "David Kim",
+      "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+      "policy_version": "lastbuy-policy-2",
+      "at": "2026-09-20T14:36:16.623980+00:00",
+      "expires_at": "2026-09-21T14:36:16.623985+00:00"
+    },
+    {
+      "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512",
+      "role": "procurement",
+      "decision": "approve",
+      "reason": "Synthetic recovery test: reviewed supplier deadline, MOQ, order multiple and draft-only export.",
+      "actor": "demo-procurement",
+      "actor_name": "Sam Taylor",
+      "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+      "policy_version": "lastbuy-policy-2",
+      "at": "2026-09-20T14:36:25.381469+00:00",
+      "expires_at": "2026-09-21T14:36:25.381474+00:00"
+    }
+  ],
+  "audit": [
+    {
+      "hash": "bf3ae0aa4f1d1479753d50fdd2aba2e6fc13a8f7e11721bfd8d15bd0c255f00e",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 1,
+        "at": "2026-09-20T14:25:16.377960+00:00",
+        "actor": "demo-planner",
+        "action": "CASE_CREATED",
+        "detail": {
+          "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857",
+          "synthetic": true
+        },
+        "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "hash": "b1ea65d49aab7c14729232e72ffea76fe31f252be4a1a22e4a6be5d04387ef05",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 2,
+        "at": "2026-09-20T14:25:36.882670+00:00",
+        "actor": "demo-planner",
+        "action": "ANALYSIS_STARTED",
+        "detail": {
+          "run_id": "77ded2b3-7f51-4139-8b82-5bb1fe56d7b4",
+          "snapshot_sha256": "e8551fa6c67c2e9021c6e9be5c4663b40d6dd849971cb8a3a185bfcc2c147857"
+        },
+        "previous_hash": "bf3ae0aa4f1d1479753d50fdd2aba2e6fc13a8f7e11721bfd8d15bd0c255f00e"
+      }
+    },
+    {
+      "hash": "7d784d6d3f05e7e9033ce99a9bbf15aa4ba854838c5bb042b8105f6af6b4d108",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 3,
+        "at": "2026-09-20T14:34:43.778524+00:00",
+        "actor": "analysis-worker",
+        "action": "ANALYSIS_COMPLETED",
+        "detail": {
+          "run_id": "77ded2b3-7f51-4139-8b82-5bb1fe56d7b4",
+          "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512",
+          "status": "READY_FOR_APPROVAL"
+        },
+        "previous_hash": "b1ea65d49aab7c14729232e72ffea76fe31f252be4a1a22e4a6be5d04387ef05"
+      }
+    },
+    {
+      "hash": "28d2ecaad7e213cc5ab4f3cbd29064e1709e0ff84a2d3b3a7e73df8e1a3f841f",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 4,
+        "at": "2026-09-20T14:35:54.608702+00:00",
+        "actor": "demo-engineering",
+        "action": "HUMAN_APPROVE",
+        "detail": {
+          "role": "engineering",
+          "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512"
+        },
+        "previous_hash": "7d784d6d3f05e7e9033ce99a9bbf15aa4ba854838c5bb042b8105f6af6b4d108"
+      }
+    },
+    {
+      "hash": "b06c58c92e944c434b47121107490844b7367f0687558ee8f382bcb87b9088ae",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 5,
+        "at": "2026-09-20T14:36:16.234077+00:00",
+        "actor": "demo-service",
+        "action": "HUMAN_APPROVE",
+        "detail": {
+          "role": "service",
+          "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512"
+        },
+        "previous_hash": "28d2ecaad7e213cc5ab4f3cbd29064e1709e0ff84a2d3b3a7e73df8e1a3f841f"
+      }
+    },
+    {
+      "hash": "3aad1c14f57d246eda447c7917c3774ef4d7a030b09a305bb8b8f20f782d0040",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 6,
+        "at": "2026-09-20T14:36:16.624514+00:00",
+        "actor": "demo-finance",
+        "action": "HUMAN_APPROVE",
+        "detail": {
+          "role": "finance",
+          "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512"
+        },
+        "previous_hash": "b06c58c92e944c434b47121107490844b7367f0687558ee8f382bcb87b9088ae"
+      }
+    },
+    {
+      "hash": "114beb0b06fec818add9f4142f44c0df7cdcc95e04b088ad68489bc7a07d545b",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 7,
+        "at": "2026-09-20T14:36:25.382015+00:00",
+        "actor": "demo-procurement",
+        "action": "HUMAN_APPROVE",
+        "detail": {
+          "role": "procurement",
+          "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512"
+        },
+        "previous_hash": "3aad1c14f57d246eda447c7917c3774ef4d7a030b09a305bb8b8f20f782d0040"
+      }
+    },
+    {
+      "hash": "600f41e1828a65432d1baa0fad5d8a7d2ef61cdb5c84eb2549862fa2f4a7f754",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 8,
+        "at": "2026-09-20T14:36:25.917600+00:00",
+        "actor": "demo-procurement",
+        "action": "EXPORT_ENQUEUED",
+        "detail": {
+          "external_key": "bda6a7c49fa0ade3c715de09a21dba7694bc57837c58a3de2ef14c098c664523",
+          "plan_sha256": "81ab7164cbc352455e419bb9390cbcaf654c665497dead6989ea3f205efb1512"
+        },
+        "previous_hash": "114beb0b06fec818add9f4142f44c0df7cdcc95e04b088ad68489bc7a07d545b"
+      }
+    },
+    {
+      "hash": "cb84e82ede2752c5270b329c64d5ad8c4d851fbf4f4704d048ba429ab6811083",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 9,
+        "at": "2026-09-20T14:36:25.922829+00:00",
+        "actor": "export-worker",
+        "action": "EXPORT_RESPONSE_LOST",
+        "detail": {
+          "external_key": "bda6a7c49fa0ade3c715de09a21dba7694bc57837c58a3de2ef14c098c664523"
+        },
+        "previous_hash": "600f41e1828a65432d1baa0fad5d8a7d2ef61cdb5c84eb2549862fa2f4a7f754"
+      }
+    },
+    {
+      "hash": "414b328b52b4ad607445babd88c1b6e791c6de2fa6f9a3134305cf641fa48072",
+      "data": {
+        "case_id": "LTB-DURABLE-001",
+        "sequence": 10,
+        "at": "2026-09-20T14:36:30.671367+00:00",
+        "actor": "export-worker",
+        "action": "DRAFT_REQUISITION_RECONCILED",
+        "detail": {
+          "external_key": "bda6a7c49fa0ade3c715de09a21dba7694bc57837c58a3de2ef14c098c664523",
+          "external_reference": "SYN-PR-BDA6A7C49FA0"
+        },
+        "previous_hash": "cb84e82ede2752c5270b329c64d5ad8c4d851fbf4f4704d048ba429ab6811083"
+      }
+    }
+  ],
+  "audit_valid": true,
+  "exports": [
+    {
+      "key": "bda6a7c49fa0ade3c715de09a21dba7694bc57837c58a3de2ef14c098c664523",
+      "status": "COMPLETE",
+      "receipt": {
+        "at": "2026-09-20T14:36:25.920633+00:00",
+        "external_key": "bda6a7c49fa0ade3c715de09a21dba7694bc57837c58a3de2ef14c098c664523",
+        "external_reference": "SYN-PR-BDA6A7C49FA0",
+        "payload_sha256": "40bb296106f2e5a5ba65a05af5c3144752d8dea187efa1bb1cd6bb6394d7323d",
+        "status": "DRAFT_REQUISITION",
+        "synthetic": true
+      }
+    }
+  ]
+}
