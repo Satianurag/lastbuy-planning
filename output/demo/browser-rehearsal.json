@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-09-22T10:02:11.373264+00:00",
+  "method": "Actual browser interactions and screenshots through CUA; local API preflight; read-only cloud API request",
+  "objective": "Prepare and show exactly what and how to demonstrate LastBuy",
+  "previous_goal_turn": "Progress: Azure Cost Management returned actual subscription cost and saved its evidence.",
+  "requirements": {
+    "working_demonstration": "Local server running on 127.0.0.1:8810; completed v7 case and blocked captured-response case opened",
+    "what_to_show": "Eight timed scenes in output/demo/START-HERE.md, aligned with existing narration and PDF",
+    "how_to_show": "Named source records, buttons, demo persona, PDF page numbers, launcher and fallback provided",
+    "source_interactions_verified": [
+      "WARRANTY-SYN-10 detector-only warranty",
+      "SERVICE-SYN-A07 component amendment and 22000 demand",
+      "ECO-SYN-482 A2 release/A1 incompatibility",
+      "DEPOT-SYN-002 same physical LOT-02",
+      "STOCK-SYN-0919 opening 6000/current 4800"
+    ],
+    "refusal_verified": "Engineering persona; no approve action; disabled Export approved draft; provisional metrics and historical-source blocker",
+    "commercial_freshness": "Both local and cloud catalogue API return QUOTE_REQUIRED after observation expiry; dated INR tier remains visible",
+    "architecture_and_recovery": "Existing eight-page PDF hash matches reviewed package; pages 3/8/5 mapped to architecture/recovery/evaluation; JSON recovery evidence checked",
+    "user_handoff": "Three browser demo tabs retained, click guide and narration provided, local restart launcher checked"
+  },
+  "no_new_model_calls": true,
+  "no_approval_or_export_created": true,
+  "scope": "Interactive demonstration preparation and guidance complete. Final participant filming/editing and actual contest submission are separate actions, not represented as completed."
+}
