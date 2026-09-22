@@ -1162,3 +1162,21 @@ dialog h2 {
 .market-page .mono { overflow-wrap:anywhere; }
 @media(max-width:760px) { .market-page { padding:20px 16px; } .market-top { margin-bottom:32px; } .market-top .brand { font-size:19px; } .market-fields { grid-template-columns:1fr; } .market-page .metric-grid { grid-template-columns:1fr; } }
 @media(min-width:900px) { .market-page .workspace { grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); } }
+
+/* Recorded specialist provenance and exact evidence checks. */
+.execution-link { margin-top: 9px; }
+.proof-validation { padding: 12px 14px; border: 1px solid var(--line); background: #f0f5ef; border-radius: 7px; margin: 14px 0 20px; font-size: 12px; }
+.proof-validation.blocked { background: #f9efea; border-color: #e9d1c6; }
+.proof-validation p { margin: 6px 0 0; }
+.field-check { border: 1px solid var(--line); border-radius: 7px; padding: 12px; margin: 8px 0; }
+.field-check summary { cursor: pointer; display: flex; justify-content: space-between; gap: 12px; font-size: 13px; }
+.field-check summary b { font-size: 17px; overflow-wrap: anywhere; }
+.field-check blockquote, dialog blockquote { margin: 13px 0 0; border-left: 3px solid #adc191; padding: 4px 12px; font-size: 14px; line-height: 1.6; }
+.field-check cite, dialog cite { display: block; color: var(--muted); font-style: normal; font-size: 11px; margin-top: 7px; }
+.execution-metadata { margin-top: 18px; font-size: 12px; }
+.execution-metadata summary { cursor: pointer; }
+.execution-metadata .mono { overflow-wrap: anywhere; }
+.next-action { margin: 9px 0 0; }
+
+.recorded-summary { font-size: 13px; margin: 15px 0; line-height: 1.6; }
+.recorded-summary summary { cursor: pointer; font-weight: 600; }

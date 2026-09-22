@@ -1,23 +1,69 @@
 {
   "title": "LastBuy: every unit justified before the final order",
-  "review_date": "2026-09-20",
-  "description": "LastBuy helps an industrial thermal-camera manufacturer's service supply-chain director verify a final semiconductor purchase before a non-cancelable order. Four scoped Microsoft Foundry specialists examine engineering applicability, component-specific service obligations, physical supply and supplier commitment. Exact source quotations and critical-fact checks feed a deterministic allocation solver. Four distinct human roles approve the source-bound plan; an isolated exporter rechecks authority and reconciles uncertain writes. Real Foundry, Azure Functions, SQL and Blob executions are recorded. In the example enterprise case, 22,000 units of protected demand require a 10,000-unit buy after stock reconciliation, producing a $640,000 modeled commitment difference at an assumed $80 unit price. A separate public market screen verifies real onsemi pricing and discontinuance evidence; those prices are not substituted into the historical example. Live testing exposed historical stock being selected as current; new approval/export gates reject that evidence. A customer pilot will measure planner effort and coverage quality, targeting at least 50% less active reconciliation time. The public market calculator is deterministic; the Foundry workflow is the agent submission.",
+  "review_date": "2026-09-22",
+  "description": "LastBuy helps a thermal-camera manufacturer's service supply-chain director verify a final semiconductor purchase before it becomes non-cancelable. Four scoped Microsoft Foundry specialists examine engineering applicability, component-specific service obligations, physical supply and supplier commitment. Quoted source facts feed a deterministic allocation solver. Four distinct human roles approve the same source and plan version; an isolated exporter rechecks authority and reconciles uncertain writes. In the example enterprise case, 22,000 units of protected demand require a 10,000-unit purchase, a $640,000 modeled commitment difference at an assumed $80 unit price. Completed Foundry executions and real Azure integration tests support the demonstration. Testing exposed a revealing error: the model's summary said 4,800 current units, but its structured purchase input selected 6,000 historical units. The current evidence gate rejects that captured response and prevents approval/export. A customer pilot will measure planner effort and service coverage, targeting at least 50% less active reconciliation time. Enterprise records and ERP are examples; dated manufacturer and distributor references substantiate the real problem category.",
   "beats": [
-    {"start":0,"end":20,"screen":"Public market evidence: AP0202AT2L00XPGA0-DR notice and 250-unit INR subtotal","narration":"A real onsemi image processor reaches last-time-buy on 7 October. The manufacturer's notice makes orders non-cancelable and non-returnable. On 20 September, the distributor listed 250 units at 200,119 rupees and 92 paise before additional charges. Public stock is not a guaranteed allocation."},
-    {"start":20,"end":40,"screen":"Completed Foundry case LTB-CLOUD-RELEASE-7; show scenario label","narration":"LastBuy addresses the enterprise decision behind such a deadline. This separate example is a thermal-camera OEM's proposed final buy: 18,000 units at an assumed 80 dollars each. The business records are examples; the four-stage Foundry execution is real and already completed."},
-    {"start":40,"end":65,"screen":"Detector warranty, component-specific amendment and engineering source records","narration":"Engineering checks released compatibility. Service checks which component the contract actually covers. A ten-year detector warranty does not establish processor coverage. The component-specific service amendment protects 22,000 units of repair demand. Each accepted fact carries an exact source quotation."},
-    {"start":65,"end":90,"screen":"Quantity bridge and recorded four specialist results","narration":"Supply removes duplicated custody, incompatible units and quarantine from 14,000 reported units. With 8,000 eligible units and 4,000 inbound, the deterministic solver requires a 10,000-unit buy. The 640,000-dollar difference is modeled commitment, not achieved customer savings. Models explain evidence; the solver calculates quantity."},
-    {"start":90,"end":125,"screen":"Local captured-response case LTB-LIVE-CURRENT-BALANCE-20260920: source, blocker and engineering approval view","narration":"Testing caught a real failure: the model selected 6,000 opening units even though the source stated 4,800 current units. Replaying that captured response now produces a historical-evidence blocker. The calculation is visibly provisional, and an engineering approver cannot approve or export it. We preserved the original failure rather than relabeling it as success."},
-    {"start":125,"end":145,"screen":"PDF architecture and authority diagram; current cloud planner role","narration":"Durable Functions persists the workflow. Engineering, service, finance and procurement must approve the same source and plan version. The current cloud user is planner-only. The model has no purchasing tool, and the export worker has its own identity."},
-    {"start":145,"end":165,"screen":"Recorded cloud export verification: CREATE and RECOVER, each one row and same repeated receipt","narration":"The real cloud exporter was tested against a separate ERP simulation. A normal export and a preseeded lost-response case each ended with one requisition; repeated requests returned the same receipt. A legacy-approved historical-stock fixture was rejected with zero external rows."},
-    {"start":165,"end":180,"screen":"Evaluation summary and pilot target","narration":"161 automated tests cover the implemented boundaries. Model evaluation retains failures and abstentions. The next customer pilot compares historical cases, targeting at least 50 percent less active planner effort without missed service obligations. That is our measurement plan, not a claimed result."}
+    {
+      "start": 0,
+      "end": 18,
+      "screen": "Completed enterprise case: $1.44m proposal, 18,000 units, service supply-chain buyer",
+      "action": "Open LTB-CLOUD-RELEASE-7 at Decision overview. Point to the original proposal; leave the example/recorded-results label visible.",
+      "narration": "One final order. Years of service obligations. How many chips should you buy? LastBuy helps a thermal-camera manufacturer's service supply-chain director decide. This example starts at 1.44 million dollars. The business records are examples; these are completed Foundry results."
+    },
+    {
+      "start": 18,
+      "end": 46,
+      "screen": "Governing service evidence: processor coverage and 22,000 protected demand",
+      "action": "Evidence \u2192 SERVICE-SYN-A07 \u2192 Inspect. Hold on processor coverage and the increase to 22,000. Close and return to Decision overview.",
+      "narration": "First, inspect what we must protect. This signed amendment covers the processor and raises protected demand to twenty-two thousand units. A detector warranty alone cannot establish that obligation. Engineering checks released compatibility; service identifies the governing coverage. Buying less is acceptable only if service coverage survives."
+    },
+    {
+      "start": 46,
+      "end": 67,
+      "screen": "Quantity bridge: eligible stock, confirmed inbound, 10,000-unit buy and modeled difference",
+      "action": "Point through the quantity bridge. Briefly inspect Evidence beside duplicate custody, then close. Hold on 10,000 units and $640,000.",
+      "narration": "Reported stock includes duplicate custody, incompatible units and quarantine. Eight thousand units are eligible, with four thousand confirmed inbound. The solver requires ten thousand more. At the example's eighty-dollar price, that is eight hundred thousand dollars: a modeled commitment reduction of six hundred forty thousand."
+    },
+    {
+      "start": 67,
+      "end": 90,
+      "screen": "Four specialist roles and recorded Foundry response: v7, scoped tool, structured facts",
+      "action": "Scroll to Specialist analysis. Open Supply \u2192 Inspect recorded response. Point to foundry-hosted, v7 and read_case_evidence; close. Briefly show PDF page 3 architecture.",
+      "narration": "Four Microsoft Foundry specialists examine engineering, service, supply and commitment. Here is a recorded response: the hosted version, scoped evidence tool, and quoted structured facts. Durable Functions preserves progress. The deterministic solver checks quantities. The model cannot approve or release a purchase."
+    },
+    {
+      "start": 90,
+      "end": 130,
+      "screen": "Captured supply error: summary 4,800 versus structured 6,000; blocked approval and next owner",
+      "action": "Failure case \u2192 Supply recorded response \u2192 Read recorded summary. Show 4,800 in the summary, SAP-01:quantity=6000 with the opening-count quote, and Current case validation: needs review. Close; show supply-planner next action. Select Arjun Rao \u00b7 engineering \u2192 Approvals; show unavailable approval and disabled export.",
+      "narration": "Here is the failure that changed the design. The model's summary correctly said forty-eight hundred current units. But its structured purchase input still selected six thousand, quoting the historical opening count. Our current gate rejects that captured response. The calculation is provisional. Even the engineering approver cannot approve or export it. The supply planner must obtain current governed evidence and rerun verification. A convincing summary is not enough to authorize a purchase."
+    },
+    {
+      "start": 130,
+      "end": 151,
+      "screen": "Version-bound human approvals and recorded cloud export recovery",
+      "action": "Hold on four pending approval roles. Show PDF page 8 final two rows: separate cloud integration fixtures, historical gate 409/zero rows and CREATE/RECOVER one row each.",
+      "narration": "Engineering, service, finance and procurement must approve the same source and plan version. In separate recorded cloud tests against an ERP simulation, a lost-response recovery produced one requisition and the same repeated receipt. Historical-stock evidence was rejected with zero external writes."
+    },
+    {
+      "start": 151,
+      "end": 175,
+      "screen": "Return to the purchase decision; quality evidence and measured customer-pilot target",
+      "action": "Return to clean case Decision overview. End on the quantity bridge and modeled difference. Keep test details in the supporting PDF; finish at 2:55.",
+      "narration": "One hundred sixty-one automated tests cover the implemented controls. The next customer pilot targets fifty percent less active reconciliation time while preserving service coverage. LastBuy connects source meaning, exact quantities and human authority, making every committed unit traceable before the final order."
+    }
   ],
-  "video_max_seconds":180,
-  "video_max_bytes":150000000,
-  "support_max_bytes":30000000,
-  "conservative_submit_by_ist":"2026-09-25T05:29:00+05:30",
-  "deadline_note":"Official sections 3/4 use September 24 23:59 PDT; section 9 uses September 24 23:59 GMT. Use the earlier GMT cutoff as a conservative target; this is not an organizer clarification.",
-  "participant_pending":["Final participant-created video with actual application screenshots/example interactions", "Participant review of originality, rights and eligibility", "Upload required PDF and video, then submit on Founderz"],
-  "video_present":false,
-  "submitted":false
+  "video_max_seconds": 180,
+  "video_max_bytes": 150000000,
+  "support_max_bytes": 30000000,
+  "conservative_submit_by_ist": "2026-09-25T05:29:00+05:30",
+  "deadline_note": "Official sections 3/4 use September 24 23:59 PDT; section 9 uses September 24 23:59 GMT. Use the earlier GMT cutoff as a conservative target; this is not an organizer clarification.",
+  "participant_pending": [
+    "Final participant-created video with actual application screenshots/example interactions",
+    "Participant review of originality, rights and eligibility",
+    "Upload required PDF and video, then submit on Founderz"
+  ],
+  "video_present": false,
+  "submitted": false,
+  "planned_video_seconds": 175
 }

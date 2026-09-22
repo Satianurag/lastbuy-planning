@@ -40,8 +40,9 @@ def main():
         for k in ("failures", "errors", "skipped")
     )
     beats = entry["beats"]
-    assert len(beats) == 8 and beats[0]["start"] == 0
-    assert beats[-1]["end"] == entry["video_max_seconds"] == 180
+    assert len(beats) == 7 and beats[0]["start"] == 0
+    assert beats[-1]["end"] == entry["planned_video_seconds"] == 175
+    assert entry["planned_video_seconds"] < entry["video_max_seconds"] == 180
     assert all(b["start"] < b["end"] for b in beats)
     assert all(a["end"] == b["start"] for a, b in zip(beats, beats[1:]))
     assert (OUT / "entry-description.txt").read_text() == entry[
@@ -50,6 +51,11 @@ def main():
     for path in ("output/submission/recording-guide.md", "docs/08-contest-handover.md"):
         text = (ROOT / path).read_text()
         assert all(b["screen"] in text and b["narration"] in text for b in beats)
+    click_guide = (ROOT / "output/demo/START-HERE.md").read_text()
+    assert all(b["screen"] in click_guide and b["action"] in click_guide for b in beats)
+    assert (ROOT / "output/demo/NARRATION.txt").read_text().strip() == "\n\n".join(
+        b["narration"] for b in beats
+    )
     for offer in market["offers"].values():
         for tier in offer["tiers"]:
             total = (Decimal(tier["unit_price"]) * tier["quantity"]).quantize(
@@ -99,11 +105,20 @@ def main():
         r["external_rows"] == 1 and r["repeat_same_receipt"] and r["audit_valid"]
         for r in exports["records"]
     )
-    cloud = read("evidence/market-release-verification.json")
+    historical_market = read("evidence/market-release-verification.json")
+    assert historical_market["cloud_inr_250_subtotal"] == "200119.92"
+    assert historical_market["cloud_usd_250_subtotal"] == "2094.40"
+    assert historical_market["supplier_observed_at"] == market["observed_at"]
+    cloud = read("evidence/demo-ui-release-verification.json")
+    assert cloud["health_http_status"] == 200
     assert cloud["unauthenticated_private_cases"] == 401
-    assert cloud["cloud_inr_250_subtotal"] == "200119.92"
-    assert cloud["cloud_usd_250_subtotal"] == "2094.40"
-    assert cloud["supplier_observed_at"] == market["observed_at"]
+    assert cloud["new_model_calls"] == 0
+    assert cloud["market_observed_at"] == market["observed_at"]
+    if cloud["market_stale"]:
+        assert cloud["market_status"] == "QUOTE_REQUIRED"
+        assert cloud["cloud_inr_250_subtotal"] is None
+    else:
+        assert cloud["cloud_inr_250_subtotal"] == "200119.92"
     assert cloud["web_release"] == releases["functions-source-release"]
     assert all(
         digest("web/" + name) == sha
@@ -127,6 +142,7 @@ def main():
         "cloud-export-verification-LIVE-20260920.json",
         "runtime-v2-checkpoint-completed.json",
         "market-release-verification.json",
+        "demo-ui-release-verification.json",
         "founderz-platform-review.json",
         "functions-source-release.json",
         "export_functions-source-release.json",
@@ -143,6 +159,16 @@ def main():
         for name in ("README.md", "entry-description.txt", "recording-guide.md")
     ]
     files += [
+        "output/demo/" + name
+        for name in (
+            "START-HERE.md",
+            "NARRATION.txt",
+            "RECORDING-CHECKLIST.md",
+            "preflight.json",
+            "browser-rehearsal.json",
+        )
+    ]
+    files += [
         "docs/" + name
         for name in (
             "01-business-case.md",
@@ -151,6 +177,7 @@ def main():
             "09-completion-audit.md",
             "10-contest-strategy-2026-09-20.md",
             "11-public-market-evidence.md",
+            "13-final-demo-review-2026-09-22.md",
         )
     ]
     files += ["evidence/" + name for name in evidence_names]
@@ -169,7 +196,8 @@ def main():
         "pdf_pages": len(pdf.pages),
         "pdf_bytes": (ROOT / pdf_path).stat().st_size,
         "narration_words": sum(len(b["narration"].split()) for b in beats),
-        "planned_video_seconds": 180,
+        "planned_video_seconds": entry["planned_video_seconds"],
+        "scene_count": len(beats),
         "video_present": False,
         "submitted": False,
         "participant_pending": entry["participant_pending"],
@@ -178,6 +206,7 @@ def main():
         "current_releases": releases,
         "release_note": "Older final-release-check and live-release-verification records are historical snapshots. These current descriptors identify the packaged web/export/hosted source releases.",
         "evidence_index": {
+            "Current demo UI deployment and price-age guards": "evidence/demo-ui-release-verification.json",
             "Market release verification": "evidence/market-release-verification.json",
             "Novel live acceptance + corrected release verification": [
                 "evidence/live-acceptance-novel.json",
@@ -191,6 +220,7 @@ def main():
             "rules": "https://founderz.com/agentathon-terms/",
             "teaching_repository": "https://github.com/microsoft/FrontierWeekHack",
             "repository_head": "cd7ec1717fbf109bf6e76edfa38a5a7cfc0d88ea",
+            "repository_head_last_verified_on": "2026-09-20",
             "authenticated_form": "evidence/founderz-platform-review.json",
             "deadline_note": entry["deadline_note"],
             "conservative_submit_by_ist": entry["conservative_submit_by_ist"],
@@ -198,11 +228,11 @@ def main():
         "new_model_calls_in_package_audit": 0,
         "checks": [
             "Eight-page PDF and form size limit",
-            "Matching eight-scene narrative",
+            "Matching seven-scene, 175-second narrative and click guide",
             "161-test zero-failure report",
             "Exact decimal public price totals",
             "Current source archive integrity",
-            "Cloud public calculations and private-case authentication",
+            "Exact deployed UI bytes, price-age guards and private-case authentication",
             "Historical stock rejection and one-row recovery evidence",
             "Explicit distinction between public facts, examples and measured results",
         ],

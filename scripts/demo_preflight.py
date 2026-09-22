@@ -38,6 +38,14 @@ def main():
     )
     assert failure["status"] == "NEEDS_REVIEW" and failure["audit_valid"]
     assert any("historical quantities" in b for b in failure["plan"]["blockers"])
+    captured_supply = next(s for s in failure["stages"] if s["role"] == "supply")[
+        "result"
+    ]["assessment"]
+    assert "4,800" in captured_supply["summary"]
+    captured_quantity = next(
+        c for c in captured_supply["checks"] if c["key"] == "SAP-01:quantity"
+    )
+    assert str(captured_quantity["observed_value"]) == "6000"
     stock = next(
         s for s in failure["snapshot"]["sources"] if s["record_id"] == "STOCK-SYN-0919"
     )
@@ -80,6 +88,9 @@ def main():
         "golden_plan_matches_recorded_cloud_result": True,
         "golden_plan_sha256": golden["plan"]["plan_sha256"],
         "failure_state": failure["status"],
+        "captured_supply_summary_current_units": 4800,
+        "captured_supply_structured_units": 6000,
+        "captured_response_rejected_by_current_gate": True,
         "market_observed_at": market["reference"]["observed_at"],
         "market_requires_reverification": market["calculation"]["stale"],
         "market_demo_instruction": "Show the dated published table; do not describe a stale catalogue subtotal as a current quote.",

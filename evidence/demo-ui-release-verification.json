@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-09-22T15:36:53.766549+00:00",
+  "verified": true,
+  "url": "https://lastbuy-dev-4126.azurewebsites.net",
+  "health_http_status": 200,
+  "auth_mode": "entra",
+  "unauthenticated_private_cases": 401,
+  "assets_match_local_bytes": {
+    "index.html": "53bbdd8e219bb1595aa5520bf371a1a7e671c6f15cfb4f6dbc1026d2c5fdb8e2",
+    "app.js": "91cac454d6fdcc6e2a8b21524c46ea380fb0f6a61fe67fdc657c9d43cc91cf4f",
+    "style.css": "6978fb7d5ce58c7a5cb9878850df60d0b4703191c08fed769fcc8a91ab690f94",
+    "market-view.js": "3a12146a0f921ae7a020891237aea7597ce25cd87059c7da53c8438f106dff51"
+  },
+  "asset_cache_version": "20260922-proof",
+  "web_release": {
+    "archive": "evidence/releases/lastbuy-functions-cd6d0707cbf97f4e.zip",
+    "sha256": "cd6d0707cbf97f4ecf2576b86fff03aece7131714688768b6812dffcc782118b",
+    "files": 36
+  },
+  "archive_sha256_verified": "cd6d0707cbf97f4ecf2576b86fff03aece7131714688768b6812dffcc782118b",
+  "market_reference_sha256": "c00732f9da3b347edc5d206334cd913cbfedbb9e6df0bb6b4a5b827da552a4cf",
+  "market_observed_at": "2026-09-20T17:31:43Z",
+  "market_status": "QUOTE_REQUIRED",
+  "market_stale": true,
+  "observed_tier_250_inr_total": "200119.92",
+  "cloud_inr_250_subtotal": null,
+  "cloud_bulk_10000": {
+    "quantity": 10000,
+    "currency": "INR",
+    "tier_quantity": 250,
+    "unit_price": null,
+    "subtotal": null,
+    "status": "QUOTE_REQUIRED",
+    "reasons": [
+      "Catalogue observation needs re-verification before estimating a current purchase.",
+      "Requested quantity exceeds observed stock and backorders are unavailable; obtain a supplier allocation and quote."
+    ],
+    "stale": true,
+    "observed_stock_shortfall": 7799,
+    "rounding": "Preserve five decimal places per unit; round the extended line once to two decimals, half up.",
+    "purchase_authority": false,
+    "existing_case_modified": false
+  },
+  "supplier_reverified_in_this_check": false,
+  "historical_provider_evidence_scope": "The UI exposes stored Foundry results. The completed golden case and captured supply failure retain their original provider provenance. The failure replay reuses other roles from the reference case; its current validation is separate from the recorded response. Cloud export/recovery records are separate historical integration tests against an ERP simulator. This check does not rerun those tests.",
+  "historical_provider_evidence": [
+    "evidence/full-cloud-release7.json",
+    "evidence/live-acceptance-novel.json",
+    "evidence/cloud-historical-gate-verification.json",
+    "evidence/cloud-export-verification-LIVE-20260920.json"
+  ],
+  "new_model_calls": 0,
+  "enterprise_case_records_changed": false,
+  "scope": "Public HTTP read checks and local archive integrity; no browser interaction verification."
+}

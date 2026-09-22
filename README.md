@@ -15,6 +15,7 @@ This is an implemented and cloud-tested development prototype. Enterprise source
 - Separate export Function identity and separate SQL ERP simulator, with a unique external reference and recovery after an uncertain write. No purchase-order release API exists.
 - Entra PKCE sign-in verified in Firefox, API JWT checks and budget admission guard; responsive case workspace, scenario coverage, source review, import preview and evidence packet download.
 - Source-owner and historical-number validation, analysis cancellation and authoritative approval timeout. Versioned Durable orchestration preserves existing replay histories. Live acceptance checks exposed and drove fixes for a historical-stock error and a SQL connection timeout.
+- Read-only recorded-response inspection exposes the hosted version, scoped tool, original model summary and quoted structured facts, with current validation shown separately. The captured failure visibly distinguishes 4,800 current units in the summary from the incorrect 6,000-unit structured input.
 
 ## Demonstration economics
 
@@ -37,7 +38,7 @@ LASTBUY_AUTH_MODE=local-demo LASTBUY_DATABASE_URL=sqlite:///data/lastbuy.db \
   .venv/bin/uvicorn lastbuy.api:create_app --factory --host 127.0.0.1 --port 8810
 ```
 
-The normal application always invokes the version-pinned hosted agent and shared admission ledger. There is no silent mocked-model fallback. Local demo identities must never be exposed through a public tunnel. The separate Durable/Azurite development mode is documented in [the runbook](docs/07-runbook.md).
+New analyses invoke the version-pinned hosted agent and shared admission ledger; inspecting completed results makes no new model call. There is no silent mocked-model fallback. Local demo identities must never be exposed through a public tunnel. The separate Durable/Azurite development mode is documented in [the runbook](docs/07-runbook.md).
 
 ```sh
 .venv/bin/pytest -q --junitxml=evidence/implementation-tests.xml
@@ -45,7 +46,7 @@ The normal application always invokes the version-pinned hosted agent and shared
 .venv/bin/python -m scripts.evaluate offline
 ```
 
-Live evaluation consumes the shared allowance. Do not run it automatically on every build. The application allowance reserves failed/uncertain attempts and cannot be independently reset by starting another process. The user authorized **₹1,000 total development/testing**, allocated conservatively as ₹700 model/prior-use admission allowance plus ₹300 infrastructure buffer. This is not an Azure billing hard cap; billing API throttling prevents verified actual-cost reporting.
+Live evaluation consumes the shared allowance. Do not run it automatically on every build. The application allowance reserves failed/uncertain attempts and cannot be independently reset by starting another process. The user authorized **₹1,000 total development/testing**, allocated conservatively as ₹700 model/prior-use admission allowance plus ₹300 infrastructure buffer. Reservations are not actual Azure charges or a billing hard cap. Use dated Azure Cost Management reporting for actual usage; the earlier HTTP 429 record describes a historical request failure, not a continuing inability to report costs.
 
 ## Deployment and review
 
@@ -54,6 +55,7 @@ Live evaluation consumes the shared allowance. Do not run it automatically on ev
 - [Operations, deployment, rollback and cleanup](docs/07-runbook.md)
 - [Contest handover and three-minute recording script](docs/08-contest-handover.md)
 - [Professional contest assessment, 20 September 2026](docs/10-contest-strategy-2026-09-20.md)
+- [Final three-reviewer demo assessment, 22 September 2026](docs/13-final-demo-review-2026-09-22.md)
 - [Required Architect supporting PDF](output/pdf/LastBuy-Architect-Solution-Design.pdf)
 - [Exact buyer, financial evidence and competitors](docs/01-business-case.md)
 - [Foundry feature decisions](docs/02-foundry-capability-audit.md)
@@ -70,4 +72,4 @@ Open [the supplier evidence screen](https://lastbuy-dev-4126.azurewebsites.net/?
 
 ## Current submission package
 
-The eight-page Architect PDF, short entry description, one canonical recording guide and integrity manifest are indexed in `output/submission/README.md`. Real public onsemi prices are a separate dated reference from the example enterprise case and its assumed USD 80 unit price. Final participant video/screenshots, participant review and Founderz submission are pending; the code and supporting document do not constitute an uploaded entry.
+The eight-page Architect PDF, short description, canonical recording guide and integrity manifest are indexed in `output/submission/README.md`. The **seven-scene, 175-second** script in `submission/entry.json` starts with the enterprise purchase, shows governing evidence and recorded Foundry responses, then the captured failure and authority/recovery controls. Real public onsemi evidence is supporting material, separate from the example's assumed USD 80 price. See [the click guide](output/demo/START-HERE.md). Final participant video/screenshots, participant review and Founderz submission remain pending.

@@ -1,12 +1,13 @@
 {
-  "checked_at": "2026-09-20T18:16:52.856449+00:00",
+  "checked_at": "2026-09-22T15:39:06.100513+00:00",
   "status": "Supporting package verified; participant video/review/submission pending",
-  "source_parent_commit": "a4039f75f2c37b677a6ba8c8251e1f3b8990ae0b",
+  "source_parent_commit": "e9e15b027a4442ade5b3e7793d735feea92b1b3d",
   "automated_tests": 161,
   "pdf_pages": 8,
-  "pdf_bytes": 27383,
-  "narration_words": 338,
-  "planned_video_seconds": 180,
+  "pdf_bytes": 27368,
+  "narration_words": 327,
+  "planned_video_seconds": 175,
+  "scene_count": 7,
   "video_present": false,
   "submitted": false,
   "participant_pending": [
@@ -18,8 +19,8 @@
   "manufacturer_notice_sha256": "1168330165aaf040ce65a112718a0b2f214f45b7e319b6b27dcf64c329897cdf",
   "current_releases": {
     "functions-source-release": {
-      "archive": "evidence/releases/lastbuy-functions-840ca0ba55733562.zip",
-      "sha256": "840ca0ba55733562de2fcf4d2296d4fe707f94be8abf4a58fbb3dd047aaa4b8f",
+      "archive": "evidence/releases/lastbuy-functions-cd6d0707cbf97f4e.zip",
+      "sha256": "cd6d0707cbf97f4ecf2576b86fff03aece7131714688768b6812dffcc782118b",
       "files": 36
     },
     "export_functions-source-release": {
@@ -38,6 +39,7 @@
   },
   "release_note": "Older final-release-check and live-release-verification records are historical snapshots. These current descriptors identify the packaged web/export/hosted source releases.",
   "evidence_index": {
+    "Current demo UI deployment and price-age guards": "evidence/demo-ui-release-verification.json",
     "Market release verification": "evidence/market-release-verification.json",
     "Novel live acceptance + corrected release verification": [
       "evidence/live-acceptance-novel.json",
@@ -47,10 +49,11 @@
     "Cloud export CREATE / RECOVER": "evidence/cloud-export-verification-LIVE-20260920.json"
   },
   "official_review": {
-    "date": "2026-09-20",
+    "date": "2026-09-22",
     "rules": "https://founderz.com/agentathon-terms/",
     "teaching_repository": "https://github.com/microsoft/FrontierWeekHack",
     "repository_head": "cd7ec1717fbf109bf6e76edfa38a5a7cfc0d88ea",
+    "repository_head_last_verified_on": "2026-09-20",
     "authenticated_form": "evidence/founderz-platform-review.json",
     "deadline_note": "Official sections 3/4 use September 24 23:59 PDT; section 9 uses September 24 23:59 GMT. Use the earlier GMT cutoff as a conservative target; this is not an organizer clarification.",
     "conservative_submit_by_ist": "2026-09-25T05:29:00+05:30"
@@ -58,42 +61,62 @@
   "new_model_calls_in_package_audit": 0,
   "checks": [
     "Eight-page PDF and form size limit",
-    "Matching eight-scene narrative",
+    "Matching seven-scene, 175-second narrative and click guide",
     "161-test zero-failure report",
     "Exact decimal public price totals",
     "Current source archive integrity",
-    "Cloud public calculations and private-case authentication",
+    "Exact deployed UI bytes, price-age guards and private-case authentication",
     "Historical stock rejection and one-row recovery evidence",
     "Explicit distinction between public facts, examples and measured results"
   ],
   "files": {
     "output/pdf/LastBuy-Architect-Solution-Design.pdf": {
-      "sha256": "dba33bcac94d2eee24e883b4c3e140411691e2f7eb183a11081947f6971086f2",
-      "bytes": 27383
+      "sha256": "0a69da387efd8d30e994034ba6b1e045fb836e83284aff01ab01f0776e3af836",
+      "bytes": 27368
     },
     "submission/entry.json": {
-      "sha256": "3f0095a6e0b965a6ab02583576f5634fe637c2a6c411b572cf163cbf1eab29a0",
-      "bytes": 5475
+      "sha256": "b9ec905faf8418981fa0ad502bb80e637d4b694599e6443e0941d4b0a9aa8415",
+      "bytes": 7038
     },
     "lastbuy/market_prices.json": {
       "sha256": "bb6cb03935412026bccb23ee6b55e5c4b62c09d12a77be24569e2702db384319",
       "bytes": 3760
     },
     "README.md": {
-      "sha256": "d057df4ddd5e09fe51618a22e69e218ed558c2b99b0e8e52a997a8a41c0eda64",
-      "bytes": 6965
+      "sha256": "a3011cd289236d4207f8326b4463e55125cd1a2f85a7a10d731b362373026740",
+      "bytes": 7707
     },
     "output/submission/README.md": {
-      "sha256": "327e68162f7973af54ef3b178c1717237fd589f43f46539628678104a9e65f73",
-      "bytes": 686
+      "sha256": "23a8c13d40c6b5ec019df1c4022411ffd158d3ec739749b57d74c4d7bc4ad0da",
+      "bytes": 854
     },
     "output/submission/entry-description.txt": {
-      "sha256": "6f5cbce6e4b1523c40f00aa1fa11f18c118a6fb6d25503f6dad09236c29a9423",
-      "bytes": 1338
+      "sha256": "ff80266e45b90637cb27b58e733daeeb05b3bc5327eda6fe6883de1643ad1ce0",
+      "bytes": 1303
     },
     "output/submission/recording-guide.md": {
-      "sha256": "2eed7c07e66d7bab308bfaf182474d89a4dd7788a638517ec908198680b00454",
-      "bytes": 5323
+      "sha256": "fd922cf228b335f814f58b5d40a7a21e599df0477405c8f49829273c6659ba79",
+      "bytes": 6735
+    },
+    "output/demo/START-HERE.md": {
+      "sha256": "9b93154d0cecaffbaededc5fd879d2159eefeb2ab401c563793bb4803ed731e6",
+      "bytes": 7802
+    },
+    "output/demo/NARRATION.txt": {
+      "sha256": "c7a431156dc9b1f68838118c6ad717cc41e4481132cc3570b09ebf6867f1bb66",
+      "bytes": 2391
+    },
+    "output/demo/RECORDING-CHECKLIST.md": {
+      "sha256": "4db745029d56c14a479085891bf4ccc8c5d6f762871feca21e7143dc3c62df52",
+      "bytes": 6928
+    },
+    "output/demo/preflight.json": {
+      "sha256": "4670adfec2b380313103d3a0bfb0781fca8473aa2b91bb1b0a6b72c8e8c16563",
+      "bytes": 896
+    },
+    "output/demo/browser-rehearsal.json": {
+      "sha256": "42c493a992f9df0bf93dc59d206eb7dd367d744bf4edd260493356adba95fb5f",
+      "bytes": 2694
     },
     "docs/01-business-case.md": {
       "sha256": "40267e495721c4bb85b2eaf2d18c926d09e2179db97e1b0a10cc84088362fc42",
@@ -104,20 +127,24 @@
       "bytes": 16779
     },
     "docs/08-contest-handover.md": {
-      "sha256": "60555e293f6e6da2266ba62ce84dcd4158e1b576f90e0c1985bad2bd2735c844",
-      "bytes": 8817
+      "sha256": "7bd9d4abc59a176f842d3e1959295459f04462751084d036dacc9db44a6f2c2c",
+      "bytes": 10246
     },
     "docs/09-completion-audit.md": {
-      "sha256": "d124b7090c23923c18da04e14061446c8d0b2325179f4cff62eb3c91220b090c",
-      "bytes": 6268
+      "sha256": "cbc697e1beec0b54d72ca07022c9e2e8d734fecbb56cdfa0d87410d6a05b4bca",
+      "bytes": 6872
     },
     "docs/10-contest-strategy-2026-09-20.md": {
-      "sha256": "04cafef6e92fc98252c72421ed8c9eda98eb22a157c590ca7087679385540463",
-      "bytes": 7486
+      "sha256": "3c89c40607b1a6a4580f131915aa140f5e2fab2ed47cab0dc7f8f354f586437f",
+      "bytes": 8359
     },
     "docs/11-public-market-evidence.md": {
       "sha256": "f6d81b7e38e7f40311b76eaf94428bf0fb7ca94e10878c805a1a80fe44868e0a",
       "bytes": 4939
+    },
+    "docs/13-final-demo-review-2026-09-22.md": {
+      "sha256": "32d84c985e911ac130f5ba96225523a8fc9838bed95c27986337673d40ebe5df",
+      "bytes": 10271
     },
     "evidence/implementation-tests.xml": {
       "sha256": "abb04a4b636e74b95e98d9c7f4bc51e4e5d4adbbedb1772c440f8fabfa0f6e5c",
@@ -159,12 +186,16 @@
       "sha256": "2dfbb4d91279e45568f26446cedf470ba1472456abe774eb381f48f22e2d898a",
       "bytes": 2015
     },
+    "evidence/demo-ui-release-verification.json": {
+      "sha256": "8c9fdbcc9fc9eae4dc7edf5d2c17596bbbe9b02cbf4aeb0e2ebbaceabc7d1a64",
+      "bytes": 2781
+    },
     "evidence/founderz-platform-review.json": {
       "sha256": "a51b1262d5ffc00755998278cca24dc9643488f79ebc9d189d07cd9c27da5d17",
       "bytes": 2094
     },
     "evidence/functions-source-release.json": {
-      "sha256": "f1f5a64fa8440b214952a8b5aa5003ed83ad69cc0aac9d2d9f544e9888adb01f",
+      "sha256": "05f5452cdbff281d33f60ef5f8bc8fb1366b7fd1f848a1992a2e7a662bc598b0",
       "bytes": 170
     },
     "evidence/export_functions-source-release.json": {

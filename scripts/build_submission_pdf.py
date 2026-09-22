@@ -135,7 +135,7 @@ def footer(c, d):
     c.drawString(
         42,
         30,
-        "20 September 2026  |  Public market evidence + example enterprise workflow",
+        "22 September 2026  |  Recorded Foundry workflow + dated market evidence",
     )
     c.drawRightString(A4[0] - 42, 30, f"LastBuy  /  {d.page}")
     c.setFillColor(GREEN)
@@ -432,12 +432,12 @@ sec(
 )
 sec(
     "The decisive demonstration",
-    "Open the public onsemi reference, then switch explicitly to the separate completed Foundry example. Show its verified 10,000-unit plan. Inspect the captured historical-stock failure: the currentness gate blocks approval and labels its figures provisional. Finish with recorded cloud export/recovery evidence. All scenes use existing results; no fresh paid model run is required.",
+    "Open inside the enterprise purchase decision. Inspect the governing service amendment, quantity bridge and recorded Foundry tool response. The decisive reveal puts the correct 4,800-unit summary beside the incorrect 6,000-unit structured field. Show the current refusal, next source owner and four human approval roles. Keep public onsemi research in the supporting evidence.",
 )
 story.append(
     table(
         [
-            ["Three-minute presentation", "Proof to show"],
+            ["2:55 presentation", "Proof to show"],
             *[
                 [
                     f"{b['start'] // 60}:{b['start'] % 60:02d}-{b['end'] // 60}:{b['end'] % 60:02d}",
@@ -475,7 +475,7 @@ story.append(
             ],
             [
                 "New live stock challenge",
-                "The model chose 6,000 opening units despite an explicit 4,800 current balance. Captured-response regression drove a currentness gate. The corrected deployed worker rejected a legacy-approved fixture with HTTP 409 and zero ERP rows.",
+                "The model summary said 4,800 current units, while its structured check selected 6,000 opening units. Captured-response regression drove a currentness gate. The corrected deployed worker rejected a legacy-approved fixture with HTTP 409 and zero ERP rows.",
             ],
             [
                 "v7 regression: 9 attempts",
@@ -574,7 +574,7 @@ for label, url in refs:
     story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
 story.append(
     P(
-        "Source review: 20 September 2026. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Full source qualifications and competitor links are in docs/01-business-case.md.",
+        "Contest/demonstration review: 22 September 2026. Market observations: 20 September. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Full source qualifications and competitor links are in docs/01-business-case.md.",
         "s",
     )
 )
@@ -644,7 +644,7 @@ story.append(
             ],
             [
                 "Captured live stock response selected historical 6,000 rather than current 4,800",
-                "Replay becomes NEEDS_REVIEW; provisional labels; engineering approval unavailable; export disabled.",
+                "Inspector shows summary 4,800 versus field 6,000; current validation NEEDS_REVIEW; engineering approval unavailable; export disabled.",
                 "Novel live acceptance + corrected release verification",
             ],
             [
@@ -667,7 +667,7 @@ sec(
 )
 sec(
     "Recording and submission",
-    "Use the same eight scenes in the supplied recording guide. The participant must create the final video, including actual application screenshots/example interactions. The verified form accepts a video up to 3 minutes / 150 MB and requires PDF/Word support up to 30 MB. This PDF is the support document. Final recording, participant review and submission are separate pending actions; no entry has been uploaded.",
+    "Use the same seven scenes in the supplied 2:55 recording guide. The participant must create the final video, including actual application screenshots/example interactions. The verified form accepts a video up to 3 minutes / 150 MB and requires PDF/Word support up to 30 MB. This PDF is the support document. Final recording, participant review and submission are separate pending actions; no entry has been uploaded.",
 )
 story.append(
     P(

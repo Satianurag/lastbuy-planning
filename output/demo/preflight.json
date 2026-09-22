@@ -1,9 +1,12 @@
 {
-  "checked_at": "2026-09-22T10:00:08.625140+00:00",
+  "checked_at": "2026-09-22T15:38:38.510241+00:00",
   "ready_for_local_rehearsal": true,
   "golden_plan_matches_recorded_cloud_result": true,
   "golden_plan_sha256": "631cb1a621d64ad6e7e85a25f76f77272169db85200161b95558e390b55fc1c6",
   "failure_state": "NEEDS_REVIEW",
+  "captured_supply_summary_current_units": 4800,
+  "captured_supply_structured_units": 6000,
+  "captured_response_rejected_by_current_gate": true,
   "market_observed_at": "2026-09-20T17:31:43Z",
   "market_requires_reverification": true,
   "market_demo_instruction": "Show the dated published table; do not describe a stale catalogue subtotal as a current quote.",

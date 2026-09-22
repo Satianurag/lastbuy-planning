@@ -1,6 +1,8 @@
 # LastBuy submission handover
 
-Use the eight-page PDF in ../pdf/LastBuy-Architect-Solution-Design.pdf as required supporting material. Paste entry-description.txt where the form permits or include it in your entry narrative. Follow recording-guide.md for one consistent three-minute presentation.
+Start with [the final click guide](../demo/START-HERE.md), [plain narration](../demo/NARRATION.txt) and [Mac recording checklist](../demo/RECORDING-CHECKLIST.md). Follow recording-guide.md for the canonical seven-scene, 2:55 presentation.
+
+Use the eight-page PDF in ../pdf/LastBuy-Architect-Solution-Design.pdf as required supporting material. Paste entry-description.txt where the form permits or include it in your entry narrative.
 
 Status: documentation and software evidence prepared; final participant video/screenshots, eligibility/originality review and Founderz upload/submission remain pending. Do not upload this ZIP in place of the required PDF/video.
 

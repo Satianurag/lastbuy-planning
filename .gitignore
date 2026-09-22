@@ -65,5 +65,6 @@ tmp/pdfs/
 !evidence/live-release-verification.json
 
 !evidence/market-release-verification.json
+!evidence/demo-ui-release-verification.json
 
 !evidence/submission-consistency-audit.json

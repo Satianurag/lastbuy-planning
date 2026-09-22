@@ -1,6 +1,8 @@
 # LastBuy: professional contest assessment, 20 September 2026
 
-Recommendation: keep LastBuy focused on the final ASIC purchase decision. Make the central proof a changed stock or service fact invalidating purchasing authority. The quantity bridge establishes the economic stakes; a blocked stale export establishes that the application understands the consequence of the decision.
+Final demo revision: 22 September 2026. The original assessment date and its historical evaluation boundaries remain below; [the three-reviewer final assessment](13-final-demo-review-2026-09-22.md) records fresh primary-source checks and the final presentation choices.
+
+Recommendation: keep LastBuy focused on the final ASIC purchase decision. The quantity bridge establishes the economic stakes. Make the central proof the captured model response whose summary says 4,800 current units while its structured input selects 6,000 historical units, followed by the current approval/export refusal and the supply planner's next action.
 
 ## What the official evidence supports
 
@@ -17,26 +19,26 @@ The current [Microsoft orchestration guidance](https://learn.microsoft.com/en-us
 | Innovation | Reconcile component-specific obligations, engineering effectivity and unique stock ownership, then bind approval to that exact evidence version. | Calling last-time-buy planning new; incumbents already do it. Presenting ordinary approvals as the whole differentiator. |
 | Usability | Let the planner understand 14,000 reported versus 8,000 usable units, inspect the governing record and see the next responsible owner. | Spending the video in portal configuration or showing opaque agent conversations. |
 | Impact | Demonstrate 22,000 protected demand with a 10,000-unit purchase; explain the $640,000 modeled commitment difference and how a customer would measure benefit. | Calling synthetic arithmetic achieved savings or implying that lower purchasing always means a better decision. |
-| Architect depth | Show a source change invalidating approval, one real trace and one recoverable uncertain export. | Listing infrastructure without showing what failure it prevents. |
+| Architect depth | Inspect a real recorded Foundry response and show version-bound authority plus separate recorded export recovery. | Listing infrastructure without showing what failure it prevents, or portraying separate test cases as one continuous run. |
 | Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting only 161 passing software tests as proof of model accuracy. |
 
 ## Why AI and why four roles
 
 The language task is identifying what source statements authorize and where records conflict. The deterministic task is conservation, compatibility, timing, money and authority. This split makes the model's contribution meaningful while limiting its power over a financial action.
 
-Engineering, service, supply and commitment have separate source scopes and testable responsibilities. The current implementation coordinates them through a shared immutable snapshot and a persisted workflow; it is not an open-ended debate among independent autonomous actors. One scoped read_case_evidence tool is implemented per role. SQL, the verifier and human approval gates remain authoritative.
+Engineering, service, supply and commitment have separate source scopes and testable responsibilities. The normal workflow coordinates them through a shared immutable snapshot and persisted orchestration; it is not an open-ended debate among independent autonomous actors. The captured failure fixture combines a fresh supply response with previously recorded other roles and is identified as mixed-session evidence. One scoped read_case_evidence tool is implemented per role. SQL, the verifier and human approval gates remain authoritative.
 
 The expected benefit of specialization is easier attribution, smaller instruction scope and role-specific validation. The first matched-input comparison is now recorded: the four-stage golden run correctly accepted the case; the single-call version falsely requested review of resolved duplicate custody. This one-case historical comparison supports a concrete tradeoff, not a general claim of superiority. Keep the four-role design for this exact implemented workflow, disclose that limit, and plan consolidation if a matched comparison fails to justify the extra calls. Do not add agents to make an architecture diagram look advanced.
 
 ## The strongest three-minute story
 
-Use the canonical eight-scene [recording guide](08-contest-handover.md): real dated market notice/prices, separate completed Foundry case, governing contract and engineering evidence, stock bridge, captured historical-stock failure, four-role authority, recorded cloud export recovery, and the evaluation/pilot outcome. The guide and PDF share the same timings from `submission/entry.json`. No fresh paid model run is scheduled in the recording. Public market calculations are deterministic; they are not passed off as the Foundry agent workflow.
+Use the canonical **seven-scene, 175-second** [recording guide](08-contest-handover.md): enterprise proposal, governing service evidence, quantity bridge, recorded specialist response, captured historical-stock error/refusal, version-bound approvals with separate cloud recovery proof, then the measurable pilot target. The guide and PDF use `submission/entry.json`. The response inspector shows original summary, quoted structured facts, hosted version and scoped tool separately from current case validation. No fresh paid model call is scheduled. Dated onsemi notice/prices remain supporting material: a second SKU/currency/deadline would dilute this decision story, and the public calculator is not the Foundry workflow.
 
 ## Current quality judgment
 
 The application has a strong, specific problem and more operational evidence than a basic agent demonstration: hosted v7, durable recovery, role checks, separate exporter and reproducible deterministic outputs. The principal weakness is evidence breadth. The v7 set is small and reused after tuning; four clean cases and no silent conflict pass in four conflicts do not establish production reliability. A later unseen current-balance challenge did silently pass in the previous pipeline; its captured response drove the new source-currentness gate. The UX has been exercised, but not by independent target buyers.
 
-With model admission exhausted and the infrastructure buffer retained, the highest-value work is a clear, correct demonstration and the required supporting design document. Do not spend the last allowance on an incomplete model run or add an untested last-minute integration. Further hosted benchmarking needs verified spend and sufficient admission allowance. Real customer integration and independent evaluation remain production-release work.
+With model admission exhausted and the infrastructure buffer retained, the highest-value work is a clear demonstration and the required supporting design document. Admission reservations are internal controls, not actual Azure charges; dated Cost Management reporting supplies that separate measure. Further hosted benchmarking needs sufficient admission allowance and verified spend. Real customer integration and independent evaluation remain production-release work.
 
 ## Submission requirements verified in the signed-in platform
 
@@ -44,4 +46,4 @@ The final assignment has three steps: design the solution, explain production re
 
 The supporting document is `output/pdf/LastBuy-Architect-Solution-Design.pdf`, eight pages with architecture, role contracts, workflow, evaluation and production gates. It has been rendered and visually checked. Nothing has been uploaded or submitted. The participant still needs to review the materials and create their own final recording/editing as specified by the official rules.
 
-Review boundary: the signed-in seven-lesson syllabus, the production lesson page and all three final-activity steps/upload controls were inspected. The seven lesson videos were not all watched; clicking the production lesson's summary link did not yield a readable document in the available browser interface. Do not describe that as a complete review of every lesson recording.
+Review boundary: the signed-in seven-lesson syllabus, production lesson page and all three final-activity steps/upload controls were inspected on September 20. The seven lesson videos were not all watched; the production summary link did not yield a readable document. Public rules, Microsoft event/repository and competitor sources were rechecked on September 22 as recorded in [doc 13](13-final-demo-review-2026-09-22.md). This is not a complete review of every lesson recording or a new authenticated form inspection.
