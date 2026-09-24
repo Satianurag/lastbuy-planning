@@ -282,6 +282,7 @@ start(
 story.append(P("OPEN THE EVIDENCE", "k"))
 story.append(
     P(
+        '<link href="https://github.com/Satianurag/lastbuy-planning" color="#173e35"><b>PROJECT GITHUB — source, tests and evidence</b></link><br/>'
         '<link href="https://lastbuy-dev-4126.azurewebsites.net/?view=market" color="#173e35"><b>Public evidence screen</b></link>'
         f'  |  <link href="{MARKET["notice_url"]}" color="#173e35"><b>Manufacturer notice</b></link>'
         f'  |  <link href="{MARKET["offers"]["USD"]["url"]}" color="#173e35"><b>USD listing</b></link>'
@@ -291,7 +292,7 @@ story.append(
 )
 story.append(
     P(
-        "Links open primary market evidence. The public screen is a deterministic catalogue reference; the private, four-agent Foundry decision workflow is demonstrated in the companion video. Architecture p3; evaluation p5; production controls p6; market evidence p7; executed proof p8.",
+        "The public screen is a deterministic catalogue reference; the authenticated four-agent Foundry decision workflow is demonstrated in the companion video. Architecture p3; evaluation p5; production controls p6; market evidence p7; executed proof p8.",
         "s",
     )
 )
@@ -593,7 +594,7 @@ for label, url in refs:
     story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
 story.append(
     P(
-        "Contest/rules review: 24 September 2026. Authenticated form recheck: 24 September. Market observations: 20 September. Technical outcomes on pages 5 and 8 are backed by retained run, test and cloud-export records; these records contain private case data and are demonstrated in the companion video.",
+        "Contest/rules review: 24 September 2026. Authenticated form recheck: 24 September. Market observations: 20 September. Technical outcomes on pages 5 and 8 are backed by committed run, test and cloud-export records in the linked project repository. Authenticated UI states are shown in the companion video; customer records are synthetic.",
         "s",
     )
 )

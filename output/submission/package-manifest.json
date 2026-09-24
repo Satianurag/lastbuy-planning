@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-24T18:57:36.784276+00:00",
+  "checked_at": "2026-09-24T19:05:52.404471+00:00",
   "status": "Supporting package verified; participant video/review/submission pending",
-  "source_parent_commit": "bfd38d3145a5dc60cef455c5d37e263b5eecf7e9",
+  "source_parent_commit": "ff924e0d113496d0bf5d1c65eaee469f350e6b04",
   "automated_tests": 163,
   "pdf_pages": 8,
-  "pdf_bytes": 29385,
+  "pdf_bytes": 29645,
   "narration_words": 332,
   "planned_video_seconds": 175,
   "scene_count": 7,
@@ -71,8 +71,8 @@
   ],
   "files": {
     "output/pdf/LastBuy-Architect-Solution-Design.pdf": {
-      "sha256": "770592205a3092f4fdd0efdab4baf5271a069f04775d81dfbac5e140ef824073",
-      "bytes": 29385
+      "sha256": "f522027109205b48133ff80ba817ef986fcac0deefbd07013f796d309255282f",
+      "bytes": 29645
     },
     "submission/entry.json": {
       "sha256": "152dff696067dbf545f557286669e73ac9c42180baf4958f55fc66ce21c45a4d",

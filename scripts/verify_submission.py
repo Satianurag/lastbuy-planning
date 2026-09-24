@@ -94,6 +94,7 @@ def main():
         for annot in pdf.pages[0].get("/Annots", [])
     }
     assert market["notice_url"] in first_page_links
+    assert "https://github.com/Satianurag/lastbuy-planning" in first_page_links
     assert all(
         offer["url"] in first_page_links for offer in market["offers"].values()
     )
