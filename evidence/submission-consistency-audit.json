@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-09-24T17:23:01.884110+00:00",
+  "checked_at": "2026-09-24T17:27:49.435639+00:00",
   "passed": true,
   "pdf_visual_review": "All eight rendered pages inspected; no clipping or overflow",
   "files_packaged": 35,
-  "bundle_sha256": "b0d1071e8eeb835079de3bc2ff62375bad9e1664850970b5511b356337f7cce8",
+  "bundle_sha256": "ae0090691a871c7e4a01ef52eee2b986ec1ecd2b3f0b5b67455590b189c79d49",
   "pdf_pages": 8,
   "automated_tests": 163,
   "new_model_calls": 0,

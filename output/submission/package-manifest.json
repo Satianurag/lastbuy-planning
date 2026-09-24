@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-09-24T17:23:01.884110+00:00",
+  "checked_at": "2026-09-24T17:27:49.435639+00:00",
   "status": "Supporting package verified; participant video/review/submission pending",
-  "source_parent_commit": "8bfea72046cb7798ceef0698f28714241dea58dc",
+  "source_parent_commit": "28ff73e78ff7f99a20c76416594650e37feef71e",
   "automated_tests": 163,
   "pdf_pages": 8,
   "pdf_bytes": 27391,
@@ -83,12 +83,12 @@
       "bytes": 3760
     },
     "README.md": {
-      "sha256": "f361df5f44ca411677c75e527dd60829aa7c7c37b36cb9f6e51a50238354a052",
-      "bytes": 8004
+      "sha256": "42fa2824fa74ea13b864c0987935a5a613fe6fc98fd0e182b452cd61cff78018",
+      "bytes": 8086
     },
     "output/submission/README.md": {
-      "sha256": "23a8c13d40c6b5ec019df1c4022411ffd158d3ec739749b57d74c4d7bc4ad0da",
-      "bytes": 854
+      "sha256": "3ca9fab8e8251662ac10fdf1119bfd4fa40507b4201b9b09d482b8851d09af43",
+      "bytes": 959
     },
     "output/submission/entry-description.txt": {
       "sha256": "34c462c79de679a11ba6e41b7b57d4f1e73fd11f63fef05e6b8aba1281a86cb1",
