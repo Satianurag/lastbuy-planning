@@ -88,7 +88,7 @@ Azure Cost Management reported **₹112.28 month-to-date ActualCost** for the wh
 
 - Microsoft sign-in is verified for the real planner. Real engineering, service, finance and procurement approvers have not been onboarded; local role switching remains explicitly synthetic.
 - Customer-owned SAP, PLM, contract and service data/adapters, registered real approvers, independent evaluation, buyer validation and finance-verified savings are necessary before production use. Source-system labels and model extraction are not substitutes for trusted connector authority.
-- The authenticated Founderz syllabus, written assignment and upload form are now reviewed. Required eight-page PDF support material is prepared; the participant must review it, create their own recording/editing and submit the entry. Seven lesson videos have not all been watched. No public Git repository or contest entry has been published.
+- The authenticated Founderz syllabus, written assignment and upload form are now reviewed. Required eight-page PDF support material is prepared and links to the public project repository. The participant must review it, create their own recording/editing and submit the entry. Seven lesson videos have not all been watched; no contest entry has been submitted.
 
 Code, source archives, research, test evidence, operating runbook and submission/recording script are ready for review. These deliverables are a cloud-tested contest prototype, not a claim that a real enterprise production rollout or contest submission is complete.
 
