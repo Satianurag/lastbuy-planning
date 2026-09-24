@@ -2,6 +2,8 @@
 
 LastBuy now includes a real-part market evidence screen at `?view=market`, available without exposing any enterprise case data. Manufacturer: **onsemi**. Orderable part: **AP0202AT2L00XPGA0-DR**, a 100-VFBGA image signal processor. This is a new public reference, not an assertion that it replaces the fictional ASIC in historical tested plans.
 
+**24 September recheck:** A web retrieval of the [DigiKey US listing](https://www.digikey.com/en/products/detail/onsemi/AP0202AT2L00XPGA0-DR/7221063), reported as crawled that day, still displayed 2,201 in stock, Last Time Buy, the 7 October date and the five USD tiers below. The [India listing](https://www.digikey.in/en/products/detail/onsemi/AP0202AT2L00XPGA0-DR/7221063) presented a security-verification page in a fresh browser session, and an independent page fetch timed out. Its INR tiers were **not** reverified on 24 September. The combined 20 September snapshot and its timestamp remain unchanged; the application's 24-hour guard therefore refuses to present either currency as a current purchase estimate until both sources are verified again. No challenge was bypassed and no substitute INR conversion was invented.
+
 ## Directly observed catalogue prices
 
 Both distributor pages were opened in the browser during this session. USD and INR are separate catalogue observations; no exchange-rate conversion was used.

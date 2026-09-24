@@ -64,7 +64,7 @@ Live evaluation consumes the shared allowance. Do not run it automatically on ev
 
 Key code: `lastbuy/` domain, solver, workflow, authorization and adapters; `hosted/` Foundry entrypoint; `functions/` Durable orchestration and web API; `export_functions/` isolated export worker; `web/` decision workspace; `evaluations/` frozen synthetic cases; `evidence/` reproducible execution records.
 
-Research and historical checkpoints are dated. The current implementation report supersedes the original setup-only notes. Public Git repository creation and contest submission are not automatic parts of deployment. The participant must record and edit their own final video under the official contest rules.
+Research and historical checkpoints are dated. The current implementation report supersedes the original setup-only notes. Source is backed up in a private GitHub repository; no contest entry has been submitted. The participant must record and edit their own final video under the official contest rules.
 
 ### Real public market evidence
 
