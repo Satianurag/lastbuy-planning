@@ -135,7 +135,7 @@ def footer(c, d):
     c.drawString(
         42,
         30,
-        "24 September 2026  |  Recorded Foundry workflow + dated market evidence",
+        "25 September 2026 (IST)  |  Foundry execution + dated market evidence",
     )
     c.drawRightString(A4[0] - 42, 30, f"LastBuy  /  {d.page}")
     c.setFillColor(GREEN)
@@ -279,6 +279,22 @@ start(
     "Every unit justified before<br/>the final order.",
     "LastBuy verifies one discontinued image-processing ASIC purchase for an industrial thermal-camera manufacturer.",
 )
+story.append(P("OPEN THE EVIDENCE", "k"))
+story.append(
+    P(
+        '<link href="https://lastbuy-dev-4126.azurewebsites.net/?view=market" color="#173e35"><b>Public evidence screen</b></link>'
+        f'  |  <link href="{MARKET["notice_url"]}" color="#173e35"><b>Manufacturer notice</b></link>'
+        f'  |  <link href="{MARKET["offers"]["USD"]["url"]}" color="#173e35"><b>USD listing</b></link>'
+        f'  |  <link href="{MARKET["offers"]["INR"]["url"]}" color="#173e35"><b>INR listing</b></link>',
+        "b",
+    )
+)
+story.append(
+    P(
+        "Links open primary market evidence. The public screen is a deterministic catalogue reference; the private, four-agent Foundry decision workflow is demonstrated in the companion video. Architecture p3; evaluation p5; production controls p6; market evidence p7; executed proof p8.",
+        "s",
+    )
+)
 story.append(
     P(
         "<b>Decision:</b> how many components must the OEM buy before the supplier closes final orders, while preserving the approved repair obligations for eligible camera cohorts?"
@@ -306,7 +322,7 @@ story.append(
 )
 sec(
     "Financial stakes with a traceable example",
-    "Reported stock can include duplicate custody records, incompatible board revisions and quarantined units. Service amendments can also increase demand. A wrong input becomes unnecessary capital commitment or an uncovered service obligation.",
+    'Reported stock can include duplicate custody records, incompatible board revisions and quarantined units. Service amendments can increase demand. A wrong input becomes unnecessary capital commitment or an uncovered obligation. <link href="https://www.sec.gov/Archives/edgar/data/1094285/000109428526000043/tdy-20260628.htm" color="#173e35">Inventory exposure</link> and <link href="https://www.flir.com/en-ca/support/warranty/instruments/2-10-thermal-camera-warranty-from-flir/" color="#173e35">component-specific warranty</link> are documented publicly; no customer has validated LastBuy.',
 )
 story.append(
     table(
@@ -327,13 +343,7 @@ story.append(
 story.append(Spacer(1, 10))
 story.append(
     P(
-        "<b>$640,000 modeled commitment difference.</b> The figures are constructed test data, not achieved savings. Real Foundry hosted agents completed this synthetic cloud case. The recommendation can increase when coverage or reservations change."
-    )
-)
-story.append(
-    P(
-        "Business basis: manufacturer discontinuation notices, component-specific warranty terms and material inventory exposures support the problem category. They do not prove that a named customer has validated LastBuy. Sources and limitations: pages 6-8.",
-        "s",
+        "<b>$640,000 modeled commitment difference.</b> Constructed test data, not achieved savings. Hosted Foundry agents completed the cloud case; changed coverage can increase the recommendation."
     )
 )
 start(
@@ -456,6 +466,15 @@ story.append(
         "s",
     )
 )
+story.append(P("The judging lens", "sec"))
+story.append(
+    P(
+        "<b>Innovation:</b> the 6,000-unit historical field is blocked despite a correct 4,800-unit summary.<br/>"
+        "<b>Usability:</b> the planner sees the quantity bridge, governing quote, owner and next action.<br/>"
+        "<b>Impact:</b> the modeled commitment falls from $1.44m to $800,000; the pilot measures time, coverage and finance benefit.",
+        "s",
+    )
+)
 start(
     5,
     "Prove quality.<br/>Expose the failures.",
@@ -534,7 +553,7 @@ sec(
     "Differentiation to test",
     "Servigistics already provides last-time-buy planning; Z2Data already offers obsolescence cases, integration and approvals. LastBuy targets verification across component-specific service obligations, released engineering effectivity and uniquely owned eligible stock, binding the resulting commitment to fresh approval and a recoverable export. Public product descriptions cannot establish exclusive capability or competitive superiority.",
 )
-story.append(P("Selected sources and reproducible evidence", "sec"))
+story.append(P("Primary sources — click each name", "sec"))
 refs = [
     (
         "Microsoft Agent-a-Thon / Level 3",
@@ -574,7 +593,7 @@ for label, url in refs:
     story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
 story.append(
     P(
-        "Contest/rules review: 24 September 2026. Authenticated form recheck: 24 September. Market observations: 20 September. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Source qualifications and competitor links: docs/01-business-case.md.",
+        "Contest/rules review: 24 September 2026. Authenticated form recheck: 24 September. Market observations: 20 September. Technical outcomes on pages 5 and 8 are backed by retained run, test and cloud-export records; these records contain private case data and are demonstrated in the companion video.",
         "s",
     )
 )
@@ -625,8 +644,8 @@ for label, url in [
 
 start(
     8,
-    "Recorded checks.<br/>Development release.",
-    "Concrete outcomes from executed tests and displayed application states. These are evidence readouts, not screenshots or a newly run model benchmark.",
+    "Evidence an enterprise<br/>buyer can audit.",
+    "Executed checks from the development release, followed by the exact decision record a customer would review.",
 )
 story.append(
     table(
@@ -662,16 +681,16 @@ story.append(
     )
 )
 sec(
-    "Reviewable enterprise proof",
-    "The completed example case is LTB-CLOUD-RELEASE-7, hosted release v7. Its four specialist results total 12,569 response-reported tokens. The current deployed web and exporter archives, exact tests, supplier reference digest and this PDF are identified in package-manifest.json. Failed model attempts remain in the repository; the public price reference cannot grant access to private cases.",
+    "Decision record, not an opaque answer",
+    "The versioned output binds case ID, source-snapshot SHA-256, policy version and plan hash; each specialist finding carries a source ID, exact quote, field check and blocker status. The deterministic plan records eligible stock, confirmed inbound, protected demand, buy quantity, price basis, allocations and independently checked constraints. Each approval binds an Entra object ID, role and amount limit to the same plan hash. Export records an idempotency key, external reference and reconciliation state.",
 )
 sec(
-    "Recording and submission",
-    "Use the same seven scenes in the supplied 2:55 recording guide. The participant must create the final video, including actual application screenshots/example interactions. The verified form accepts a video up to 3 minutes / 150 MB and requires PDF/Word support up to 30 MB. This PDF is the support document. Final recording, participant review and submission are separate pending actions; no entry has been uploaded.",
+    "Release evidence and measured limits",
+    "Completed cloud case LTB-CLOUD-RELEASE-7 used hosted application v7; its four specialist results total 12,569 response-reported tokens. The corrected deployed worker denied a historically approved but stale-evidence export with HTTP 409 and zero external rows. Current evidence establishes a working development system with synthetic enterprise data; buyer-provided historical cases, real connectors and finance sign-off remain the gates to a production claim.",
 )
 story.append(
     P(
-        "The rules conflict on PDT versus GMT in different sections. Conservative submission target: 24 September 2026 at 23:59 GMT (25 September 05:29 IST), pending any organizer clarification. Public references are observations dated 20 September; refresh the listing before making a later current-price claim.",
+        "Public catalogue references are observations dated 20 September 2026. They must be refreshed before a later current-price claim or purchase. The USD 640,000 modeled difference is a constructed case result, not realized savings. No private case, approval or customer integration is exposed by the public market link.",
         "s",
     )
 )

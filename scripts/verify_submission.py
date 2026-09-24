@@ -85,10 +85,19 @@ def main():
         "HTTP 409",
         "NEEDS_REVIEW",
         "not achieved",
-        "not screenshots",
+        "Decision record, not an opaque answer",
     ):
         assert claim in pdf_text, claim
     assert sum(len(p.get("/Annots", [])) for p in pdf.pages) >= 10
+    first_page_links = {
+        str(annot.get_object().get("/A", {}).get("/URI"))
+        for annot in pdf.pages[0].get("/Annots", [])
+    }
+    assert market["notice_url"] in first_page_links
+    assert all(
+        offer["url"] in first_page_links for offer in market["offers"].values()
+    )
+    assert "https://lastbuy-dev-4126.azurewebsites.net/?view=market" in first_page_links
     releases = {}
     for name in (
         "functions-source-release",
