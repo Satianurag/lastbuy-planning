@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-24T16:49:43.426978+00:00",
+  "checked_at": "2026-09-24T17:22:21.475573+00:00",
   "verified": true,
   "url": "https://lastbuy-dev-4126.azurewebsites.net",
   "health_http_status": 200,
@@ -13,11 +13,11 @@
   },
   "asset_cache_version": "20260922-proof",
   "web_release": {
-    "archive": "evidence/releases/lastbuy-functions-d3438723251d76d2.zip",
-    "sha256": "d3438723251d76d27e4d00a0569f6472ee219830d52ba9b05f33adbcc0cb7e7c",
+    "archive": "evidence/releases/lastbuy-functions-af9459c1a4f26242.zip",
+    "sha256": "af9459c1a4f26242f8016cfa64214a2750b0db9312661b43b1ae662b672978d8",
     "files": 36
   },
-  "archive_sha256_verified": "d3438723251d76d27e4d00a0569f6472ee219830d52ba9b05f33adbcc0cb7e7c",
+  "archive_sha256_verified": "af9459c1a4f26242f8016cfa64214a2750b0db9312661b43b1ae662b672978d8",
   "market_reference_sha256": "c00732f9da3b347edc5d206334cd913cbfedbb9e6df0bb6b4a5b827da552a4cf",
   "market_observed_at": "2026-09-20T17:31:43Z",
   "market_status": "QUOTE_REQUIRED",

@@ -6,6 +6,8 @@ A working Microsoft Foundry application for an industrial thermal-camera OEM's f
 
 This is an implemented and cloud-tested development prototype. Enterprise source records and ERP are synthetic; Microsoft Foundry, Azure Functions, Azure SQL, Blob and Entra wiring are real. No real purchase has been submitted. Customer adapters, independent evaluation, actual buyer validation and production operations remain deployment gates.
 
+The current API accepts only explicitly synthetic source snapshots. An authenticated ingester cannot turn an unverified JSON flag into a customer-data claim; real-source intake requires a future trusted adapter and provenance check.
+
 ## What works
 
 - Four bounded, read-only Foundry specialists: engineering, service coverage, supply and commitment. Hosted release v7 includes mandatory source-fact extraction, exact quotes and server comparisons after v3 stress testing exposed missed contradictions.

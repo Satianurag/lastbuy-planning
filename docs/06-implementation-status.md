@@ -18,7 +18,7 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 |---|---|
 | Deterministic purchase/lot conservation | CP-SAT solver and independent verifier; `tests/test_solver.py`; 50 structured constraint fixtures in frozen evaluation |
 | Identity, role/amount authority, 4 distinct humans, stale/expired approval denial | Entra JWT tests and workflow negative tests; actual cloud real user is planner-only |
-| Typed/hash-verified source input, read-only import preview | API/import tests and browser import/preview/save; no real SAP/PLM connector credentials used |
+| Typed/hash-verified source input, read-only import preview | API/import tests and browser import/preview/save; no real SAP/PLM connector credentials used. The current API rejects a non-synthetic snapshot even from an authenticated ingester; no caller-controlled flag establishes customer provenance. |
 | Foundry bounded tools and exact citations | Versioned hosted runs; scoped structured output; source quote checks; mandatory critical-fact extraction and server comparison |
 | Current full cloud path | `evidence/full-cloud-release7.json`; plan hash `631cb1a621d6…`; all four results pin v7 |
 | Actual process crash/resume | `durable-before-crash.json`, `durable-after-restart.json`, `durable-completed-history.json`; same run resumed after worker SIGKILL using persisted Azurite history |
@@ -29,7 +29,7 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 | Source-owner boundary | Engineering requires Windchill, coverage requires Contracts/Dataverse, demand requires Planning, lots require SAP/Depot and terms require Supplier manifest references. Five wrong-owner cases fail before analysis. These checks trust the ingester’s manifest; external authenticity is not proven. |
 | Cancellation and approval timeout | Authoritative CANCELLED/APPROVAL_WAIT_EXPIRED transitions, no late result commit, no old-run expiry of a newer run; preserved approved-at-boundary behavior. V1 retained for history replay; v2 registered in cloud; actual local Functions/Azurite checkpoint-to-approval completion plus offline cancellation/expiry branches. Recovery reused recorded model responses. |
 | Actual local backup/restore | SQLite backup restored while the independent synthetic ERP retained a newer receipt; reconciliation returned the same reference, one external row and a valid audit chain. `local-restore-verification.json`; model test double, not Azure SQL PITR. |
-| Automated checks | **162 passed on 24 September**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
+| Automated checks | **163 passed on 24 September**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
 | Observability | `lastbuy-deployed-model-traces.json` contains correlated model/tool spans; input/output content capture disabled explicitly for current hosted release and Durable |
 | Budget enforcement | Shared SQL admission ledger, atomic reservation, retained failure allowance, full-run preflight, concurrency tests; no automatic replenishment |
 

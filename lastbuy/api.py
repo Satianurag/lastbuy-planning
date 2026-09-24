@@ -348,20 +348,28 @@ def create_app(workflow=None, demo=None):
     def case(case_id: str, actor=Depends(identity)):
         return workflow.get(case_id, actor)
 
+    def require_supported_snapshot(snapshot: Snapshot):
+        if snapshot.synthetic:
+            return
+        if demo:
+            raise HTTPException(400, "Local demo accepts only synthetic snapshots")
+        raise HTTPException(
+            403,
+            "Customer-source adapters are not configured; this deployment accepts only explicitly synthetic snapshots",
+        )
+
     @app.post("/api/cases", status_code=201)
     def create(snapshot: Snapshot, actor=Depends(identity)):
         if not demo:
             workflow.require(actor, "ingester")
-        if demo and not snapshot.synthetic:
-            raise HTTPException(400, "Local demo accepts only synthetic snapshots")
+        require_supported_snapshot(snapshot)
         return workflow.create(snapshot, actor)
 
     @app.put("/api/cases/{case_id}/snapshot")
     def update(case_id: str, data: SourceUpdate, actor=Depends(identity)):
         if not demo:
             workflow.require(actor, "ingester")
-        if demo and not data.snapshot.synthetic:
-            raise HTTPException(400, "Local demo accepts only synthetic snapshots")
+        require_supported_snapshot(data.snapshot)
         return workflow.replace_snapshot(
             case_id, data.snapshot, data.expected_revision, actor
         )

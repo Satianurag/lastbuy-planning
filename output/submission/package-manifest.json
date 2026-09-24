@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-24T17:06:39.825765+00:00",
+  "checked_at": "2026-09-24T17:23:01.884110+00:00",
   "status": "Supporting package verified; participant video/review/submission pending",
-  "source_parent_commit": "bbe8b5150e607dc2b3715c47a4e6ffc2fd107308",
-  "automated_tests": 162,
+  "source_parent_commit": "8bfea72046cb7798ceef0698f28714241dea58dc",
+  "automated_tests": 163,
   "pdf_pages": 8,
   "pdf_bytes": 27391,
   "narration_words": 330,
@@ -19,8 +19,8 @@
   "manufacturer_notice_sha256": "1168330165aaf040ce65a112718a0b2f214f45b7e319b6b27dcf64c329897cdf",
   "current_releases": {
     "functions-source-release": {
-      "archive": "evidence/releases/lastbuy-functions-d3438723251d76d2.zip",
-      "sha256": "d3438723251d76d27e4d00a0569f6472ee219830d52ba9b05f33adbcc0cb7e7c",
+      "archive": "evidence/releases/lastbuy-functions-af9459c1a4f26242.zip",
+      "sha256": "af9459c1a4f26242f8016cfa64214a2750b0db9312661b43b1ae662b672978d8",
       "files": 36
     },
     "export_functions-source-release": {
@@ -62,7 +62,7 @@
   "checks": [
     "Eight-page PDF and form size limit",
     "Matching seven-scene, 175-second narrative and click guide",
-    "162-test zero-failure report, run within 24 hours",
+    "163-test zero-failure report, run within 24 hours",
     "Exact decimal public price totals",
     "Current source archive integrity",
     "Exact deployed UI bytes, price-age guards and private-case authentication",
@@ -71,7 +71,7 @@
   ],
   "files": {
     "output/pdf/LastBuy-Architect-Solution-Design.pdf": {
-      "sha256": "6893487509d1ae328078473f1a113f619c40a9c5ace166e76c93a6bc58bf6950",
+      "sha256": "5f9e6efe2e10fccf088e7398a80a76858c4c8dcf625f0759b63cf167e736b1aa",
       "bytes": 27391
     },
     "submission/entry.json": {
@@ -83,8 +83,8 @@
       "bytes": 3760
     },
     "README.md": {
-      "sha256": "ed7d82b581b4b209a78e5e5520ab26ef875c07d0b4e72f71f12eb0f30421376f",
-      "bytes": 7770
+      "sha256": "f361df5f44ca411677c75e527dd60829aa7c7c37b36cb9f6e51a50238354a052",
+      "bytes": 8004
     },
     "output/submission/README.md": {
       "sha256": "23a8c13d40c6b5ec019df1c4022411ffd158d3ec739749b57d74c4d7bc4ad0da",
@@ -111,7 +111,7 @@
       "bytes": 6927
     },
     "output/demo/preflight.json": {
-      "sha256": "8afa71b0f22c17fd915c4b838c2f1012069d1f03068fcc4b697fd54a1ef3c4e1",
+      "sha256": "bf806536b2c9010f24a2286d17f0a7114541fc05619c9d67e57c006fccbeed05",
       "bytes": 896
     },
     "output/demo/browser-rehearsal.json": {
@@ -127,12 +127,12 @@
       "bytes": 16779
     },
     "docs/08-contest-handover.md": {
-      "sha256": "baa36ca81d0cb809d6de98c73ac36fa8644ed4387b5fbafb44023d7c7ac494e3",
+      "sha256": "793869d1df9252b1e1efd2d614919dc8c88c1be1016a3cf4595c9d3fccb5d054",
       "bytes": 10145
     },
     "docs/09-completion-audit.md": {
-      "sha256": "ec57d5d764fbd8528d3d842958b46ce40fe7dd93f6e04e6d96a7956b53d54551",
-      "bytes": 7115
+      "sha256": "c37c1c91bf7963da4253d848e7066079bd193fbc5fa9e4fc85ad0e8f3f9c7615",
+      "bytes": 7328
     },
     "docs/10-contest-strategy-2026-09-20.md": {
       "sha256": "7c256f65532133327eeacde7734bf42e47385d2f57ded7d850dced43fe95859f",
@@ -147,8 +147,8 @@
       "bytes": 10271
     },
     "evidence/implementation-tests.xml": {
-      "sha256": "fe3010b7e3428c33e02fa595a917e09f2f7c0a8a2ed8aeb347f818097c41dfe5",
-      "bytes": 20196
+      "sha256": "83ad3e7f9dafd73b90eecf018040ebe861e1906771a9f49b818d0d02f2c8cde1",
+      "bytes": 20320
     },
     "evidence/evaluation-summary.json": {
       "sha256": "d6b85c4d29408df22eeed4072670838b798c4f9f56a716e7b862ce85ea735c54",
@@ -187,7 +187,7 @@
       "bytes": 2015
     },
     "evidence/demo-ui-release-verification.json": {
-      "sha256": "e3f25dd17d208e77c3b40bbe14c71eff84cd705535e1f876c0dcc629e653f021",
+      "sha256": "7f69cf2846bcd80197b00cb99c9b6fe97bae93fdde8c5c85fabb417dfec9332c",
       "bytes": 2781
     },
     "evidence/founderz-platform-review.json": {
@@ -195,7 +195,7 @@
       "bytes": 2094
     },
     "evidence/functions-source-release.json": {
-      "sha256": "794dde3022a7df53003752128fc3a946d7d3eede52bd475aeda163d9de7842b3",
+      "sha256": "7d0e0c2d1ebaa620d39d87a7bfd7e28b7735dbee4ebee1eeabebbb9d8d9325c0",
       "bytes": 170
     },
     "evidence/export_functions-source-release.json": {

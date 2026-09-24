@@ -8,7 +8,7 @@ LastBuy helps an industrial thermal-camera manufacturer decide its final purchas
 
 ## Current supporting material
 
-The eight-page design PDF covers buyer/problem, four-role architecture, human authority, the same seven-scene demo, 162 passing automated tests with live failures disclosed, production gates, real dated market evidence, and recorded interactions. All public prices belong to onsemi AP0202AT2L00XPGA0-DR; the USD 80 / USD 640,000 figures belong only to the separate constructed enterprise case.
+The eight-page design PDF covers buyer/problem, four-role architecture, human authority, the same seven-scene demo, 163 passing automated tests with live failures disclosed, production gates, real dated market evidence, and recorded interactions. All public prices belong to onsemi AP0202AT2L00XPGA0-DR; the USD 80 / USD 640,000 figures belong only to the separate constructed enterprise case.
 
 Public catalogue calculations are deterministic and do not invoke Foundry. The four specialists in the enterprise workflow are the AI agent solution. A manufacturer-recommended alternative is not a customer engineering approval.
 

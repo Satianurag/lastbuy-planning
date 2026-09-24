@@ -83,6 +83,32 @@ def test_health_does_not_infer_customer_data_from_auth_mode(entra):
     assert "data_mode" not in health
 
 
+def test_ingester_cannot_claim_customer_provenance_without_adapter(entra):
+    client, token = entra
+    ingester = Actor(
+        id="entra-ingester",
+        name="Development ingester",
+        organization="NORTHSTAR",
+        roles=["ingester", "planner"],
+        authority_minor=0,
+    )
+    client.app.state.workflow.store.register(ingester)
+    client.headers["Authorization"] = "Bearer " + token(oid=ingester.id)
+    snapshot = demo_snapshot("LTB-INGEST-TEST")
+    accepted = client.post("/api/cases", json=snapshot.model_dump(mode="json"))
+    assert accepted.status_code == 201, accepted.text
+    unverified = demo_snapshot("LTB-INGEST-UNVERIFIED")
+    unverified.synthetic = False
+    assert client.post("/api/cases", json=unverified.model_dump(mode="json")).status_code == 403
+    snapshot.synthetic = False
+    snapshot.source_revision = 2
+    response = client.put(
+        "/api/cases/LTB-INGEST-TEST/snapshot",
+        json={"expected_revision": 1, "snapshot": snapshot.model_dump(mode="json")},
+    )
+    assert response.status_code == 403
+
+
 @pytest.mark.parametrize(
     "overrides",
     [
