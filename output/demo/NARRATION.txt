@@ -10,4 +10,4 @@ Here is a captured supply failure, replayed alongside three earlier specialist r
 
 Engineering, service, finance and procurement must approve the same source and plan version. In separate recorded cloud tests against an ERP simulation, a lost-response recovery produced one requisition and the same repeated receipt. Historical-stock evidence was rejected with zero external writes.
 
-Over one hundred sixty automated tests cover the implemented controls. The next customer pilot targets fifty percent less active reconciliation time while preserving service coverage. The planner can trace the 10,000-unit recommendation to the service amendment and stock records; stale evidence keeps purchasing blocked.
+Monitoring and evaluation lessons from the course changed our design: we expose each recorded response and reject an unsafe stock field. Over one hundred sixty automated tests cover the controls. A customer pilot will measure service coverage and active reconciliation time, targeting fifty percent less time.

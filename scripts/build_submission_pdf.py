@@ -574,7 +574,7 @@ for label, url in refs:
     story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
 story.append(
     P(
-        "Contest/rules review: 24 September 2026. Authenticated form inspection: 20 September. Market observations: 20 September. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Source qualifications and competitor links: docs/01-business-case.md.",
+        "Contest/rules review: 24 September 2026. Authenticated form recheck: 24 September. Market observations: 20 September. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Source qualifications and competitor links: docs/01-business-case.md.",
         "s",
     )
 )

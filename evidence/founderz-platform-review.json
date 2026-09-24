@@ -44,6 +44,6 @@
   "submitted": false,
   "uploaded": false,
   "paid_model_runs": 0,
-  "form_reverified_at": "2026-09-20T18:16:11.882248+00:00",
-  "form_reverification": "Read-only signed-in form: title; mp4/mov/m4v video up to 3 minutes / 150 MB; PDF/docx/doc support required up to 30 MB. Modal closed without upload or submission."
+  "form_reverified_at": "2026-09-24T17:29:37+00:00",
+  "form_reverification": "Read-only signed-in final-activity form and upload modal: title; mp4/mov/m4v video up to 3 minutes / 150 MB; required PDF/docx/doc support up to 30 MB. No separate description field observed. No upload or submission."
 }

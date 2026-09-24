@@ -26,11 +26,11 @@ Local role switching shares a cookie across tabs. After switching roles, reload 
 | 1:07-1:30 | Four specialist roles and recorded Foundry response: v7, scoped tool, structured facts | Scroll to Specialist analysis. Open Supply → Inspect recorded response. Point to foundry-hosted, v7 and read_case_evidence; close. Briefly show PDF page 3 architecture. |
 | 1:30-2:10 | Captured supply error: summary 4,800 versus structured 6,000; blocked approval and next owner | Failure case → Supply recorded response → Read recorded summary. Show 4,800 in the summary, SAP-01:quantity=6000 with the opening-count quote, and Current case validation: needs review. Close; show supply-planner next action. Select Arjun Rao · engineering → Approvals; show unavailable approval and disabled export. |
 | 2:10-2:31 | Version-bound human approvals and recorded cloud export recovery | Hold on four pending approval roles. Show PDF page 8 final two rows: separate cloud integration fixtures, historical gate 409/zero rows and CREATE/RECOVER one row each. |
-| 2:31-2:55 | Return to the purchase decision; quality evidence and measured customer-pilot target | Return to clean case Decision overview. End on the quantity bridge and modeled difference. Keep test details in the supporting PDF; finish at 2:55. |
+| 2:31-2:55 | Return to the purchase decision; quality evidence and customer-pilot target | Return to clean case Decision overview. End on the quantity bridge and modeled difference. Keep test details in the supporting PDF; finish at 2:55. |
 
 ## Make the proof readable
 
-Rehearse at normal speech speed. The script contains 330 whitespace-delimited words; speaking numbers aloud takes longer. Aim for 2:55, not exactly 3:00. Hold the source amendment and the summary/structured-field mismatch long enough to read. Keep the mouse still on each key number. Record in a maximized landscape browser; avoid rapid zooms, music and a long logo intro.
+Rehearse at normal speech speed. The script contains 332 whitespace-delimited words; speaking numbers aloud takes longer. Aim for 2:55, not exactly 3:00. Hold the source amendment and the summary/structured-field mismatch long enough to read. Keep the mouse still on each key number. Record in a maximized landscape browser; avoid rapid zooms, music and a long logo intro.
 
 The failure inspector opens its first SAP quantity check automatically. Expand Read recorded summary; its 4,800 current count and the 6000 structured field should be visible together. Current case validation is a separate panel. Close the inspector, show Next: supply planner, then switch to Arjun Rao · engineering and Approvals. No approval action is offered and Export approved draft is disabled.
 

@@ -1,12 +1,12 @@
 # Completion audit against the verified Architect assignment
 
-Updated 24 September 2026; authenticated Founderz assignment/form evidence remains dated September 20. The earlier audit conflated customer production-rollout gates with contest deliverables. The actual assignment requires a production-readiness design and plan; it does not require a completed enterprise pilot. Both scopes are preserved below, with different completion conditions.
+Updated 24 September 2026; the authenticated Founderz final-activity text and upload form were rechecked that day. The full syllabus inspection remains dated September 20. The earlier audit conflated customer production-rollout gates with contest deliverables. The actual assignment requires a production-readiness design and plan; it does not require a completed enterprise pilot. Both scopes are preserved below, with different completion conditions.
 
 ## Contest and original project requirements
 
 | Requirement | Authoritative evidence | Current result |
 |---|---|---|
-| Official Microsoft/FrontierWeekHack/Founderz/rules review | Public primary sources and September 22 review in doc 13; September 20 authenticated syllabus, all three assignment steps and upload modal in `founderz-platform-review.json` | Public sources rechecked; authenticated written assignment/form evidence retained. Seven lesson videos not all watched; summary attachment not readable through available interface. |
+| Official Microsoft/FrontierWeekHack/Founderz/rules review | Public primary sources and September 22 review in doc 13; September 20 authenticated syllabus and September 24 final-activity/upload-modal recheck in `founderz-platform-review.json` | Public sources rechecked; current authenticated assignment/form fields verified. Seven lesson videos not all watched; summary attachment not readable through available interface. |
 | One specific, financially significant enterprise problem | Doc 01: final discontinued ASIC purchase, named economic buyer/users, primary financial/industry evidence and competitor analysis | Defined and substantiated at problem-category level. Exact buyer adoption and recoverable customer benefit remain unvalidated. |
 | Specialized agents, inputs, tools, flow and structured outputs | Executable `lastbuy/` and `hosted/`; design PDF pages 2-3; actual hosted v7 cloud result | Implemented with synthetic source snapshots; four scoped roles, bounded tools, deterministic quantities and persisted decisions. |
 | Justify multi-agent design | Design PDF page 2 and doc 10 | Rationale based on distinct source ownership, instructions and evaluation scope provided. One matched-input live comparison is recorded: four stages accepted the clean case, while one model workflow falsely blocked it; broader superiority is not inferred. |
