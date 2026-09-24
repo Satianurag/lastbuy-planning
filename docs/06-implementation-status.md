@@ -1,6 +1,6 @@
 # LastBuy: current implementation and verified boundaries
 
-Updated 20 September 2026. The development prototype is implemented and deployed. This report distinguishes real cloud execution from synthetic business data, tests, and work that needs the participant/customer. It supersedes the earlier setup checkpoints.
+Updated 24 September 2026. The development prototype is implemented and deployed. This report distinguishes real cloud execution from example business data, tests, and work that needs the participant/customer. It supersedes the earlier setup checkpoints.
 
 ## Live result
 
@@ -29,7 +29,7 @@ The successful stage responses total **12,569 tokens** and **18.085 seconds** re
 | Source-owner boundary | Engineering requires Windchill, coverage requires Contracts/Dataverse, demand requires Planning, lots require SAP/Depot and terms require Supplier manifest references. Five wrong-owner cases fail before analysis. These checks trust the ingester’s manifest; external authenticity is not proven. |
 | Cancellation and approval timeout | Authoritative CANCELLED/APPROVAL_WAIT_EXPIRED transitions, no late result commit, no old-run expiry of a newer run; preserved approved-at-boundary behavior. V1 retained for history replay; v2 registered in cloud; actual local Functions/Azurite checkpoint-to-approval completion plus offline cancellation/expiry branches. Recovery reused recorded model responses. |
 | Actual local backup/restore | SQLite backup restored while the independent synthetic ERP retained a newer receipt; reconciliation returned the same reference, one external row and a valid audit chain. `local-restore-verification.json`; model test double, not Azure SQL PITR. |
-| Automated checks | **161 passed**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
+| Automated checks | **162 passed on 24 September**, JUnit `implementation-tests.xml`; **60/60 offline evaluation cases** (50 solver fixtures + 10 security regression references); Ruff and JavaScript syntax checks |
 | Observability | `lastbuy-deployed-model-traces.json` contains correlated model/tool spans; input/output content capture disabled explicitly for current hosted release and Durable |
 | Budget enforcement | Shared SQL admission ledger, atomic reservation, retained failure allowance, full-run preflight, concurrency tests; no automatic replenishment |
 
@@ -82,7 +82,7 @@ Development limits: hosted input is capped at 12,000 UTF-8 bytes per snapshot fo
 
 The user authorized **₹1,000 total**. The shared ledger has a ₹700 admission allowance (including ₹200 reserved for prior activity) and ₹300 infrastructure buffer. Latest checkpoint: **₹700 reserved allowance, ₹0 unreserved allowance**. These are deliberately conservative allocations, **not an invoice**. A new four-stage analysis needs ₹40 allowance and is therefore blocked before any paid call. Existing results, approvals, source review and synthetic export can still be demonstrated.
 
-Azure Cost Management repeatedly returned HTTP 429. Actual billed spend is **unverified**, not zero. Empty/zero token metrics are not proof of no usage. No extra paid benchmarking is authorized beyond the existing cap, and the ledger has not been replenished to finish tests. See `budget-status.json` and `cost-management-current.json`.
+Azure Cost Management reported **₹112.28 month-to-date ActualCost** for the whole subscription when checked on 24 September 2026; its latest usage date was 24 September. This is posted usage at that moment, may lag later charges, and is not allocated solely to LastBuy. The earlier HTTP 429 response is a historical failed query. Internal ₹700 model-admission reservations are separate from billed cost. No extra paid benchmarking is authorized beyond the existing cap. See `budget-status.json` and `cost-summary-20260924.json`.
 
 ## Remaining external gates
 

@@ -98,7 +98,7 @@ To roll back application code, deploy a retained known-good archive and its comp
 
 ## Cost stop / cleanup
 
-The user authorized ₹1,000 **total** development/testing. The SQL admission ledger reserves ₹10 per attempted specialist call, retaining reservations for failed/uncertain work. It has ₹700 total allowance including a ₹200 conservative reserve for earlier activity; ₹300 is held outside that ledger for infrastructure. These are allowances, not measured Azure charges. Cost Management has returned HTTP 429; report actual spend as unverified until billing can be read.
+The user authorized ₹1,000 **total** development/testing. The SQL admission ledger reserves ₹10 per attempted specialist call, retaining reservations for failed/uncertain work. It has ₹700 total allowance including a ₹200 conservative reserve for earlier activity; ₹300 is held outside that ledger for infrastructure. These are allowances, not measured Azure charges. Azure Cost Management reported ₹112.28 month-to-date ActualCost for the whole subscription on 24 September 2026, with usage through that date; posted charges may change and are not allocated solely to LastBuy. See `evidence/cost-summary-20260924.json`. The earlier HTTP 429 was a historical failed query.
 
 To close model admission without deleting evidence, an operator sets `budget_accounts.limit_paise = reserved_paise` for account `development` inside a transaction. Stop both Function Apps to prevent further executions, and terminate this task's hosted sessions if needed after exporting decision evidence. Keep SQL free-exhaustion AutoPause and zero always-ready settings. Do not assume stopping Functions deletes storage charges or model deployment state.
 

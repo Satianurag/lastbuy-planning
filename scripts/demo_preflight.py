@@ -69,7 +69,7 @@ def main():
         ET.parse(ROOT / "evidence/implementation-tests.xml").getroot().find("testsuite")
     )
     assert (
-        int(suite.attrib["tests"]) == 161
+        int(suite.attrib["tests"]) == manifest["automated_tests"] > 0
         and int(suite.attrib["failures"]) == int(suite.attrib["errors"]) == 0
     )
     exports = json.loads(

@@ -37,6 +37,9 @@ def main():
         assert health.status_code == 200, "Cloud health did not return HTTP 200"
         assert health.json()["status"] == "ok"
         assert health.json()["auth_mode"] == "entra"
+        assert "data_mode" not in health.json(), (
+            "Authentication cannot imply customer data"
+        )
         protected = client.get(BASE + "/api/cases")
         assert protected.status_code == 401, (
             "Private cases are not rejecting anonymous access"

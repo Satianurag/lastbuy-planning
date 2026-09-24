@@ -46,7 +46,7 @@ New analyses invoke the version-pinned hosted agent and shared admission ledger;
 .venv/bin/python -m scripts.evaluate offline
 ```
 
-Live evaluation consumes the shared allowance. Do not run it automatically on every build. The application allowance reserves failed/uncertain attempts and cannot be independently reset by starting another process. The user authorized **₹1,000 total development/testing**, allocated conservatively as ₹700 model/prior-use admission allowance plus ₹300 infrastructure buffer. Reservations are not actual Azure charges or a billing hard cap. Use dated Azure Cost Management reporting for actual usage; the earlier HTTP 429 record describes a historical request failure, not a continuing inability to report costs.
+Live evaluation consumes the shared allowance. Do not run it automatically on every build. The application allowance reserves failed/uncertain attempts and cannot be independently reset by starting another process. The user authorized **₹1,000 total development/testing**, allocated conservatively as ₹700 model/prior-use admission allowance plus ₹300 infrastructure buffer. Reservations are not actual Azure charges or a billing hard cap. Azure Cost Management reported ₹112.28 month-to-date ActualCost for the whole subscription on 24 September 2026; this is posted usage at query time, not a LastBuy-only cost allocation. The earlier HTTP 429 was a failed historical query.
 
 ## Deployment and review
 

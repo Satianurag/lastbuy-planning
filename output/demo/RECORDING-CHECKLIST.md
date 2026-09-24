@@ -1,6 +1,6 @@
 # Record the final LastBuy demo on your Mac
 
-Prepared 22 September 2026. Follow the [current narration](../submission/recording-guide.md): **seven scenes, 327 words, 2 minutes 55 seconds**. The source of truth is [submission/entry.json](../../submission/entry.json). This checklist handles recording; it does not introduce another script.
+Updated 24 September 2026. Follow the [current narration](../submission/recording-guide.md): **seven scenes, 330 words, 2 minutes 55 seconds**. The source of truth is [submission/entry.json](../../submission/entry.json). This checklist handles recording; it does not introduce another script.
 
 ## Set up the screen
 
@@ -30,7 +30,7 @@ First do a silent click rehearsal. Then speak the canonical narration at a norma
 | 2:31 | Return to the clean decision and closing outcome |
 | 2:55 | Finish |
 
-The 327 words average about 112 words per minute across the whole video, allowing room for clicks and short pauses. Rehearse the failure scene twice: show **4,800 in the summary**, **6,000 in the structured input**, then the approval refusal. If you run long, shorten navigation pauses and the architecture hold; preserve that failure and refusal sequence. Use your own natural delivery. The purchase case is the opener; keep the dated supplier-price reference in supporting material.
+The 330 words average about 113 words per minute across the whole video, allowing room for clicks and short pauses. Rehearse the failure scene twice: show **4,800 in the summary**, **6,000 in the structured input**, then the approval refusal. If you run long, shorten navigation pauses and the architecture hold; preserve that failure and refusal sequence. Use your own natural delivery. The purchase case is the opener; keep the dated supplier-price reference in supporting material.
 
 ## Make a short screen-and-microphone test
 

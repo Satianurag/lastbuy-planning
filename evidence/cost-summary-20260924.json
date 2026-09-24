@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-09-24T16:30:23.688450+00:00",
+  "source": "Azure Cost Management query, ActualCost, MonthToDate, daily, grouped by resource group and service",
+  "http_status": 200,
+  "scope": "Whole Azure subscription; the response contained one resource group. Costs are not solely attributable to LastBuy without resource-level allocation.",
+  "reported_total_inr": "112.28",
+  "latest_usage_date": "2026-09-24",
+  "interpretation": "Posted month-to-date amount at query time; later or delayed charges may change it. The internal model admission reservations are separate from billed cost."
+}

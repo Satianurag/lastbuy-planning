@@ -75,6 +75,14 @@ def test_real_jwt_validation_and_no_demo_personas(entra):
     assert client.post("/api/cases/LTB-2026-017/demo-reservation").status_code == 404
 
 
+def test_health_does_not_infer_customer_data_from_auth_mode(entra):
+    client, _ = entra
+    health = client.get("/api/health").json()
+    assert health["status"] == "ok"
+    assert health["auth_mode"] == "entra"
+    assert "data_mode" not in health
+
+
 @pytest.mark.parametrize(
     "overrides",
     [

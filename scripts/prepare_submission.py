@@ -1,10 +1,17 @@
 """Build one consistent participant handover from the reviewed entry description."""
 
 import json
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 entry = json.loads((ROOT / "submission/entry.json").read_text())
+test_count = sum(
+    int(suite.attrib["tests"])
+    for suite in ET.parse(ROOT / "evidence/implementation-tests.xml")
+    .getroot()
+    .iter("testsuite")
+)
 out = ROOT / "output/submission"
 out.mkdir(parents=True, exist_ok=True)
 (out / "entry-description.txt").write_text(
@@ -55,7 +62,7 @@ handover = (
     + entry["title"]
     + ".**\n\n"
     + entry["description"]
-    + "\n\n## Current supporting material\n\nThe eight-page design PDF covers buyer/problem, four-role architecture, human authority, the same seven-scene demo, 161 passing automated tests with live failures disclosed, production gates, real dated market evidence, and recorded interactions. All public prices belong to onsemi AP0202AT2L00XPGA0-DR; the USD 80 / USD 640,000 figures belong only to the separate constructed enterprise case.\n\nPublic catalogue calculations are deterministic and do not invoke Foundry. The four specialists in the enterprise workflow are the AI agent solution. A manufacturer-recommended alternative is not a customer engineering approval.\n\n## Judging alignment\n\n- Innovation: exact evidence-to-input checks, deterministic purchase constraints and authority tied to the source version. Servigistics and Z2Data already address this problem category; exclusivity is not claimed.\n- Usability: inspect quantity adjustments, source owners, provisional blocked results and clear next actions. Browser workflows were exercised; independent buyer study remains a pilot task.\n- Impact: reproducible modeled commitment and a measured customer-pilot plan, targeting at least 50% less active reconciliation time without more missed coverage obligations. Targets are not achieved outcomes.\n\n[Official rules](https://founderz.com/agentathon-terms/) give each criterion 30 points and use Innovation first in ties. The final participant video must satisfy their originality requirements.\n\n"
+    + f"\n\n## Current supporting material\n\nThe eight-page design PDF covers buyer/problem, four-role architecture, human authority, the same seven-scene demo, {test_count} passing automated tests with live failures disclosed, production gates, real dated market evidence, and recorded interactions. All public prices belong to onsemi AP0202AT2L00XPGA0-DR; the USD 80 / USD 640,000 figures belong only to the separate constructed enterprise case.\n\nPublic catalogue calculations are deterministic and do not invoke Foundry. The four specialists in the enterprise workflow are the AI agent solution. A manufacturer-recommended alternative is not a customer engineering approval.\n\n## Judging alignment\n\n- Innovation: exact evidence-to-input checks, deterministic purchase constraints and authority tied to the source version. Servigistics and Z2Data already address this problem category; exclusivity is not claimed.\n- Usability: inspect quantity adjustments, source owners, provisional blocked results and clear next actions. Browser workflows were exercised; independent buyer study remains a pilot task.\n- Impact: reproducible modeled commitment and a measured customer-pilot plan, targeting at least 50% less active reconciliation time without more missed coverage obligations. Targets are not achieved outcomes.\n\n[Official rules](https://founderz.com/agentathon-terms/) give each criterion 30 points and use Innovation first in ties. The final participant video must satisfy their originality requirements.\n\n"
     + guide.replace(
         "# LastBuy: final recording guide", "## Three-minute recording script", 1
     )
@@ -75,7 +82,7 @@ demo.mkdir(parents=True, exist_ok=True)
 cue = [
     "# LastBuy: final recording plan",
     "",
-    "Updated 22 September after independent rubric, editorial and proof reviews. This replaces the earlier market-first eight-scene plan. One enterprise decision, seven scenes, 2:55 total. The PDF, description and narration use the same submission/entry.json source.",
+    "Updated 24 September after rubric, editorial and proof reviews. One enterprise decision, seven scenes, 2:55 total. The PDF, description and narration use the same submission/entry.json source.",
     "",
     "**The decisive moment:** the recorded model summary says 4,800 current units, but its structured purchase field says 6,000. Show both in the new inspector, then show that current validation blocks purchasing authority.",
     "",
@@ -127,7 +134,7 @@ cue.extend(
         "",
         "The [public supplier screen](http://127.0.0.1:8810/?view=market) and PDF page 7 substantiate a real last-time-buy event. The onsemi part, INR prices and 7 October deadline are separate from the example ASIC, USD 80 price and 15 October deadline. Do not splice their numbers together. The September 20 price observation is dated; after 24 hours its calculator correctly refuses a current estimate. It stays in the appendix rather than the opening.",
         "",
-        "Use [preflight.json](preflight.json) for current runtime readiness. The local UI avoids cloud cold-start delays while retaining the original saved results. If the expected case or inspector is missing, stop the take, restart/refresh, and run `.venv/bin/python scripts/demo_preflight.py` from the project directory. Do not overwrite records to stage a passing result.",
+        "The saved [preflight.json](preflight.json) records an earlier rehearsal. Run `.venv/bin/python scripts/demo_preflight.py` from the project directory before recording to check the current local cases and PDF. The local UI avoids cloud cold-start delays while retaining the original saved results. If a case or inspector is missing, stop the take and restart/refresh. Do not overwrite records to stage a passing result.",
         "",
         "## Submission boundary",
         "",

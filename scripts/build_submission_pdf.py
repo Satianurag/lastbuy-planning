@@ -135,7 +135,7 @@ def footer(c, d):
     c.drawString(
         42,
         30,
-        "22 September 2026  |  Recorded Foundry workflow + dated market evidence",
+        "24 September 2026  |  Recorded Foundry workflow + dated market evidence",
     )
     c.drawRightString(A4[0] - 42, 30, f"LastBuy  /  {d.page}")
     c.setFillColor(GREEN)
@@ -289,7 +289,7 @@ story.append(
         [
             ["Accountability", "Exact enterprise role"],
             [
-                "Economic buyer",
+                "Target economic buyer",
                 "Director of Global Service Supply Chain; finance controller co-signs material commitments.",
             ],
             [
@@ -574,7 +574,7 @@ for label, url in refs:
     story.append(P(f'<link href="{url}" color="#173e35">{label}</link>', "s"))
 story.append(
     P(
-        "Contest/demonstration review: 22 September 2026. Market observations: 20 September. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Full source qualifications and competitor links are in docs/01-business-case.md.",
+        "Contest/rules review: 24 September 2026. Authenticated form inspection: 20 September. Market observations: 20 September. Current release index: output/submission/package-manifest.json. Evidence: full-cloud-release7.json; implementation-tests.xml; live-acceptance-summary.json; market-release-verification.json. Source qualifications and competitor links: docs/01-business-case.md.",
         "s",
     )
 )
@@ -625,7 +625,7 @@ for label, url in [
 
 start(
     8,
-    "Recorded interactions.<br/>One consistent release.",
+    "Recorded checks.<br/>Development release.",
     "Concrete outcomes from executed tests and displayed application states. These are evidence readouts, not screenshots or a newly run model benchmark.",
 )
 story.append(

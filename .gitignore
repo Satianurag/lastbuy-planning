@@ -46,6 +46,7 @@ evidence/*
 !evidence/export-identity.json
 !evidence/budget-status.json
 !evidence/cost-management-current.json
+!evidence/cost-summary-20260924.json
 !evidence/final-cloud-api-checks.json
 !evidence/npm-audit.json
 !evidence/lastbuy-deployed-model-traces.json

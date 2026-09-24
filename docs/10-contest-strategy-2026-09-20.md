@@ -20,7 +20,7 @@ The current [Microsoft orchestration guidance](https://learn.microsoft.com/en-us
 | Usability | Let the planner understand 14,000 reported versus 8,000 usable units, inspect the governing record and see the next responsible owner. | Spending the video in portal configuration or showing opaque agent conversations. |
 | Impact | Demonstrate 22,000 protected demand with a 10,000-unit purchase; explain the $640,000 modeled commitment difference and how a customer would measure benefit. | Calling synthetic arithmetic achieved savings or implying that lower purchasing always means a better decision. |
 | Architect depth | Inspect a real recorded Foundry response and show version-bound authority plus separate recorded export recovery. | Listing infrastructure without showing what failure it prevents, or portraying separate test cases as one continuous run. |
-| Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting only 161 passing software tests as proof of model accuracy. |
+| Learning and refinement | Explain the missed contradictions in the first stress set and the later source-fact checks and abstention behavior. | Quoting passing software tests as proof of model accuracy. |
 
 ## Why AI and why four roles
 

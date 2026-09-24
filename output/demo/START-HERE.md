@@ -1,6 +1,6 @@
 # LastBuy: final recording plan
 
-Updated 22 September after independent rubric, editorial and proof reviews. This replaces the earlier market-first eight-scene plan. One enterprise decision, seven scenes, 2:55 total. The PDF, description and narration use the same submission/entry.json source.
+Updated 24 September after rubric, editorial and proof reviews. One enterprise decision, seven scenes, 2:55 total. The PDF, description and narration use the same submission/entry.json source.
 
 **The decisive moment:** the recorded model summary says 4,800 current units, but its structured purchase field says 6,000. Show both in the new inspector, then show that current validation blocks purchasing authority.
 
@@ -30,7 +30,7 @@ Local role switching shares a cookie across tabs. After switching roles, reload 
 
 ## Make the proof readable
 
-Rehearse at normal speech speed. The script contains 327 whitespace-delimited words; speaking numbers aloud takes longer. Aim for 2:55, not exactly 3:00. Hold the source amendment and the summary/structured-field mismatch long enough to read. Keep the mouse still on each key number. Record in a maximized landscape browser; avoid rapid zooms, music and a long logo intro.
+Rehearse at normal speech speed. The script contains 330 whitespace-delimited words; speaking numbers aloud takes longer. Aim for 2:55, not exactly 3:00. Hold the source amendment and the summary/structured-field mismatch long enough to read. Keep the mouse still on each key number. Record in a maximized landscape browser; avoid rapid zooms, music and a long logo intro.
 
 The failure inspector opens its first SAP quantity check automatically. Expand Read recorded summary; its 4,800 current count and the 6000 structured field should be visible together. Current case validation is a separate panel. Close the inspector, show Next: supply planner, then switch to Arjun Rao · engineering and Approvals. No approval action is offered and Export approved draft is disabled.
 
@@ -50,7 +50,7 @@ Record the architecture insert for about five seconds and the recovery proof for
 
 The [public supplier screen](http://127.0.0.1:8810/?view=market) and PDF page 7 substantiate a real last-time-buy event. The onsemi part, INR prices and 7 October deadline are separate from the example ASIC, USD 80 price and 15 October deadline. Do not splice their numbers together. The September 20 price observation is dated; after 24 hours its calculator correctly refuses a current estimate. It stays in the appendix rather than the opening.
 
-Use [preflight.json](preflight.json) for current runtime readiness. The local UI avoids cloud cold-start delays while retaining the original saved results. If the expected case or inspector is missing, stop the take, restart/refresh, and run `.venv/bin/python scripts/demo_preflight.py` from the project directory. Do not overwrite records to stage a passing result.
+The saved [preflight.json](preflight.json) records an earlier rehearsal. Run `.venv/bin/python scripts/demo_preflight.py` from the project directory before recording to check the current local cases and PDF. The local UI avoids cloud cold-start delays while retaining the original saved results. If a case or inspector is missing, stop the take and restart/refresh. Do not overwrite records to stage a passing result.
 
 ## Submission boundary
 

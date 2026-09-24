@@ -254,7 +254,6 @@ def create_app(workflow=None, demo=None):
         return {
             "status": "ok",
             "auth_mode": "local-demo" if demo else "entra",
-            "data_mode": "synthetic-development" if demo else "enterprise",
             "model": os.getenv("AZURE_AI_MODEL_DEPLOYMENT_NAME", "lastbuy-dev-mini"),
         }
 

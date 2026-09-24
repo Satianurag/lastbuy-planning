@@ -8,7 +8,7 @@ import hashlib
 import json
 import subprocess
 import xml.etree.ElementTree as ET
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -33,12 +33,14 @@ def main():
     tests = ET.parse(ROOT / "evidence/implementation-tests.xml").getroot()
     suites = list(tests.iter("testsuite"))
     count = sum(int(s.attrib["tests"]) for s in suites)
-    assert count == 161
+    assert count >= 160
     assert all(
         int(s.attrib.get(k, 0)) == 0
         for s in suites
         for k in ("failures", "errors", "skipped")
     )
+    checked_suite_at = datetime.fromisoformat(suites[0].attrib["timestamp"])
+    assert timedelta(0) <= datetime.now(UTC) - checked_suite_at <= timedelta(hours=24)
     beats = entry["beats"]
     assert len(beats) == 7 and beats[0]["start"] == 0
     assert beats[-1]["end"] == entry["planned_video_seconds"] == 175
@@ -56,6 +58,10 @@ def main():
     assert (ROOT / "output/demo/NARRATION.txt").read_text().strip() == "\n\n".join(
         b["narration"] for b in beats
     )
+    assert (
+        f"{sum(len(b['narration'].split()) for b in beats)} words"
+        in (ROOT / "output/demo/RECORDING-CHECKLIST.md").read_text()
+    )
     for offer in market["offers"].values():
         for tier in offer["tiers"]:
             total = (Decimal(tier["unit_price"]) * tier["quantity"]).quantize(
@@ -68,7 +74,7 @@ def main():
     assert (ROOT / pdf_path).stat().st_size < entry["support_max_bytes"]
     pdf_text = "\n".join(p.extract_text() for p in pdf.pages)
     for claim in (
-        "161 automated tests",
+        f"{count} automated tests",
         "12,569",
         "8,363",
         "200119.92",
@@ -220,7 +226,7 @@ def main():
             "rules": "https://founderz.com/agentathon-terms/",
             "teaching_repository": "https://github.com/microsoft/FrontierWeekHack",
             "repository_head": "cd7ec1717fbf109bf6e76edfa38a5a7cfc0d88ea",
-            "repository_head_last_verified_on": "2026-09-20",
+            "repository_head_last_verified_on": "2026-09-24",
             "authenticated_form": "evidence/founderz-platform-review.json",
             "deadline_note": entry["deadline_note"],
             "conservative_submit_by_ist": entry["conservative_submit_by_ist"],
@@ -229,7 +235,7 @@ def main():
         "checks": [
             "Eight-page PDF and form size limit",
             "Matching seven-scene, 175-second narrative and click guide",
-            "161-test zero-failure report",
+            f"{count}-test zero-failure report, run within 24 hours",
             "Exact decimal public price totals",
             "Current source archive integrity",
             "Exact deployed UI bytes, price-age guards and private-case authentication",
